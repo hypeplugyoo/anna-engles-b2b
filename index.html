@@ -439,7 +439,7 @@
       border-color: var(--accent-bordeaux);
     }
 
-    /* 3D WebGL Canvas Stage */
+    /* 3D WebGL Canvas Stage: Haute Couture Atelier Mannequin */
     .hero-canvas-frame {
       position: relative;
       height: 640px;
@@ -448,79 +448,209 @@
       border: 1px solid var(--border-hairline);
       border-radius: var(--radius-subtle);
       overflow: hidden;
+      user-select: none;
     }
     #hero-webgl-canvas {
       width: 100%;
       height: 100%;
       display: block;
       cursor: grab;
+      touch-action: none;
     }
     #hero-webgl-canvas:active { cursor: grabbing; }
 
     .canvas-hud-top {
       position: absolute;
-      top: 20px; left: 24px; right: 24px;
+      top: 18px; left: 24px; right: 24px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       pointer-events: none;
       z-index: 10;
+      gap: 12px;
     }
     .canvas-hud-tag {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(8px);
-      padding: 6px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      padding: 6px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       font-weight: 600;
       color: var(--text-main);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
     .canvas-hud-tag .status-dot {
       display: inline-block; width: 6px; height: 6px; background: var(--accent-forest);
       border-radius: 50%; margin-right: 6px;
     }
 
+    /* Floating Technical Biotype Card */
+    .mannequin-metric-card {
+      position: absolute;
+      top: 66px; right: 24px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-hairline);
+      padding: 14px 18px;
+      width: 220px;
+      z-index: 10;
+      pointer-events: none;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    .mannequin-card-header {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-bordeaux);
+      font-weight: 700;
+      margin-bottom: 6px;
+      border-bottom: 1px solid var(--border-hairline);
+      padding-bottom: 4px;
+    }
+    .mannequin-card-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .mannequin-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .mannequin-metric-box {
+      background: var(--bg-canvas);
+      padding: 6px 2px;
+      border: 1px solid var(--border-hairline);
+    }
+    .mannequin-metric-val {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1;
+    }
+    .mannequin-metric-label {
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+    .mannequin-fitting-note {
+      font-size: 10px;
+      line-height: 1.35;
+      color: var(--text-body);
+      font-style: italic;
+    }
+
+    /* Bottom HUD with Biotype Switcher */
     .canvas-hud-bottom {
       position: absolute;
-      bottom: 24px; left: 24px; right: 24px;
+      bottom: 20px; left: 24px; right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 10;
+    }
+    .canvas-hud-bottom-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .cloth-color-swatches {
+    .mannequin-biotype-selector {
       display: flex;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.9);
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(12px);
-      padding: 8px 14px;
+      padding: 6px;
       border: 1px solid var(--border-hairline);
-      border-radius: 30px;
+      border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      overflow-x: auto;
+      max-width: 100%;
     }
-    .cloth-swatch-dot {
-      width: 20px; height: 20px; border-radius: 50%;
+    .biotype-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 6px 12px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      border-radius: 2px;
+    }
+    .biotype-btn:hover {
+      color: var(--text-main);
+      background: rgba(0, 0, 0, 0.04);
+    }
+    .biotype-btn.active {
+      background: var(--bg-charcoal);
+      color: #FFFFFF;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .mannequin-finish-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      padding: 6px 12px;
+      border: 1px solid var(--border-hairline);
+      border-radius: 4px;
+    }
+    .mannequin-finish-label {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .finish-swatches {
+      display: flex;
+      gap: 6px;
+    }
+    .finish-dot {
+      width: 18px; height: 18px; border-radius: 50%;
       border: 2px solid #FFFFFF; box-shadow: 0 0 0 1px var(--border-hairline);
+      cursor: pointer;
       transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .cloth-swatch-dot.active {
-      transform: scale(1.25);
+    .finish-dot.active {
+      transform: scale(1.22);
       box-shadow: 0 0 0 2px var(--accent-bordeaux);
     }
-    .cloth-swatch-dot[data-color="bordeaux"] { background: #7A1013; }
-    .cloth-swatch-dot[data-color="sand"] { background: #DDD2C1; }
-    .cloth-swatch-dot[data-color="noir"] { background: #181716; }
-    .cloth-swatch-dot[data-color="white"] { background: #F8F6F0; }
+    .finish-dot[data-finish="linen"] { background: #EEE9DF; }
+    .finish-dot[data-finish="velvet"] { background: #7A1013; }
+    .finish-dot[data-finish="noir"] { background: #1C1A18; }
 
     .canvas-instruction {
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.85);
-      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 5px 10px;
+      border: 1px solid var(--border-hairline);
       border-radius: 2px;
+      align-self: flex-start;
+      pointer-events: none;
     }
 
     /* ==========================================================================
@@ -1273,7 +1403,8 @@
     /* Responsive Breakpoints */
     @media (max-width: 1024px) {
       .hero-editorial { grid-template-columns: 1fr; padding: 24px; }
-      .hero-canvas-frame { height: 460px; }
+      .hero-canvas-frame { height: 520px; }
+      .mannequin-metric-card { top: 62px; right: 20px; width: 200px; padding: 12px 14px; }
       .editorial-product-grid { grid-template-columns: repeat(6, 1fr); gap: 32px 20px; }
       .product-cell { grid-column: span 3; }
       .product-cell.span-featured { grid-column: span 6; }
@@ -1283,7 +1414,19 @@
       .nav-chapters { display: none; }
     }
     @media (max-width: 640px) {
-      .hero-canvas-frame { height: 380px; }
+      .hero-canvas-frame { height: 480px; }
+      .mannequin-metric-card {
+        top: auto;
+        bottom: 96px;
+        left: 16px;
+        right: 16px;
+        width: auto;
+        padding: 10px 14px;
+      }
+      .mannequin-fitting-note { display: none; }
+      .mannequin-biotype-selector { max-width: 100%; overflow-x: auto; }
+      .mannequin-finish-group { display: none; }
+      .canvas-instruction { display: none; }
       .editorial-product-grid { grid-template-columns: 1fr; }
       .product-cell, .product-cell.span-featured { grid-column: span 1; }
       .footer-content-grid { grid-template-columns: 1fr; }
@@ -1392,30 +1535,66 @@
         </div>
       </div>
 
-      <!-- 3D Silk Simulation Frame -->
-      <div class="hero-canvas-frame">
+      <!-- 3D Atelier Dress Form / Mannequin Stage -->
+      <div class="hero-canvas-frame" id="hero-canvas-container">
+        <!-- Top HUD -->
         <div class="canvas-hud-top">
           <div class="canvas-hud-tag">
             <span class="status-dot"></span>
-            <span id="canvas-status-label">Simulação WebGL • Seda & Linho em Movimento</span>
+            <span id="canvas-status-label">Atelier 3D • Estudo de Caimento em 4 Biotipos</span>
           </div>
-          <div class="canvas-hud-tag" style="background: rgba(18, 17, 16, 0.85); color: #fff;">
-            <span>60 FPS</span>
+          <div class="canvas-hud-tag" style="background: rgba(18, 17, 16, 0.88); color: #fff;">
+            <span>360° Rotativo</span>
+          </div>
+        </div>
+
+        <!-- Floating Technical Spec Card -->
+        <div class="mannequin-metric-card" id="mannequin-card">
+          <div class="mannequin-card-header">Ficha Técnica • Prova B2B</div>
+          <div class="mannequin-card-title" id="mannequin-shape-name">40/42 Clássica</div>
+          <div class="mannequin-metric-grid">
+            <div class="mannequin-metric-box">
+              <div class="mannequin-metric-val" id="val-bust">92</div>
+              <div class="mannequin-metric-label">Busto cm</div>
+            </div>
+            <div class="mannequin-metric-box">
+              <div class="mannequin-metric-val" id="val-waist">72</div>
+              <div class="mannequin-metric-label">Cintura cm</div>
+            </div>
+            <div class="mannequin-metric-box">
+              <div class="mannequin-metric-val" id="val-hip">102</div>
+              <div class="mannequin-metric-label">Quadril cm</div>
+            </div>
+          </div>
+          <div class="mannequin-fitting-note" id="mannequin-fitting-note">
+            Modelagem padrão das coleções. Proporção áurea de alfaiataria.
           </div>
         </div>
 
         <canvas id="hero-webgl-canvas"></canvas>
 
+        <!-- Bottom HUD: 4 Biotypes & Finish Swatches -->
         <div class="canvas-hud-bottom">
-          <div class="cloth-color-swatches" title="Trocar Tonalidade do Tecido">
-            <button class="cloth-swatch-dot active" data-color="bordeaux" aria-label="Bordô"></button>
-            <button class="cloth-swatch-dot" data-color="sand" aria-label="Areia"></button>
-            <button class="cloth-swatch-dot" data-color="noir" aria-label="Preto"></button>
-            <button class="cloth-swatch-dot" data-color="white" aria-label="Off-White"></button>
+          <div class="canvas-hud-bottom-row">
+            <div class="mannequin-biotype-selector" role="group" aria-label="Selecione o Biotipo do Manequim">
+              <button class="biotype-btn" data-shape="petite" type="button">36/38 Petite</button>
+              <button class="biotype-btn active" data-shape="classic" type="button">40/42 Clássica</button>
+              <button class="biotype-btn" data-shape="curvy" type="button">44/46 Curvy</button>
+              <button class="biotype-btn" data-shape="allure" type="button">48/50 Allure</button>
+            </div>
+
+            <div class="mannequin-finish-group">
+              <span class="mannequin-finish-label">Revestimento</span>
+              <div class="finish-swatches">
+                <button class="finish-dot active" data-finish="linen" title="Linho Belga Cru" aria-label="Linho Belga Cru"></button>
+                <button class="finish-dot" data-finish="velvet" title="Veludo Bordô Imperial" aria-label="Veludo Bordô Imperial"></button>
+                <button class="finish-dot" data-finish="noir" title="Cetim Noir Acetinado" aria-label="Cetim Noir Acetinado"></button>
+              </div>
+            </div>
           </div>
 
           <div class="canvas-instruction">
-            <span>Mova o cursor para interagir com o tecido</span>
+            <span>Arraste para girar em 360° • Clique no biotipo para ver a graduação</span>
           </div>
         </div>
       </div>
@@ -1638,7 +1817,7 @@
   </footer>
 
   <!-- ==========================================================================
-       SCRIPTS: LENIS + THREE.JS CLOTH SHADER + CATALOG ENGINE + CART
+       SCRIPTS: LENIS + THREE.JS 3D ATELIER MANNEQUIN + CATALOG ENGINE + CART
        ========================================================================== */
   <script>
     /* ==========================================================================
@@ -1804,21 +1983,165 @@
     renderCursor();
 
     /* ==========================================================================
-       4. THREE.JS 3D HERO: REAL-TIME FLUID SILK CLOTH SHADER
+       4. THREE.JS 3D HERO: HAUTE COUTURE ATELIER DRESS FORM (4 BIOTIPOS FEMININOS)
        ========================================================================== */
-    let heroScene, heroCamera, heroRenderer, clothMesh, clothGeometry, clothMaterial;
-    let mouseNorm = { x: 0, y: 0 };
-    let mouseTarget = { x: 0, y: 0 };
-    let mouseVelocity = 0;
-    let lastMousePos = { x: 0, y: 0 };
+    let heroScene, heroCamera, heroRenderer;
+    let mannequinGroup, torsoMesh, waistRibbon, torsoGeometry;
+    let linenMaterial, velvetMaterial, noirMaterial, brassMaterial, darkIronMaterial, ribbonMaterial;
     let isCanvasVisible = true;
+    let isDraggingMannequin = false;
+    let lastPointerX = 0;
+    let mannequinVelocityY = 0;
+    let turntableTime = 0;
 
-    const clothColors = {
-      bordeaux: 0x7A1013,
-      sand: 0xDDD2C1,
-      noir: 0x181716,
-      white: 0xF8F6F0
+    // Female Body Biotypes with Tailoring Measurements & Parametric Scales
+    const BODY_PRESETS = {
+      petite: {
+        key: 'petite',
+        name: '36/38 Petite',
+        bustScale: 0.15,
+        bustWidth: 0.58,
+        waistWidth: 0.40,
+        waistDepth: 0.28,
+        hipWidth: 0.68,
+        hipDepth: 0.42,
+        shoulderWidth: 0.72,
+        torsoScale: 0.95,
+        measurements: { bust: 84, waist: 64, hip: 92 },
+        note: 'Alfaiataria esguia com ajuste milimÃ©trico nas costas e ombros.'
+      },
+      classic: {
+        key: 'classic',
+        name: '40/42 Clássica',
+        bustScale: 0.22,
+        bustWidth: 0.65,
+        waistWidth: 0.46,
+        waistDepth: 0.32,
+        hipWidth: 0.76,
+        hipDepth: 0.48,
+        shoulderWidth: 0.78,
+        torsoScale: 1.0,
+        measurements: { bust: 92, waist: 72, hip: 102 },
+        note: 'Modelagem padrão das coleções. Proporção áurea de alfaiataria.'
+      },
+      curvy: {
+        key: 'curvy',
+        name: '44/46 Curvy',
+        bustScale: 0.30,
+        bustWidth: 0.74,
+        waistWidth: 0.53,
+        waistDepth: 0.38,
+        hipWidth: 0.88,
+        hipDepth: 0.56,
+        shoulderWidth: 0.84,
+        torsoScale: 1.05,
+        measurements: { bust: 104, waist: 84, hip: 114 },
+        note: 'Drapeados fluidos em crepe georgette e decotes com caimento nobre.'
+      },
+      allure: {
+        key: 'allure',
+        name: '48/50 Allure',
+        bustScale: 0.38,
+        bustWidth: 0.82,
+        waistWidth: 0.62,
+        waistDepth: 0.44,
+        hipWidth: 0.98,
+        hipDepth: 0.64,
+        shoulderWidth: 0.90,
+        torsoScale: 1.10,
+        measurements: { bust: 116, waist: 96, hip: 126 },
+        note: 'Cortes amplos e saias evasê sem repuxo ou tensão no tecido.'
+      }
     };
+
+    let activeBodyKey = 'classic';
+    let currentMorphParams = Object.assign({}, BODY_PRESETS.classic);
+
+    const Y_SLICES = 64;
+    const RAD_SEGS = 48;
+
+    function evaluateTorsoProfile(t, p) {
+      // t: 0.0 (hips, y = -0.65) to 1.0 (neck, y = 0.95)
+      const y = -0.65 + t * 1.60;
+      let rx, rz;
+
+      if (t < 0.25) {
+        // Hips curve
+        const norm = t / 0.25;
+        rx = p.hipWidth * (0.88 + 0.12 * Math.sin(norm * Math.PI * 0.5));
+        rz = p.hipDepth * (0.86 + 0.14 * Math.sin(norm * Math.PI * 0.5));
+      } else if (t < 0.55) {
+        // Waist taper (narrowest at t ~ 0.45)
+        const norm = (t - 0.25) / 0.30;
+        const waistPinch = Math.sin(norm * Math.PI);
+        rx = p.hipWidth * (1 - norm * 0.38) - (p.hipWidth - p.waistWidth) * waistPinch * 0.6;
+        rz = p.hipDepth * (1 - norm * 0.34) - (p.hipDepth - p.waistDepth) * waistPinch * 0.6;
+      } else if (t < 0.85) {
+        // Bust and ribs
+        const norm = (t - 0.55) / 0.30;
+        rx = p.waistWidth + (p.bustWidth - p.waistWidth) * Math.sin(norm * Math.PI * 0.5);
+        rz = p.waistDepth + (p.bustWidth * 0.48 - p.waistDepth) * Math.sin(norm * Math.PI * 0.5);
+      } else {
+        // Shoulders to high neck
+        const norm = (t - 0.85) / 0.15;
+        rx = (p.shoulderWidth * 0.9) * (1 - norm * 0.72) + 0.14 * norm;
+        rz = (p.waistDepth * 0.8) * (1 - norm * 0.55) + 0.14 * norm;
+      }
+
+      return { y, rx, rz };
+    }
+
+    function updateTorsoVertices(p) {
+      if (!torsoGeometry) return;
+      const pos = torsoGeometry.attributes.position;
+      let ptr = 0;
+
+      for (let j = 0; j <= Y_SLICES; j++) {
+        const t = j / Y_SLICES;
+        const profile = evaluateTorsoProfile(t, p);
+
+        for (let i = 0; i <= RAD_SEGS; i++) {
+          const u = i / RAD_SEGS;
+          const theta = u * Math.PI * 2;
+          const cosT = Math.cos(theta);
+          const sinT = Math.sin(theta);
+
+          let x = cosT * profile.rx;
+          let y = profile.y;
+          let z = sinT * profile.rz;
+
+          // Anatomical Couture Bust Lobes (sinT > 0 is front)
+          if (sinT > 0 && t > 0.52 && t < 0.84) {
+            const bustHeightWeight = Math.exp(-Math.pow((t - 0.68) / 0.09, 2));
+            const leftDist = Math.hypot(x - 0.22, y - 0.42);
+            const rightDist = Math.hypot(x + 0.22, y - 0.42);
+            const lobeProtrusion = Math.exp(-Math.pow(leftDist / 0.22, 2)) + Math.exp(-Math.pow(rightDist / 0.22, 2));
+            z += lobeProtrusion * p.bustScale * bustHeightWeight;
+          }
+
+          // Gentle gluteal curve at back (sinT < 0)
+          if (sinT < 0 && t < 0.32) {
+            const backWeight = Math.exp(-Math.pow((t - 0.16) / 0.12, 2));
+            z -= 0.06 * p.hipDepth * backWeight * Math.abs(sinT);
+          }
+
+          pos.setXYZ(ptr, x, y, z);
+          ptr++;
+        }
+      }
+
+      pos.needsUpdate = true;
+      torsoGeometry.computeVertexNormals();
+    }
+
+    function updateRibbonScale() {
+      if (!waistRibbon) return;
+      waistRibbon.scale.set(
+        currentMorphParams.waistWidth / 0.46,
+        currentMorphParams.waistDepth / 0.32,
+        1
+      );
+    }
 
     function initHero3D() {
       const container = document.querySelector('.hero-canvas-frame');
@@ -1831,10 +2154,10 @@
       heroScene = new THREE.Scene();
       heroScene.background = new THREE.Color(0xF5F2EB);
 
-      heroCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-      heroCamera.position.set(0, 0, 4.2);
+      // Camera setup with mobile responsive framing
+      heroCamera = new THREE.PerspectiveCamera(38, width / height, 0.1, 100);
+      heroCamera.position.set(0, 0.25, width < 600 ? 5.2 : (width < 1024 ? 4.4 : 3.8));
 
-      // High-performance opaque WebGLRenderer (Zero buffer-swap blinking or alpha jitter)
       heroRenderer = new THREE.WebGLRenderer({
         canvas: canvas,
         antialias: true,
@@ -1844,139 +2167,318 @@
       heroRenderer.setSize(width, height);
       heroRenderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
       heroRenderer.setClearColor(0xF5F2EB, 1);
+      heroRenderer.shadowMap.enabled = true;
+      heroRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-      // Studio Lighting
-      const ambLight = new THREE.AmbientLight(0xFFFBF4, 0.95);
+      // Studio Haute Couture Lighting
+      const ambLight = new THREE.AmbientLight(0xFFFBF4, 0.90);
       heroScene.add(ambLight);
 
-      const keyLight = new THREE.DirectionalLight(0xFFFFFF, 1.15);
-      keyLight.position.set(2.5, 3.5, 3.0);
+      const keyLight = new THREE.DirectionalLight(0xFFFFFF, 1.2);
+      keyLight.position.set(2.8, 3.8, 3.2);
+      keyLight.castShadow = true;
+      keyLight.shadow.mapSize.width = 1024;
+      keyLight.shadow.mapSize.height = 1024;
       heroScene.add(keyLight);
 
-      const softFill = new THREE.DirectionalLight(0xEEDECF, 0.75);
-      softFill.position.set(-3.0, -1.0, 2.0);
-      heroScene.add(softFill);
+      const fillLight = new THREE.DirectionalLight(0xEEDECF, 0.70);
+      fillLight.position.set(-3.0, 1.0, 2.2);
+      heroScene.add(fillLight);
 
-      const rimLight = new THREE.DirectionalLight(0xFFFFFF, 0.6);
-      rimLight.position.set(0, 4.0, 1.5);
+      const rimLight = new THREE.DirectionalLight(0xFFFFFF, 0.85);
+      rimLight.position.set(0, 3.5, -3.0);
       heroScene.add(rimLight);
 
-      // Cloth Geometry (Optimized 45x45 grid for locked 60fps and zero normal jitter)
-      clothGeometry = new THREE.PlaneGeometry(3.6, 3.4, 45, 45);
-
-      // Luxurious Silk Satin Material (FrontSide prevents specular normal-flip strobing)
-      clothMaterial = new THREE.MeshStandardMaterial({
-        color: new THREE.Color(clothColors.bordeaux),
-        roughness: 0.32,
-        metalness: 0.08,
-        side: THREE.FrontSide
+      // Atelier Materials
+      linenMaterial = new THREE.MeshStandardMaterial({
+        color: 0xEEE9DF,
+        roughness: 0.80,
+        metalness: 0.04
       });
 
-      clothMesh = new THREE.Mesh(clothGeometry, clothMaterial);
-      clothMesh.rotation.x = -0.12;
-      heroScene.add(clothMesh);
-
-      // Mouse tracking
-      container.addEventListener('mousemove', (e) => {
-        const rect = container.getBoundingClientRect();
-        mouseNorm.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-        mouseNorm.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-
-        const distMoved = Math.hypot(e.clientX - lastMousePos.x, e.clientY - lastMousePos.y);
-        mouseVelocity = Math.min(distMoved * 0.02, 1.2);
-        lastMousePos = { x: e.clientX, y: e.clientY };
+      velvetMaterial = new THREE.MeshStandardMaterial({
+        color: 0x7A1013,
+        roughness: 0.52,
+        metalness: 0.14
       });
 
-      // Mobile Touch Move
-      container.addEventListener('touchmove', (e) => {
-        if (e.touches.length > 0) {
-          const touch = e.touches[0];
-          const rect = container.getBoundingClientRect();
-          mouseNorm.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
-          mouseNorm.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
-          mouseVelocity = 0.6;
+      noirMaterial = new THREE.MeshStandardMaterial({
+        color: 0x1A1918,
+        roughness: 0.36,
+        metalness: 0.22
+      });
+
+      brassMaterial = new THREE.MeshStandardMaterial({
+        color: 0xC5A880,
+        metalness: 0.88,
+        roughness: 0.28
+      });
+
+      darkIronMaterial = new THREE.MeshStandardMaterial({
+        color: 0x1C1A18,
+        metalness: 0.70,
+        roughness: 0.45
+      });
+
+      ribbonMaterial = new THREE.MeshStandardMaterial({
+        color: 0x7A1013,
+        metalness: 0.18,
+        roughness: 0.48
+      });
+
+      // Mannequin Master Group
+      mannequinGroup = new THREE.Group();
+      heroScene.add(mannequinGroup);
+
+      // 1. Cast-Iron & Turned Brass Pedestal Stand
+      const standGroup = new THREE.Group();
+      mannequinGroup.add(standGroup);
+
+      const baseMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.62, 0.05, 48), darkIronMaterial);
+      baseMesh.position.y = -1.65;
+      baseMesh.receiveShadow = true;
+      standGroup.add(baseMesh);
+
+      const baseRingGeom = new THREE.TorusGeometry(0.56, 0.02, 16, 48);
+      baseRingGeom.rotateX(Math.PI / 2);
+      const baseRing = new THREE.Mesh(baseRingGeom, brassMaterial);
+      baseRing.position.y = -1.65;
+      standGroup.add(baseRing);
+
+      const poleMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 2.2, 24), brassMaterial);
+      poleMesh.position.y = -0.55;
+      poleMesh.castShadow = true;
+      standGroup.add(poleMesh);
+
+      const collarMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.08, 24), brassMaterial);
+      collarMesh.position.y = -0.85;
+      standGroup.add(collarMesh);
+
+      // Contact Floor Shadow
+      const shadowCanvas = document.createElement('canvas');
+      shadowCanvas.width = 128; shadowCanvas.height = 128;
+      const ctx = shadowCanvas.getContext('2d');
+      const grad = ctx.createRadialGradient(64, 64, 10, 64, 64, 60);
+      grad.addColorStop(0, 'rgba(30, 24, 20, 0.35)');
+      grad.addColorStop(0.5, 'rgba(30, 24, 20, 0.12)');
+      grad.addColorStop(1, 'rgba(30, 24, 20, 0.0)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 128, 128);
+      const shadowTex = new THREE.CanvasTexture(shadowCanvas);
+      const shadowPlane = new THREE.Mesh(
+        new THREE.PlaneGeometry(1.7, 1.7),
+        new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false })
+      );
+      shadowPlane.rotateX(-Math.PI / 2);
+      shadowPlane.position.y = -1.675;
+      standGroup.add(shadowPlane);
+
+      // 2. Neck Brass Finial
+      const finialGroup = new THREE.Group();
+      mannequinGroup.add(finialGroup);
+
+      const neckCap = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.15, 0.06, 36), brassMaterial);
+      neckCap.position.y = 0.98;
+      finialGroup.add(neckCap);
+
+      const finialKnob = new THREE.Mesh(new THREE.SphereGeometry(0.07, 24, 24), brassMaterial);
+      finialKnob.position.y = 1.06;
+      finialGroup.add(finialKnob);
+
+      // 3. Parametric Torso Buffer Geometry
+      torsoGeometry = new THREE.BufferGeometry();
+      const vertexCount = (Y_SLICES + 1) * (RAD_SEGS + 1);
+      const positions = new Float32Array(vertexCount * 3);
+      const uvs = new Float32Array(vertexCount * 2);
+      const indices = [];
+
+      for (let j = 0; j < Y_SLICES; j++) {
+        for (let i = 0; i < RAD_SEGS; i++) {
+          const a = j * (RAD_SEGS + 1) + i;
+          const b = (j + 1) * (RAD_SEGS + 1) + i;
+          const c = (j + 1) * (RAD_SEGS + 1) + (i + 1);
+          const d = j * (RAD_SEGS + 1) + (i + 1);
+          indices.push(a, b, d);
+          indices.push(b, c, d);
         }
+      }
+      torsoGeometry.setIndex(indices);
+      torsoGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      torsoGeometry.setAttribute('uv', new THREE.BufferAttribute(uvs, 2));
+
+      updateTorsoVertices(currentMorphParams);
+
+      torsoMesh = new THREE.Mesh(torsoGeometry, linenMaterial);
+      torsoMesh.castShadow = true;
+      torsoMesh.receiveShadow = true;
+      mannequinGroup.add(torsoMesh);
+
+      // 4. Waistline Grosgrain Ribbon Belt
+      const waistRingGeom = new THREE.TorusGeometry(0.48, 0.015, 12, 48);
+      waistRingGeom.rotateX(Math.PI / 2);
+      waistRibbon = new THREE.Mesh(waistRingGeom, ribbonMaterial);
+      waistRibbon.position.y = 0.08;
+      mannequinGroup.add(waistRibbon);
+      updateRibbonScale();
+
+      // Mouse & Touch 360 Drag Interaction
+      const onPointerStart = (clientX) => {
+        isDraggingMannequin = true;
+        lastPointerX = clientX;
+        mannequinVelocityY = 0;
+      };
+
+      const onPointerMove = (clientX) => {
+        if (!isDraggingMannequin) return;
+        const delta = clientX - lastPointerX;
+        lastPointerX = clientX;
+        mannequinVelocityY = delta * 0.007;
+        mannequinGroup.rotation.y += mannequinVelocityY;
+      };
+
+      const onPointerEnd = () => {
+        isDraggingMannequin = false;
+      };
+
+      canvas.addEventListener('mousedown', (e) => onPointerStart(e.clientX));
+      window.addEventListener('mousemove', (e) => onPointerMove(e.clientX));
+      window.addEventListener('mouseup', onPointerEnd);
+
+      canvas.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) onPointerStart(e.touches[0].clientX);
       }, { passive: true });
 
-      // Performance: Pause when out of viewport
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) onPointerMove(e.touches[0].clientX);
+      }, { passive: true });
+
+      window.addEventListener('touchend', onPointerEnd);
+
+      // Setup Biotype & Finish event listeners
+      document.querySelectorAll('.biotype-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const shape = btn.dataset.shape;
+          if (shape) setBodyShape(shape);
+        });
+      });
+
+      document.querySelectorAll('.finish-dot').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.finish-dot').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const finish = btn.dataset.finish;
+          if (!torsoMesh) return;
+
+          let targetMat = linenMaterial;
+          if (finish === 'velvet') targetMat = velvetMaterial;
+          if (finish === 'noir') targetMat = noirMaterial;
+
+          torsoMesh.material = targetMat;
+        });
+      });
+
+      // Resize & Viewport Observer
+      const handleResize = () => {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        heroCamera.aspect = w / h;
+        heroCamera.position.z = w < 600 ? 5.2 : (w < 1024 ? 4.4 : 3.8);
+        heroCamera.position.y = w < 600 ? 0.35 : 0.25;
+        heroCamera.updateProjectionMatrix();
+        heroRenderer.setSize(w, h);
+      };
+      window.addEventListener('resize', handleResize);
+
       const observer = new IntersectionObserver(([entry]) => {
         isCanvasVisible = entry.isIntersecting;
       }, { threshold: 0.05 });
       observer.observe(container);
 
-      // Resize
-      window.addEventListener('resize', () => {
-        const w = container.clientWidth;
-        const h = container.clientHeight;
-        heroCamera.aspect = w / h;
-        heroCamera.updateProjectionMatrix();
-        heroRenderer.setSize(w, h);
-      });
-
-      animateHeroCloth(0);
+      // Start Animation Loop
+      animateHeroMannequin();
     }
 
-    let clothTime = 0;
-    function animateHeroCloth(timestamp) {
-      requestAnimationFrame(animateHeroCloth);
-      if (!isCanvasVisible) return;
+    function animateHeroMannequin() {
+      requestAnimationFrame(animateHeroMannequin);
+      if (!isCanvasVisible || !mannequinGroup) return;
 
-      clothTime += 0.015;
+      turntableTime += 0.01;
 
-      // Smooth mouse lerp
-      mouseTarget.x += (mouseNorm.x - mouseTarget.x) * 0.05;
-      mouseTarget.y += (mouseNorm.y - mouseTarget.y) * 0.05;
-      mouseVelocity *= 0.93; // Decay
+      if (!isDraggingMannequin) {
+        // Apply smooth momentum damping
+        mannequinVelocityY *= 0.92;
+        mannequinGroup.rotation.y += mannequinVelocityY;
 
-      // Dynamic Cloth vertex displacement
-      const pos = clothGeometry.attributes.position;
-      const count = pos.count;
-
-      for (let i = 0; i < count; i++) {
-        const u = pos.getX(i);
-        const v = pos.getY(i);
-
-        // Fluid silk satin drape waves (smooth harmonic curves)
-        const wave1 = Math.sin(u * 1.8 + clothTime * 1.2) * 0.18;
-        const wave2 = Math.cos(v * 2.0 + clothTime * 0.9) * 0.14;
-        const wave3 = Math.sin((u + v) * 1.2 + clothTime * 1.4) * 0.08;
-
-        // Interactive mouse perturbation (soft dampened ripple)
-        const dx = u - (mouseTarget.x * 1.4);
-        const dy = v - (mouseTarget.y * 1.4);
-        const dist = Math.hypot(dx, dy);
-        const ripple = Math.sin(dist * 4.5 - clothTime * 2.8) * Math.exp(-dist * 1.1) * (0.08 + mouseVelocity * 0.12);
-
-        pos.setZ(i, wave1 + wave2 + wave3 + ripple);
+        // Subtle continuous turntable rotation when idle
+        if (Math.abs(mannequinVelocityY) < 0.0003) {
+          mannequinGroup.rotation.y += 0.0035;
+        }
       }
-      pos.needsUpdate = true;
-      clothGeometry.computeVertexNormals();
-
-      // Subtle cloth breathing rotation
-      clothMesh.rotation.y = Math.sin(clothTime * 0.35) * 0.07 + (mouseTarget.x * 0.10);
-      clothMesh.rotation.x = -0.12 + Math.cos(clothTime * 0.28) * 0.04 - (mouseTarget.y * 0.08);
 
       heroRenderer.render(heroScene, heroCamera);
     }
 
-    // Color Swatch Transition
-    document.querySelectorAll('.cloth-swatch-dot').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.cloth-swatch-dot').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const colorKey = btn.dataset.color;
-        const targetHex = clothColors[colorKey];
-        if (targetHex && clothMaterial) {
-          gsap.to(clothMaterial.color, {
-            r: ((targetHex >> 16) & 255) / 255,
-            g: ((targetHex >> 8) & 255) / 255,
-            b: (targetHex & 255) / 255,
-            duration: 0.6,
-            ease: "power2.out"
-          });
+    // Biotype Shape Switcher with GSAP Morphing & Live Metric Counting
+    window.setBodyShape = function(key) {
+      const target = BODY_PRESETS[key];
+      if (!target) return;
+      activeBodyKey = key;
+
+      // Update Active Button
+      document.querySelectorAll('.biotype-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.shape === key);
+      });
+
+      // Update Card Header & Texts
+      const nameEl = document.getElementById('mannequin-shape-name');
+      const noteEl = document.getElementById('mannequin-fitting-note');
+      if (nameEl) nameEl.textContent = target.name;
+      if (noteEl) noteEl.textContent = target.note;
+
+      // Animate Geometry Parameters
+      gsap.to(currentMorphParams, {
+        bustScale: target.bustScale,
+        bustWidth: target.bustWidth,
+        waistWidth: target.waistWidth,
+        waistDepth: target.waistDepth,
+        hipWidth: target.hipWidth,
+        hipDepth: target.hipDepth,
+        shoulderWidth: target.shoulderWidth,
+        torsoScale: target.torsoScale,
+        duration: 0.85,
+        ease: "power2.inOut",
+        onUpdate: () => {
+          updateTorsoVertices(currentMorphParams);
+          updateRibbonScale();
         }
       });
-    });
+
+      // Animate Measurement Numbers on Floating Card
+      const bustEl = document.getElementById('val-bust');
+      const waistEl = document.getElementById('val-waist');
+      const hipEl = document.getElementById('val-hip');
+
+      if (bustEl && waistEl && hipEl) {
+        const currentVals = {
+          bust: parseFloat(bustEl.textContent) || 92,
+          waist: parseFloat(waistEl.textContent) || 72,
+          hip: parseFloat(hipEl.textContent) || 102
+        };
+
+        gsap.to(currentVals, {
+          bust: target.measurements.bust,
+          waist: target.measurements.waist,
+          hip: target.measurements.hip,
+          duration: 0.85,
+          ease: "power2.out",
+          onUpdate: () => {
+            bustEl.textContent = Math.round(currentVals.bust);
+            waistEl.textContent = Math.round(currentVals.waist);
+            hipEl.textContent = Math.round(currentVals.hip);
+          }
+        });
+      }
+    };
 
     /* ==========================================================================
        5. VIP INVITATION ROUTER & STATE ENGINE
