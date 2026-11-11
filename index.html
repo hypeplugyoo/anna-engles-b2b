@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -12,10 +12,10 @@
   <meta property="og:image" content="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Haute Couture Editorial Pairing (Cormorant Garamond + Montserrat) -->
+  <!-- Google Fonts: Luxury High-Fashion Editorial Stack (Cinzel, Italiana, Playfair Display, Plus Jakarta Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   
   <!-- CDNs: Three.js + GSAP + Lenis Smooth Scroll -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -33,46 +33,72 @@
     }
     /* ==========================================================================
        DESIGN SYSTEM & ART DIRECTION TOKENS
-       Haute Couture Editorial: Off-White Silk, Raw Sand, Imperial Bordeaux, Charcoal
+       High Fashion Luxury: Silk Cashmere, Noir Velvet, Imperial Bordeaux & Champagne Gold
        ========================================================================== */
     :root {
-      /* Color Palette */
-      --bg-canvas: #F8F6F0;           /* Off-White Silk base */
+      /* Color Palette: Refined Luxury */
+      --bg-canvas: #FAF8F5;           /* Luminous Silk Cashmere base */
       --bg-surface: #FFFFFF;          /* Pure Alabaster surface */
-      --bg-sand: #EFEBE4;             /* Raw linen backdrop */
-      --bg-charcoal: #121110;         /* Deep obsidian charcoal */
+      --bg-sand: #F2ECE1;             /* French Raw Linen */
+      --bg-charcoal: #0F0E0D;         /* Deep Obsidian Velvet Noir */
+      --bg-charcoal-card: #181615;    /* Deep Graphite */
       
-      --text-main: #141312;           /* Editorial Noir */
-      --text-muted: #6E6B66;         /* Tailored Graphite */
-      --text-light: #9C9891;         /* Warm Mist */
-      --text-on-dark: #F8F6F0;       /* Alabaster on dark */
+      --text-main: #141210;           /* Editorial Noir */
+      --text-muted: #69655F;         /* Tailored Graphite */
+      --text-light: #9E9991;         /* Warm Mist */
+      --text-on-dark: #FAF8F5;       /* Silk on dark */
       
-      --accent-bordeaux: #7A1013;     /* Anna Engles Imperial Wine */
-      --accent-bordeaux-hover: #5E0B0E;
-      --accent-brass: #BFA37C;        /* Brushed Champagne Brass */
-      --accent-forest: #2B4E3A;       /* Profit Olive */
-      
-      --border-hairline: rgba(20, 19, 18, 0.09);
-      --border-dark: rgba(248, 246, 240, 0.12);
-      --border-brass: rgba(191, 163, 124, 0.4);
+      /* Royal Imperial Bordeaux & Ruby Velvet */
+      --accent-bordeaux: #821019;
+      --accent-bordeaux-hover: #5C0B12;
+      --accent-bordeaux-light: #9F1B25;
+      --accent-bordeaux-glow: rgba(130, 16, 25, 0.28);
+      --accent-bordeaux-soft: rgba(130, 16, 25, 0.08);
 
-      /* Typography Scales: Haute Couture Editorial */
-      --font-display: 'Canesa', 'Cormorant Garamond', Georgia, serif;
-      --font-serif-italic: 'Cormorant Garamond', Garamond, Georgia, serif;
-      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      /* Champagne Gold & Brushed Brass */
+      --accent-gold: #D4AF37;
+      --accent-brass: #C5A059;
+      --accent-brass-light: #E7D7BE;
+      --accent-brass-soft: rgba(197, 160, 89, 0.15);
+      --gold-gradient: linear-gradient(135deg, #ECC880 0%, #C5A059 50%, #9E7432 100%);
+      --gold-shimmer: linear-gradient(90deg, #C5A059 0%, #FAF0DF 50%, #C5A059 100%);
 
-      --fs-huge: clamp(52px, 8vw, 118px);
-      --fs-h1: clamp(36px, 4.5vw, 60px);
-      --fs-h2: clamp(26px, 3vw, 40px);
-      --fs-h3: clamp(19px, 2vw, 26px);
+      /* Noble Emerald Profit */
+      --accent-forest: #1E4D3E;
+      --accent-forest-light: #2D6A56;
+      --accent-forest-bg: rgba(30, 77, 62, 0.08);
+      --accent-forest-border: rgba(30, 77, 62, 0.24);
+      
+      --border-hairline: rgba(20, 18, 16, 0.08);
+      --border-dark: rgba(250, 248, 245, 0.12);
+      --border-brass: rgba(197, 160, 89, 0.45);
+
+      /* Typography Scales: Italian Haute Couture Editorial */
+      --font-brand: 'Cinzel', serif;
+      --font-display: 'Italiana', 'Cinzel', 'Canesa', Georgia, serif;
+      --font-serif-italic: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --fs-huge: clamp(52px, 7.5vw, 114px);
+      --fs-h1: clamp(38px, 4.8vw, 64px);
+      --fs-h2: clamp(26px, 3.2vw, 42px);
+      --fs-h3: clamp(20px, 2.2vw, 28px);
       --fs-body: 14.5px;
       --fs-caption: 12px;
       --fs-tag: 10px;
 
       /* Spatial & Motion */
       --transition-editorial: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      --transition-fast: all 0.25s ease-out;
-      --radius-subtle: 2px;
+      --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      --radius-subtle: 3px;
+      --radius-pill: 999px;
+
+      /* Elevated Shadows */
+      --shadow-subtle: 0 4px 20px rgba(20, 18, 16, 0.04);
+      --shadow-card: 0 12px 32px -8px rgba(20, 18, 16, 0.06);
+      --shadow-hover: 0 24px 48px -12px rgba(130, 16, 25, 0.14);
+      --shadow-modal: 0 32px 80px -16px rgba(15, 14, 13, 0.4);
     }
 
     /* Reset & Base */
@@ -98,32 +124,75 @@
 
     /* Film grain noise */
     .film-grain {
-      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.028;
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.026;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Luxury Toast Notification */
+    .luxury-toast {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: var(--bg-charcoal);
+      color: #FFFFFF;
+      border: 1px solid var(--accent-brass);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10001;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .luxury-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Pulse Dot Animation for Live tags */
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 7px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .pulse-dot {
+      display: inline-block; width: 6px; height: 6px; background: #25D366;
+      border-radius: 50%; animation: pulseGreen 2s infinite; margin-right: 6px;
+      vertical-align: middle;
     }
 
     /* Custom Editorial Cursor */
     .custom-cursor-dot {
       position: fixed; top: 0; left: 0; width: 6px; height: 6px;
-      background: var(--text-main); border-radius: 50%; pointer-events: none;
+      background: var(--accent-bordeaux); border-radius: 50%; pointer-events: none;
       z-index: 10000; transform: translate(-50%, -50%); transition: opacity 0.2s, transform 0.1s;
     }
     .custom-cursor-ring {
       position: fixed; top: 0; left: 0; width: 34px; height: 34px;
-      border: 1px solid rgba(20, 19, 18, 0.3); border-radius: 50%; pointer-events: none;
+      border: 1px solid rgba(130, 16, 25, 0.4); border-radius: 50%; pointer-events: none;
       z-index: 9999; transform: translate(-50%, -50%);
       transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, background-color 0.3s;
       display: flex; align-items: center; justify-content: center;
     }
     .custom-cursor-ring.active-hover {
       width: 76px; height: 76px;
-      background: rgba(122, 16, 19, 0.9);
-      border-color: var(--accent-bordeaux);
-      backdrop-filter: blur(4px);
+      background: rgba(130, 16, 25, 0.92);
+      border-color: var(--accent-brass);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 30px var(--accent-bordeaux-glow);
     }
     .custom-cursor-ring.active-hover::after {
       content: 'VER';
-      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+      font-family: var(--font-brand);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
       color: #FFFFFF; text-transform: uppercase;
     }
 
@@ -229,20 +298,28 @@
       flex-direction: column;
     }
     .brand-title {
-      font-family: var(--font-display);
-      font-size: 26px;
-      letter-spacing: 0.18em;
+      font-family: var(--font-brand);
+      font-size: 25px;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      font-weight: 300;
+      font-weight: 600;
       line-height: 1;
+      background: linear-gradient(135deg, var(--text-main) 40%, var(--accent-bordeaux) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: var(--transition-fast);
+    }
+    .brand-title:hover {
+      letter-spacing: 0.27em;
     }
     .brand-subtitle {
+      font-family: var(--font-sans);
       font-size: 9px;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--accent-bordeaux);
-      margin-top: 5px;
-      font-weight: 600;
+      margin-top: 6px;
+      font-weight: 700;
     }
 
     .nav-chapters {
@@ -254,14 +331,14 @@
       font-size: var(--fs-tag);
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted);
       position: relative;
       transition: color 0.25s;
     }
     .nav-chapters a::after {
       content: '';
-      position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+      position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px;
       background: var(--accent-bordeaux);
       transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -275,47 +352,58 @@
     }
     .btn-vip-portal {
       font-size: var(--fs-tag);
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      font-weight: 600;
-      padding: 10px 18px;
-      border: 1px solid var(--border-hairline);
-      border-radius: var(--radius-subtle);
+      font-weight: 700;
+      padding: 11px 20px;
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      border-radius: var(--radius-pill);
       transition: var(--transition-fast);
-      background: var(--bg-surface);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     .btn-vip-portal:hover {
-      border-color: var(--text-main);
+      border-color: var(--accent-brass);
       color: var(--accent-bordeaux);
+      box-shadow: 0 4px 16px rgba(197, 160, 89, 0.25);
+      transform: translateY(-1px);
     }
     .btn-order-bag {
       font-size: var(--fs-tag);
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      font-weight: 600;
-      padding: 10px 22px;
-      background: var(--text-main);
+      font-weight: 700;
+      padding: 11px 24px;
+      background: var(--bg-charcoal);
       color: var(--bg-canvas);
-      border-radius: var(--radius-subtle);
+      border-radius: var(--radius-pill);
       display: flex;
       align-items: center;
       gap: 10px;
       transition: var(--transition-editorial);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     }
     .btn-order-bag:hover {
       background: var(--accent-bordeaux);
-      transform: translateY(-1px);
+      box-shadow: 0 6px 20px var(--accent-bordeaux-glow);
+      transform: translateY(-2px);
     }
     .bag-counter {
-      width: 18px; height: 18px;
-      background: var(--bg-canvas);
-      color: var(--text-main);
+      width: 20px; height: 20px;
+      background: var(--accent-brass);
+      color: #FFFFFF;
       border-radius: 50%;
       font-size: 10px;
-      font-weight: 700;
+      font-weight: 800;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     /* ==========================================================================
@@ -346,18 +434,18 @@
       text-transform: uppercase;
       color: var(--accent-bordeaux);
       margin-bottom: 24px;
-      font-weight: 600;
+      font-weight: 700;
     }
     .hero-batch-tag .line {
-      width: 32px; height: 1px; background: var(--accent-bordeaux);
+      width: 32px; height: 1.5px; background: var(--accent-bordeaux);
     }
 
     .hero-headline {
       font-family: var(--font-display);
       font-size: var(--fs-huge);
-      font-weight: 300;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.01em;
       margin-bottom: 28px;
     }
     .hero-headline .italic-accent {
@@ -365,8 +453,8 @@
       font-style: italic;
       font-weight: 400;
       color: var(--accent-bordeaux);
-      letter-spacing: 0;
-      padding-right: 4px;
+      letter-spacing: -0.02em;
+      padding-right: 6px;
     }
 
     .hero-statement {
@@ -374,7 +462,7 @@
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 36px;
-      font-weight: 300;
+      font-weight: 400;
       max-width: 520px;
     }
 
@@ -388,12 +476,13 @@
       margin-bottom: 36px;
     }
     .hero-metric-cell .num {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 300;
+      font-family: var(--font-brand);
+      font-size: 32px;
+      font-weight: 600;
       color: var(--text-main);
       display: block;
       line-height: 1;
+      letter-spacing: -0.02em;
     }
     .hero-metric-cell .label {
       font-size: var(--fs-tag);
@@ -402,6 +491,7 @@
       color: var(--text-muted);
       margin-top: 8px;
       display: block;
+      font-weight: 600;
     }
 
     .hero-action-row {
@@ -411,24 +501,27 @@
     }
     .btn-hero-explore {
       padding: 16px 36px;
-      background: var(--text-main);
+      background: var(--bg-charcoal);
       color: var(--bg-canvas);
       font-size: var(--fs-tag);
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      font-weight: 600;
-      border-radius: var(--radius-subtle);
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       transition: var(--transition-editorial);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
     .btn-hero-explore:hover {
       background: var(--accent-bordeaux);
+      box-shadow: 0 8px 24px var(--accent-bordeaux-glow);
       transform: translateY(-2px);
     }
     .btn-hero-invitation {
       font-size: var(--fs-tag);
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-main);
       padding: 16px 20px;
       border-bottom: 1px solid var(--text-main);
@@ -444,11 +537,12 @@
       position: relative;
       height: 640px;
       width: 100%;
-      background: #F5F2EB;
-      border: 1px solid var(--border-hairline);
+      background: radial-gradient(circle at 50% 45%, #FFFFFF 0%, #F5F0E6 70%, #ECE5D8 100%);
+      border: 1px solid rgba(197, 160, 89, 0.35);
       border-radius: var(--radius-subtle);
       overflow: hidden;
       user-select: none;
+      box-shadow: 0 24px 60px -15px rgba(20, 18, 16, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
     }
     #hero-webgl-canvas {
       width: 100%;
@@ -773,10 +867,22 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-subtle);
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .product-cell:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(130, 16, 25, 0.22);
     }
     .product-cell.span-featured {
       grid-column: span 6;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+      border-color: rgba(197, 160, 89, 0.35);
     }
     .product-cell.hidden {
       display: none;
@@ -788,12 +894,29 @@
       aspect-ratio: 3 / 4;
       background: var(--bg-sand);
       overflow: hidden;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       perspective: 1000px;
       transform-style: preserve-3d;
+      border-radius: var(--radius-subtle);
+      border: 1px solid rgba(20, 18, 16, 0.04);
     }
     .product-cell.span-featured .card-photo-container {
       aspect-ratio: 4 / 5;
+    }
+
+    /* Specular Light-Sweep Animation across Photo on Hover */
+    .card-photo-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+      transform: translateX(-100%);
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      z-index: 4;
+    }
+    .product-cell:hover .card-photo-container::after {
+      transform: translateX(100%);
     }
 
     .card-photo-img {
@@ -802,10 +925,10 @@
       object-fit: cover;
       display: block;
       transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
-      filter: contrast(1.02) saturate(0.95);
+      filter: contrast(1.02) saturate(0.96);
     }
     .product-cell:hover .card-photo-img {
-      transform: scale(1.04);
+      transform: scale(1.05);
       filter: contrast(1.05) saturate(1.05);
     }
 
@@ -813,27 +936,31 @@
     .card-atelier-badge {
       position: absolute;
       top: 14px; left: 14px;
-      background: rgba(18, 17, 16, 0.88);
-      backdrop-filter: blur(8px);
+      background: rgba(15, 14, 13, 0.88);
+      backdrop-filter: blur(10px);
       color: #FFFFFF;
       font-size: 9px;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      padding: 5px 10px;
-      border-radius: var(--radius-subtle);
-      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
       z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
     .card-number-badge {
       position: absolute;
       top: 14px; right: 14px;
-      font-family: var(--font-display);
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.85);
-      background: rgba(18, 17, 16, 0.5);
-      backdrop-filter: blur(8px);
-      padding: 2px 8px;
-      border-radius: var(--radius-subtle);
+      font-family: var(--font-brand);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--accent-brass-light);
+      background: rgba(15, 14, 13, 0.78);
+      backdrop-filter: blur(10px);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(197, 160, 89, 0.4);
       z-index: 2;
     }
 
@@ -856,20 +983,24 @@
     .btn-card-quickview {
       flex: 1;
       padding: 12px;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
       color: var(--text-main);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      border-radius: var(--radius-subtle);
+      border-radius: var(--radius-pill);
       text-align: center;
-      transition: background 0.2s, color 0.2s;
+      transition: var(--transition-fast);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.8);
     }
     .btn-card-quickview:hover {
       background: var(--accent-bordeaux);
       color: #FFFFFF;
+      box-shadow: 0 8px 24px var(--accent-bordeaux-glow);
+      transform: translateY(-1px);
     }
 
     /* Card Details */
@@ -881,21 +1012,27 @@
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 6px;
+      font-weight: 600;
     }
     .card-item-title {
       font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 1.25;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.22;
       margin-bottom: 12px;
       color: var(--text-main);
+      letter-spacing: -0.01em;
     }
     .card-pricing-block {
-      background: #FFFFFF;
+      background: #FAF8F5;
       border: 1px solid var(--border-hairline);
       border-radius: var(--radius-subtle);
-      padding: 12px 14px;
-      margin-bottom: 12px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      transition: background 0.25s ease;
+    }
+    .product-cell:hover .card-pricing-block {
+      background: #F4EEE4;
     }
     .price-data-row {
       display: flex;
@@ -905,41 +1042,55 @@
     }
     .price-data-row.total-line {
       margin-bottom: 0;
-      padding-top: 6px;
-      border-top: 1px dashed var(--border-hairline);
+      padding-top: 8px;
+      margin-top: 6px;
+      border-top: 1px dashed rgba(20, 18, 16, 0.12);
     }
     .price-data-row .tag-name {
       font-size: 10px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-muted);
+      font-weight: 600;
     }
     .price-data-row .val-wholesale {
-      font-family: var(--font-display);
-      font-size: 19px;
-      font-weight: 400;
+      font-family: var(--font-brand);
+      font-size: 21px;
+      font-weight: 700;
       color: var(--accent-bordeaux);
+      letter-spacing: -0.02em;
     }
     .price-data-row .val-retail {
       font-size: 12px;
       color: var(--text-light);
       text-decoration: line-through;
+      font-weight: 500;
     }
     .price-data-row .val-profit {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--accent-forest);
+      background: var(--accent-forest-bg);
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-forest-border);
     }
 
     /* Locked state */
     .card-pricing-locked {
       background: var(--bg-sand);
-      border: 1px dashed rgba(122, 16, 19, 0.35);
+      border: 1px dashed rgba(130, 16, 25, 0.35);
       border-radius: var(--radius-subtle);
-      padding: 14px 12px;
+      padding: 16px 14px;
       text-align: center;
       cursor: pointer;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      transition: var(--transition-fast);
+    }
+    .card-pricing-locked:hover {
+      background: #EAE3D6;
+      border-color: var(--accent-bordeaux);
+      transform: translateY(-1px);
     }
     .card-pricing-locked strong {
       display: block;
@@ -948,6 +1099,7 @@
       text-transform: uppercase;
       color: var(--accent-bordeaux);
       margin-bottom: 4px;
+      font-weight: 700;
     }
     .card-pricing-locked span {
       font-size: 11px;
@@ -961,35 +1113,43 @@
       gap: 8px;
     }
     .btn-quick-grade {
-      padding: 10px;
+      padding: 11px 12px;
       font-size: 10px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
       border: 1px solid var(--border-hairline);
       border-radius: var(--radius-subtle);
       background: #FFFFFF;
-      transition: all 0.2s;
+      transition: var(--transition-fast);
       text-align: center;
+      cursor: pointer;
     }
     .btn-quick-grade:hover {
-      border-color: var(--text-main);
+      border-color: var(--accent-bordeaux);
       color: var(--accent-bordeaux);
+      background: var(--accent-bordeaux-soft);
+      transform: translateY(-1px);
     }
     .btn-quick-bundle {
-      padding: 10px;
+      padding: 11px 12px;
       font-size: 10px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 700;
-      background: var(--text-main);
+      background: var(--bg-charcoal);
       color: #FFFFFF;
       border-radius: var(--radius-subtle);
-      transition: all 0.2s;
+      transition: var(--transition-fast);
       text-align: center;
+      cursor: pointer;
+      border: 1px solid transparent;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
     .btn-quick-bundle:hover {
       background: var(--accent-bordeaux);
+      box-shadow: 0 4px 16px var(--accent-bordeaux-glow);
+      transform: translateY(-1px);
     }
 
     /* ==========================================================================
@@ -1438,6 +1598,12 @@
 <body>
   <div class="film-grain"></div>
 
+  <!-- High Fashion Toast Notification -->
+  <div class="luxury-toast" id="luxury-toast" role="status" aria-live="polite">
+    <span style="color: var(--accent-brass); font-size: 14px;">✦</span>
+    <span id="toast-message">Item adicionado com sucesso</span>
+  </div>
+
   <!-- Editorial Custom Cursor -->
   <div class="custom-cursor-dot" id="cursor-dot"></div>
   <div class="custom-cursor-ring" id="cursor-ring"></div>
@@ -1824,117 +1990,370 @@
        1. DATA LAYER (10 Real Boutique Pieces with Verified Nuvemshop CDN)
        ========================================================================== */
     const PRODUCTS = [
-      {
-        id: "p1",
-        number: "01",
-        name: "Calça Alfaiataria Wide Leg DANI",
-        category: "alfaiataria",
-        fabric: "Alfaiataria Estruturada Premium • Toque Pesado",
-        retailPrice: 139.99,
-        wholesalePrice: 69.90,
-        spanFeatured: true,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp"
-      },
-      {
-        id: "p2",
-        number: "02",
-        name: "Conjunto Calça e Blusa Comfy MAYA",
-        category: "conjuntos",
-        fabric: "Malha Nobre Areia Macia • Gramatura Alta",
-        retailPrice: 199.00,
-        wholesalePrice: 99.50,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp"
-      },
-      {
-        id: "p3",
-        number: "03",
-        name: "Macacão Liocel Fluido ZOE",
-        category: "alfaiataria",
-        fabric: "100% Liocel Nobre Toque Seda",
-        retailPrice: 279.00,
-        wholesalePrice: 134.90,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7658-80bd06bda5f5b32daa17692049337761-1024-1024.webp"
-      },
-      {
-        id: "p4",
-        number: "04",
-        name: "Shorts Saia Alfaiataria ZARA",
-        category: "alfaiataria",
-        fabric: "Alfaiataria Encorpada com Forro Duplo",
-        retailPrice: 149.00,
-        wholesalePrice: 74.50,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-339-bf4f39a6d7001472a217298165046669-1024-1024.webp"
-      },
-      {
-        id: "p5",
-        number: "05",
-        name: "Blusa Manga Curta Crepe MAITÊ",
-        category: "crepe",
-        fabric: "Crepe Georgette Não Amassa • Fluidez Diária",
-        retailPrice: 129.00,
-        wholesalePrice: 59.90,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-107-2aaeb7e8e7d56311df17290986356025-1024-1024.webp"
-      },
-      {
-        id: "p6",
-        number: "06",
-        name: "Blusa Decote V Crepe SOFIA",
-        category: "crepe",
-        fabric: "Crepe de Alfaiataria com Gola Estruturada",
-        retailPrice: 179.00,
-        wholesalePrice: 84.90,
-        spanFeatured: true,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-c9293966716c55694f17844936499970-1024-1024.webp"
-      },
-      {
-        id: "p7",
-        number: "07",
-        name: "Blusa Manga 3/4 Bordô LUIZA",
-        category: "crepe",
-        fabric: "Crepe Soft com Tonalidade Vinho Assinatura",
-        retailPrice: 159.00,
-        wholesalePrice: 79.50,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_6440-e940507fa5fef65c0517759459063860-1024-1024.webp"
-      },
-      {
-        id: "p8",
-        number: "08",
-        name: "Blusa Regata Frente Dupla CELINE",
-        category: "crepe",
-        fabric: "Crepe Duplo Zero Transparência",
-        retailPrice: 109.00,
-        wholesalePrice: 49.90,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8898-3d7f8271a1c756826b17784646655342-1024-1024.webp"
-      },
-      {
-        id: "p9",
-        number: "09",
-        name: "Blusa 100% Algodão Pima MARCELLE",
-        category: "essenciais",
-        fabric: "Algodão Pima Peruano de Fio Penteado",
-        retailPrice: 99.00,
-        wholesalePrice: 45.00,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-33-36abfb83d0c4ca9d0617290992151913-1024-1024.webp"
-      },
-      {
-        id: "p10",
-        number: "10",
-        name: "Body Regata Corte a Fio ZAYA",
-        category: "essenciais",
-        fabric: "Poliamida com Elastano Confort 360°",
-        retailPrice: 99.00,
-        wholesalePrice: 45.00,
-        spanFeatured: false,
-        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7978-b20b666fdabfec51cb17705870319299-1024-1024.webp"
-      }
-    ];
+  {
+    id: 'p1',
+    number: '001',
+    name: 'Blusa 100% Algodão Feminina MARCELLE',
+    category: 'essenciais',
+    fabric: '100% Algodão Premium',
+    retailPrice: 99,
+    wholesalePrice: 49.5,
+    spanFeatured: true,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-33-36abfb83d0c4ca9d0617290992151913-1024-1024.webp'
+  },
+  {
+    id: 'p2',
+    number: '002',
+    name: 'Conjunto Calça e Blusa Comfy MAYA',
+    category: 'conjuntos',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 199,
+    wholesalePrice: 99.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp'
+  },
+  {
+    id: 'p3',
+    number: '003',
+    name: 'Blusa Básica Manga Curta Crepe Premium Feminina MAITÊ',
+    category: 'crepe',
+    fabric: 'Crepe Premium',
+    retailPrice: 129,
+    wholesalePrice: 64.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-107-2aaeb7e8e7d56311df17290986356025-1024-1024.webp'
+  },
+  {
+    id: 'p4',
+    number: '004',
+    name: 'Blusa de Tule Feminina Gola Alta com Top Anna Engles',
+    category: 'essenciais',
+    fabric: 'Tule + Top embutido',
+    retailPrice: 99,
+    wholesalePrice: 49.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9424-00e63d22e79de4d3c817795316936954-1024-1024.webp'
+  },
+  {
+    id: 'p5',
+    number: '005',
+    name: 'Blusa Feminina Manga 3/4 Premium LUIZA',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 159,
+    wholesalePrice: 79.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_6440-e940507fa5fef65c0517759459063860-1024-1024.webp'
+  },
+  {
+    id: 'p6',
+    number: '006',
+    name: 'Shorts Saia Alfaiataria Feminino ZARA',
+    category: 'alfaiataria',
+    fabric: 'Alfaiataria Premium',
+    retailPrice: 149,
+    wholesalePrice: 74.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-339-bf4f39a6d7001472a217298165046669-1024-1024.webp'
+  },
+  {
+    id: 'p7',
+    number: '007',
+    name: 'Calça Alfaiataria Wide Leg Feminina DANI',
+    category: 'alfaiataria',
+    fabric: 'Alfaiataria Premium',
+    retailPrice: 139.99,
+    wholesalePrice: 70,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp'
+  },
+  {
+    id: 'p8',
+    number: '008',
+    name: 'Blusa T-Shirt Feminina Essenciais Algodão Premium Anna Engles',
+    category: 'essenciais',
+    fabric: '100% Algodão Premium',
+    retailPrice: 119,
+    wholesalePrice: 59.5,
+    spanFeatured: true,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9045-91a249691d47ad961917784466411492-1024-1024.webp'
+  },
+  {
+    id: 'p9',
+    number: '009',
+    name: 'Vestido Longo Poliamida Feminino HELENA',
+    category: 'essenciais',
+    fabric: 'Poliamida Premium',
+    retailPrice: 189,
+    wholesalePrice: 94.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/1-58ea68c8ca3060a8ce17915054542744-1024-1024.webp'
+  },
+  {
+    id: 'p10',
+    number: '010',
+    name: 'Blusa Feminina Manga Longa Decote V crepe premium Sofia',
+    category: 'crepe',
+    fabric: 'Crepe Premium',
+    retailPrice: 179,
+    wholesalePrice: 89.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-c9293966716c55694f17844936499970-1024-1024.webp'
+  },
+  {
+    id: 'p11',
+    number: '011',
+    name: 'Body Regata Corte a Fio ZAYA',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 99,
+    wholesalePrice: 49.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7978-b20b666fdabfec51cb17705870319299-1024-1024.webp'
+  },
+  {
+    id: 'p12',
+    number: '012',
+    name: 'Blusa Regata Feminina Frente Dupla Premium CELINE',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 109,
+    wholesalePrice: 54.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8898-3d7f8271a1c756826b17784646655342-1024-1024.webp'
+  },
+  {
+    id: 'p13',
+    number: '013',
+    name: 'Conjunto Feminino Gola Alta Calça e Blusa Assimétrica MARIAH',
+    category: 'conjuntos',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 169,
+    wholesalePrice: 84.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_1592-8cee3e3f140cb7299417811831317875-1024-1024.webp'
+  },
+  {
+    id: 'p14',
+    number: '014',
+    name: 'Conjunto Feminino Calça e Blusa Regata ISIS',
+    category: 'conjuntos',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 199,
+    wholesalePrice: 99.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_1528-eb261abb8601bffb0c17912087287118-1024-1024.webp'
+  },
+  {
+    id: 'p15',
+    number: '015',
+    name: 'Blusa Feminina Decote Transpassado Crepe Premium Anna Engles',
+    category: 'crepe',
+    fabric: 'Crepe Premium',
+    retailPrice: 179,
+    wholesalePrice: 89.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8407-b0e4832985652e1f5c17889623798034-1024-1024.webp'
+  },
+  {
+    id: 'p16',
+    number: '016',
+    name: 'Blusa Regata Feminina Anna Engles',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 59.99,
+    wholesalePrice: 30,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9125-08fdc0fec5d404a6cf17889629862964-1024-1024.webp'
+  },
+  {
+    id: 'p17',
+    number: '017',
+    name: 'Conjunto de Moletom Feminino Flanelado Premium Anna Engles',
+    category: 'conjuntos',
+    fabric: 'Moletom Flanelado Premium',
+    retailPrice: 249,
+    wholesalePrice: 124.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-4974814566b94f45ab17831860385061-1024-1024.webp'
+  },
+  {
+    id: 'p18',
+    number: '018',
+    name: 'Conjunto Feminino Calça e Blusa Gola Alta Anna Engles',
+    category: 'conjuntos',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 169,
+    wholesalePrice: 84.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_6876-de52c95d166629d4e117866424256052-1024-1024.webp'
+  },
+  {
+    id: 'p19',
+    number: '019',
+    name: 'Macacão Feminino Liocel Premium ZOE',
+    category: 'conjuntos',
+    fabric: 'Liocel Premium',
+    retailPrice: 279,
+    wholesalePrice: 139.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7658-80bd06bda5f5b32daa17692049337761-1024-1024.webp'
+  },
+  {
+    id: 'p20',
+    number: '020',
+    name: 'Blusa Feminina Poliamida Premium Anna Engles MALU',
+    category: 'essenciais',
+    fabric: 'Poliamida Premium',
+    retailPrice: 119,
+    wholesalePrice: 59.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7519-99197963b7dafe46fb17683249823089-1024-1024.webp'
+  },
+  {
+    id: 'p21',
+    number: '021',
+    name: 'Conjunto Feminino Comfy Calça e Blusa Moletinho CLARA',
+    category: 'conjuntos',
+    fabric: 'Moletom Flanelado Premium',
+    retailPrice: 219,
+    wholesalePrice: 109.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_2557-7857d691122e0fd77f17822358668088-1024-1024.webp'
+  },
+  {
+    id: 'p22',
+    number: '022',
+    name: 'Calça Feminina Fluity Comfort OLÍVIA',
+    category: 'essenciais',
+    fabric: 'Poliamida Premium',
+    retailPrice: 189.99,
+    wholesalePrice: 95,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-2-cfd2bbac4167bcbab117844213659438-1024-1024.webp'
+  },
+  {
+    id: 'p23',
+    number: '023',
+    name: 'Blusa Feminina Fluity Comfort OLIVIA',
+    category: 'essenciais',
+    fabric: 'Poliamida Premium',
+    retailPrice: 109.9,
+    wholesalePrice: 54.95,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-eddc7fdcaf8f93a93a17844214179240-1024-1024.webp'
+  },
+  {
+    id: 'p24',
+    number: '024',
+    name: 'Blusa Feminina Decote Quadrado Poliamida Premium LUARA',
+    category: 'essenciais',
+    fabric: 'Poliamida Premium',
+    retailPrice: 99,
+    wholesalePrice: 49.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-ecb375be934cdb809917822393683626-1024-1024.webp'
+  },
+  {
+    id: 'p25',
+    number: '025',
+    name: 'Blusa Regata Feminina Alça Larga Básica Anna Engles',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 59,
+    wholesalePrice: 29.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-650faa4eba8ccd915617901715863840-1024-1024.webp'
+  },
+  {
+    id: 'p26',
+    number: '026',
+    name: 'Vestido Feminino Frente Única AURORE',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 179,
+    wholesalePrice: 89.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7717-2d1645d8e3014ce1dd17692077174923-1024-1024.webp'
+  },
+  {
+    id: 'p27',
+    number: '027',
+    name: 'Blusa Regata Feminina Gola Redonda Poliamida Premium ZARA',
+    category: 'essenciais',
+    fabric: 'Poliamida Premium',
+    retailPrice: 99,
+    wholesalePrice: 49.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-64a1609a975d5c667717822394437392-1024-1024.webp'
+  },
+  {
+    id: 'p28',
+    number: '028',
+    name: 'Blusa Feminina Frente Única Pemium CECILIA',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 109,
+    wholesalePrice: 54.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9587-4a05db9509b391c05217702555930103-1024-1024.webp'
+  },
+  {
+    id: 'p29',
+    number: '029',
+    name: 'Shorts Saia Alfaiataria Feminino Anna Engles',
+    category: 'alfaiataria',
+    fabric: 'Alfaiataria Premium',
+    retailPrice: 139,
+    wholesalePrice: 69.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-03fc8b0c5da778a1c717839484161117-1024-1024.webp'
+  },
+  {
+    id: 'p30',
+    number: '030',
+    name: 'Conjunto Feminino INFANTIL Shorts e Blusa Comfy HELENA',
+    category: 'conjuntos',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 109,
+    wholesalePrice: 54.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8466-a17527ac0d6a11299717691278943000-1024-1024.webp'
+  },
+  {
+    id: 'p31',
+    number: '031',
+    name: 'Blusa Regata Feminina Alça Fina Básica Anna Engles',
+    category: 'essenciais',
+    fabric: 'Tecido premium selecionado',
+    retailPrice: 59,
+    wholesalePrice: 29.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-ad53a4465034f5c8f417901724350730-1024-1024.webp'
+  },
+  {
+    id: 'p32',
+    number: '032',
+    name: 'Blusa Regata Feminina Decote Quadrado Poliamida Premium LARA',
+    category: 'essenciais',
+    fabric: 'Poliamida Premium',
+    retailPrice: 99,
+    wholesalePrice: 49.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-f5c2ff7618d2e6a0fb17822391808095-1024-1024.webp'
+  },
+  {
+    id: 'p33',
+    number: '033',
+    name: 'Calça Wide Leg Feminina Liocel Premium FABI',
+    category: 'alfaiataria',
+    fabric: 'Liocel Premium',
+    retailPrice: 169,
+    wholesalePrice: 84.5,
+    spanFeatured: false,
+    img: 'https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_3265-d251c9928e887576bd17734004553590-1024-1024.webp'
+  }
+];
 
     /* ==========================================================================
        2. LENIS LUXURY SMOOTH SCROLL
@@ -2152,7 +2571,7 @@
       const height = container.clientHeight;
 
       heroScene = new THREE.Scene();
-      heroScene.background = new THREE.Color(0xF5F2EB);
+      heroScene.background = new THREE.Color(0xF9F6F0);
 
       // Camera setup with mobile responsive framing
       heroCamera = new THREE.PerspectiveCamera(38, width / height, 0.1, 100);
@@ -2166,7 +2585,7 @@
       });
       heroRenderer.setSize(width, height);
       heroRenderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      heroRenderer.setClearColor(0xF5F2EB, 1);
+      heroRenderer.setClearColor(0xF9F6F0, 1);
       heroRenderer.shadowMap.enabled = true;
       heroRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -2189,29 +2608,29 @@
       rimLight.position.set(0, 3.5, -3.0);
       heroScene.add(rimLight);
 
-      // Atelier Materials
+      // Atelier Materials: Upgraded Luxury Finishes
       linenMaterial = new THREE.MeshStandardMaterial({
-        color: 0xEEE9DF,
-        roughness: 0.80,
-        metalness: 0.04
+        color: 0xF2ECE1,
+        roughness: 0.74,
+        metalness: 0.05
       });
 
       velvetMaterial = new THREE.MeshStandardMaterial({
-        color: 0x7A1013,
-        roughness: 0.52,
-        metalness: 0.14
+        color: 0x821019,
+        roughness: 0.46,
+        metalness: 0.16
       });
 
       noirMaterial = new THREE.MeshStandardMaterial({
-        color: 0x1A1918,
-        roughness: 0.36,
-        metalness: 0.22
+        color: 0x141210,
+        roughness: 0.32,
+        metalness: 0.28
       });
 
       brassMaterial = new THREE.MeshStandardMaterial({
-        color: 0xC5A880,
-        metalness: 0.88,
-        roughness: 0.28
+        color: 0xD4AF37,
+        metalness: 0.90,
+        roughness: 0.24
       });
 
       darkIronMaterial = new THREE.MeshStandardMaterial({
@@ -2221,9 +2640,9 @@
       });
 
       ribbonMaterial = new THREE.MeshStandardMaterial({
-        color: 0x7A1013,
-        metalness: 0.18,
-        roughness: 0.48
+        color: 0x821019,
+        metalness: 0.20,
+        roughness: 0.44
       });
 
       // Mannequin Master Group
@@ -2520,6 +2939,18 @@
       applyVipState();
     }
 
+    window.showLuxuryToast = function(msg) {
+      const toast = document.getElementById('luxury-toast');
+      const msgEl = document.getElementById('toast-message');
+      if (!toast || !msgEl) return;
+      msgEl.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(window._toastTimeout);
+      window._toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3400);
+    };
+
     function applyVipState() {
       isVipActive = true;
       document.body.classList.add('vip-active');
@@ -2532,6 +2963,7 @@
       if (storeDisplay) storeDisplay.textContent = vipStoreName;
       if (vipBtnText) vipBtnText.textContent = "Convite Ativo";
 
+      showLuxuryToast(`✦ Acesso VIP desbloqueado: ${vipStoreName}`);
       renderCatalog();
     }
 
@@ -2544,7 +2976,7 @@
 
     btnOpenVip.addEventListener('click', () => {
       if (isVipActive) {
-        alert(`Seu convite VIP está ativo para: ${vipStoreName}`);
+        showLuxuryToast(`Seu convite VIP está ativo para: ${vipStoreName}`);
       } else {
         vipModal.classList.add('open');
       }
@@ -2636,7 +3068,7 @@
           </div>
           <div class="card-meta-line">
             <span>${p.fabric}</span>
-            <span>PRONTA-ENTREGA</span>
+            <span style="display: inline-flex; align-items: center;"><span class="pulse-dot"></span>PRONTA-ENTREGA</span>
           </div>
           <h3 class="card-item-title">${p.name}</h3>
           ${priceMarkup}
@@ -2645,6 +3077,13 @@
 
         productGrid.appendChild(cell);
       });
+
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo('.product-cell',
+          { opacity: 0, y: 22 },
+          { opacity: 1, y: 0, duration: 0.45, stagger: 0.05, ease: 'power2.out' }
+        );
+      }
 
       attach3DTilt();
       attachCursorHoverTargets();
@@ -2767,6 +3206,10 @@
       saveCart();
       updateCartUI();
       modalBackdrop.classList.remove('open');
+      showLuxuryToast(`✓ Grade adicionada ao pedido (${total} peças)`);
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo('#bag-count-badge', { scale: 1.8 }, { scale: 1, duration: 0.45, ease: 'back.out(2)' });
+      }
       openCartDrawer();
     });
 
@@ -2815,6 +3258,10 @@
 
       saveCart();
       updateCartUI();
+      showLuxuryToast(`✓ Grade Fechada (-5%) adicionada: ${prod.name}`);
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo('#bag-count-badge', { scale: 1.8 }, { scale: 1, duration: 0.45, ease: 'back.out(2)' });
+      }
       openCartDrawer();
     };
 
@@ -2889,6 +3336,7 @@
       cart.splice(idx, 1);
       saveCart();
       updateCartUI();
+      showLuxuryToast('Peça removida da lista de pedido');
     };
 
     const cartDrawer = document.getElementById('cart-drawer');
@@ -2947,13 +3395,25 @@
     });
 
     /* ==========================================================================
-       9. INITIALIZATION
+       9. INITIALIZATION & LUXURY EDITORIAL ENTRANCE
        ========================================================================== */
     window.addEventListener('DOMContentLoaded', () => {
       initHero3D();
       initVipEngine();
       renderCatalog();
       updateCartUI();
+
+      // Cinematic Entrance Animations with GSAP
+      if (typeof gsap !== 'undefined') {
+        gsap.from('.b2b-header-bar', { y: -30, opacity: 0, duration: 0.8, ease: 'power3.out' });
+        gsap.from('.site-nav', { y: -20, opacity: 0, duration: 0.8, delay: 0.15, ease: 'power3.out' });
+        gsap.from('.hero-batch-tag', { opacity: 0, x: -30, duration: 0.8, delay: 0.3, ease: 'power2.out' });
+        gsap.from('.hero-headline', { opacity: 0, y: 35, duration: 1.0, delay: 0.4, ease: 'power3.out' });
+        gsap.from('.hero-statement', { opacity: 0, y: 25, duration: 0.9, delay: 0.55, ease: 'power3.out' });
+        gsap.from('.hero-metric-cell', { opacity: 0, y: 20, duration: 0.8, stagger: 0.12, delay: 0.7, ease: 'power3.out' });
+        gsap.from('.hero-action-row button, .hero-action-row a', { opacity: 0, y: 15, duration: 0.7, stagger: 0.1, delay: 0.85, ease: 'power2.out' });
+        gsap.from('.hero-canvas-frame', { opacity: 0, scale: 0.97, duration: 1.1, delay: 0.4, ease: 'power3.out' });
+      }
     });
   </script>
 </body>
