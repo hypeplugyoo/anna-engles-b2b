@@ -28,15 +28,13 @@
     }
 
     /* ==========================================================================
-       DESIGN TOKENS — ALTA COSTURA & 60FPS COMPOSITOR PERFORMANCE
+       DESIGN TOKENS — ALTA COSTURA & MICRO-INTERACTION SPRING PHYSICS
        ========================================================================== */
     :root {
       --bg-body: #FAF8F5;            /* Seda Off-White */
       --bg-surface: #FFFFFF;         /* Alabastro Puro */
       --bg-subtle: #F4EFE6;          /* Areia Quente */
-      --bg-card: #FFFFFF;
       --bg-dark: #12100E;            /* Noir Noturno Profundo */
-      --bg-dark-surface: #1C1917;
       
       --text-main: #181614;          /* Grafite Puro */
       --text-muted: #635E58;         /* Cinza Neutro Nobre */
@@ -50,7 +48,6 @@
       --accent-gold: #C5A059;        /* Ouro Latão Nobre */
       --accent-gold-light: #E7D7BA;
       --accent-gold-dark: #8F6F32;
-      --accent-gold-glow: rgba(197, 160, 89, 0.22);
       
       --accent-green: #1F7A46;       /* Verde Lucro Esmeralda */
       --accent-green-bg: #EAF7EE;
@@ -68,11 +65,17 @@
       --radius-md: 14px;
       --radius-lg: 24px;
       
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in-out-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      /* Micro-interaction Spring & Motion Physics */
+      --spring-fast: cubic-bezier(0.16, 1, 0.3, 1);
+      --spring-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+      --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+      
+      --dur-tap: 100ms;
+      --dur-hover: 220ms;
+      --dur-feedback: 260ms;
     }
 
-    /* Reset & Base */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -105,6 +108,7 @@
       cursor: pointer;
       border: none;
       background: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -158,7 +162,6 @@
       100% { transform: translate3d(-30px, -20px, 0) scale(0.95); }
     }
 
-    /* Delicate SVG Atelier Stitching Background Track */
     .bg-atelier-svg {
       position: absolute;
       top: 0;
@@ -171,12 +174,12 @@
     }
 
     /* ==========================================================================
-       60FPS SCROLL REVEAL ANIMATIONS (TRANSFORM + OPACITY ONLY)
+       60FPS SCROLL REVEAL ANIMATIONS
        ========================================================================== */
     .reveal-on-scroll {
       opacity: 0;
       transform: translate3d(0, 24px, 0);
-      transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+      transition: opacity 0.65s var(--spring-fast), transform 0.65s var(--spring-fast);
       will-change: transform, opacity;
     }
 
@@ -186,23 +189,23 @@
       will-change: auto;
     }
 
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+    .delay-3 { transition-delay: 0.24s; }
+    .delay-4 { transition-delay: 0.32s; }
 
     /* ==========================================================================
-       HEADER & BARRA DE NAVEGAÇÃO
+       HEADER & BARRA DE NAVEGAÇÃO COM MICRO-INTERAÇÕES
        ========================================================================== */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(250, 248, 245, 0.92);
+      background: rgba(250, 248, 245, 0.94);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-light);
-      transition: transform 0.3s var(--ease-out-expo);
+      transition: transform 0.3s var(--spring-fast);
     }
 
     .header-inner {
@@ -216,6 +219,16 @@
       display: flex;
       flex-direction: column;
       position: relative;
+      transition: transform var(--dur-hover) var(--spring-overshoot);
+    }
+
+    .brand-logo-wrap:hover {
+      transform: translate3d(0, -1px, 0) scale(1.01);
+    }
+
+    .brand-logo-wrap:active {
+      transform: scale(0.98);
+      transition-duration: var(--dur-tap);
     }
 
     .brand-logo {
@@ -237,6 +250,11 @@
       stroke: var(--accent-gold);
       stroke-width: 1.5;
       fill: none;
+      transition: transform var(--dur-hover) var(--spring-overshoot);
+    }
+
+    .brand-logo-wrap:hover .brand-logo-monogram {
+      transform: rotate(18deg) scale(1.1);
     }
 
     .brand-sub {
@@ -268,7 +286,8 @@
       color: var(--text-muted);
       position: relative;
       padding: 6px 0;
-      transition: color 0.25s ease;
+      transition: color var(--dur-hover) ease, transform var(--dur-hover) var(--spring-fast);
+      display: inline-block;
     }
 
     .nav-link::after {
@@ -281,11 +300,12 @@
       background: var(--accent-bordeaux);
       transform: scaleX(0);
       transform-origin: right;
-      transition: transform 0.3s var(--ease-out-expo);
+      transition: transform 0.25s var(--spring-fast);
     }
 
     .nav-link:hover {
       color: var(--accent-bordeaux);
+      transform: translate3d(0, -1px, 0);
     }
 
     .nav-link:hover::after {
@@ -293,7 +313,12 @@
       transform-origin: left;
     }
 
-    /* 60fps Button with Pseudo-Element Shimmer */
+    .nav-link:active {
+      transform: scale(0.96);
+      transition-duration: var(--dur-tap);
+    }
+
+    /* Micro-interaction Button: instant press feedback scale(0.96) */
     .header-cta-btn {
       position: relative;
       display: inline-flex;
@@ -308,11 +333,11 @@
       text-transform: uppercase;
       border-radius: var(--radius-sm);
       overflow: hidden;
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.25s var(--ease-out-expo);
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform var(--dur-hover) var(--spring-fast);
+      cursor: pointer;
     }
 
-    /* Cheap 60fps Box-Shadow via Pseudo-Element Opacity */
     .header-cta-btn::before {
       content: '';
       position: absolute;
@@ -324,7 +349,6 @@
       pointer-events: none;
     }
 
-    /* Shimmer sweep animation */
     .header-cta-btn::after {
       content: '';
       position: absolute;
@@ -334,12 +358,12 @@
       height: 200%;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
       transform: rotate(25deg) translate3d(0, 0, 0);
-      transition: transform 0.75s var(--ease-out-expo);
+      transition: transform 0.65s var(--spring-fast);
       pointer-events: none;
     }
 
     .header-cta-btn:hover {
-      transform: translate3d(0, -2px, 0);
+      transform: translate3d(0, -2px, 0) scale(1.02);
     }
 
     .header-cta-btn:hover::before {
@@ -348,6 +372,11 @@
 
     .header-cta-btn:hover::after {
       transform: rotate(25deg) translate3d(450%, 0, 0);
+    }
+
+    .header-cta-btn:active {
+      transform: translate3d(0, 0, 0) scale(0.96);
+      transition-duration: var(--dur-tap);
     }
 
     /* ==========================================================================
@@ -360,15 +389,14 @@
       z-index: 1;
     }
 
-    /* Pill with SVG animated glow dot */
     .hero-badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(8px);
       border: 1px solid var(--accent-gold-light);
-      padding: 8px 20px;
+      padding: 8px 22px;
       border-radius: 40px;
       font-size: 0.75rem;
       letter-spacing: 0.16em;
@@ -377,12 +405,18 @@
       font-weight: 700;
       margin-bottom: 24px;
       box-shadow: 0 4px 16px rgba(197, 160, 89, 0.12);
+      transition: transform var(--dur-hover) var(--spring-overshoot), border-color var(--dur-hover) ease;
+      cursor: default;
+    }
+
+    .hero-badge-pill:hover {
+      transform: translate3d(0, -2px, 0) scale(1.03);
+      border-color: var(--accent-gold);
     }
 
     .hero-badge-svg-pulse {
       width: 10px;
       height: 10px;
-      position: relative;
     }
 
     .hero-badge-svg-pulse circle.pulse {
@@ -415,7 +449,6 @@
       display: inline-block;
     }
 
-    /* SVG Underline Draw-on under the brand name */
     .hero-title-svg-flourish {
       position: absolute;
       bottom: -6px;
@@ -446,7 +479,7 @@
     }
 
     /* ==========================================================================
-       FRAME DE VÍDEO RESERVADO COM SVG ANIMADO E 60FPS COMPOSITOR
+       FRAME DE VÍDEO COM MICRO-INTERAÇÕES DE PLAY
        ========================================================================== */
     .video-showcase-container {
       max-width: 880px;
@@ -466,10 +499,10 @@
       justify-content: center;
       cursor: pointer;
       transform: translate3d(0, 0, 0);
-      transition: transform 0.4s var(--ease-out-expo);
+      transition: transform var(--dur-hover) var(--spring-fast);
+      user-select: none;
     }
 
-    /* 60fps Box-shadow pseudo-element */
     .video-card-frame::before {
       content: '';
       position: absolute;
@@ -477,7 +510,7 @@
       border-radius: inherit;
       box-shadow: 0 24px 64px rgba(20, 18, 16, 0.18), 0 8px 24px rgba(197, 160, 89, 0.16);
       opacity: 0.85;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.35s ease;
       pointer-events: none;
       z-index: 1;
     }
@@ -490,6 +523,11 @@
       opacity: 1;
     }
 
+    .video-card-frame:active {
+      transform: translate3d(0, -1px, 0) scale(0.985);
+      transition-duration: var(--dur-tap);
+    }
+
     .video-poster-img {
       position: absolute;
       inset: 0;
@@ -499,7 +537,7 @@
       opacity: 0.76;
       filter: saturate(1.1);
       transform: translate3d(0, 0, 0) scale(1);
-      transition: transform 0.6s var(--ease-out-expo), opacity 0.4s ease;
+      transition: transform 0.5s var(--spring-fast), opacity 0.35s ease;
     }
 
     .video-card-frame:hover .video-poster-img {
@@ -515,7 +553,6 @@
       z-index: 2;
     }
 
-    /* Play Trigger with SVG Rotating Ring */
     .video-play-trigger {
       position: relative;
       z-index: 5;
@@ -534,7 +571,6 @@
       justify-content: center;
     }
 
-    /* SVG Rotating Dashed Ring */
     .svg-play-ring {
       position: absolute;
       inset: 0;
@@ -542,6 +578,11 @@
       height: 100%;
       transform-origin: center;
       animation: rotateRing 12s linear infinite;
+      transition: animation-duration 0.3s ease;
+    }
+
+    .video-card-frame:hover .svg-play-ring {
+      animation-duration: 5s; /* Micro-interaction: spins faster on hover */
     }
 
     @keyframes rotateRing {
@@ -560,13 +601,18 @@
       justify-content: center;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
       transform: translate3d(0, 0, 0) scale(1);
-      transition: transform 0.3s var(--ease-out-expo), background 0.25s ease;
+      transition: transform var(--dur-hover) var(--spring-overshoot), background var(--dur-hover) ease, color var(--dur-hover) ease;
     }
 
     .video-card-frame:hover .play-btn-circle {
-      transform: translate3d(0, 0, 0) scale(1.12);
+      transform: translate3d(0, 0, 0) scale(1.15);
       background: #FFFFFF;
       color: var(--accent-bordeaux-hover);
+    }
+
+    .video-card-frame:active .play-btn-circle {
+      transform: translate3d(0, 0, 0) scale(0.92);
+      transition-duration: var(--dur-tap);
     }
 
     .play-icon-svg {
@@ -584,20 +630,19 @@
       font-weight: 600;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
       background: rgba(18, 16, 14, 0.65);
-      padding: 7px 18px;
+      padding: 7px 20px;
       border-radius: 30px;
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       transform: translate3d(0, 0, 0);
-      transition: transform 0.25s var(--ease-out-expo);
+      transition: transform var(--dur-hover) var(--spring-fast), background var(--dur-hover) ease;
     }
 
     .video-card-frame:hover .play-tag-text {
-      transform: translate3d(0, -2px, 0);
-      background: rgba(18, 16, 14, 0.8);
+      transform: translate3d(0, -3px, 0);
+      background: rgba(18, 16, 14, 0.85);
     }
 
-    /* Video Caption Bar */
     .video-caption-bar {
       display: flex;
       align-items: center;
@@ -644,6 +689,13 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background var(--dur-hover) ease;
+    }
+
+    .caption-tag-item:hover {
+      background: var(--bg-subtle);
     }
 
     .caption-tag-item svg {
@@ -654,7 +706,7 @@
       fill: none;
     }
 
-    /* Hero CTA Row */
+    /* Hero CTA Row with instant press feedback */
     .hero-action-row {
       margin-top: 40px;
       display: flex;
@@ -671,7 +723,7 @@
       gap: 12px;
       background: var(--accent-bordeaux);
       color: var(--text-white);
-      padding: 18px 40px;
+      padding: 19px 42px;
       font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -680,8 +732,9 @@
       width: 100%;
       max-width: 480px;
       overflow: hidden;
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.3s var(--ease-out-expo);
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform var(--dur-hover) var(--spring-fast);
+      cursor: pointer;
     }
 
     .btn-main-cta::before {
@@ -704,12 +757,12 @@
       height: 200%;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       transform: rotate(25deg) translate3d(0, 0, 0);
-      transition: transform 0.8s var(--ease-out-expo);
+      transition: transform 0.7s var(--spring-fast);
       pointer-events: none;
     }
 
     .btn-main-cta:hover {
-      transform: translate3d(0, -3px, 0);
+      transform: translate3d(0, -3px, 0) scale(1.02);
     }
 
     .btn-main-cta:hover::before {
@@ -718,6 +771,11 @@
 
     .btn-main-cta:hover::after {
       transform: rotate(25deg) translate3d(450%, 0, 0);
+    }
+
+    .btn-main-cta:active {
+      transform: translate3d(0, 0, 0) scale(0.96);
+      transition-duration: var(--dur-tap);
     }
 
     .cta-helper-note {
@@ -736,12 +794,12 @@
       fill: none;
     }
 
-    /* Modal de Vídeo com Transição Suave */
+    /* Modal de Vídeo com Entrada e Saída Assimétrica */
     .video-modal-backdrop {
       position: fixed;
       inset: 0;
       background: rgba(14, 12, 10, 0.94);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       z-index: 999;
       display: flex;
       align-items: center;
@@ -749,12 +807,13 @@
       padding: 24px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.22s var(--ease-exit);
     }
 
     .video-modal-backdrop.active {
       opacity: 1;
       pointer-events: auto;
+      transition: opacity 0.28s var(--ease-enter);
     }
 
     .video-modal-content {
@@ -766,8 +825,8 @@
       position: relative;
       border: 1px solid rgba(197, 160, 89, 0.3);
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
-      transform: translate3d(0, 20px, 0) scale(0.96);
-      transition: transform 0.4s var(--ease-out-expo);
+      transform: translate3d(0, 18px, 0) scale(0.96);
+      transition: transform 0.28s var(--spring-overshoot);
     }
 
     .video-modal-backdrop.active .video-modal-content {
@@ -787,12 +846,17 @@
       align-items: center;
       justify-content: center;
       z-index: 10;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition: background var(--dur-hover) ease, transform var(--dur-hover) var(--spring-overshoot);
     }
 
     .video-modal-close-btn:hover {
       background: rgba(255, 255, 255, 0.4);
-      transform: scale(1.08);
+      transform: scale(1.12);
+    }
+
+    .video-modal-close-btn:active {
+      transform: scale(0.92);
+      transition-duration: var(--dur-tap);
     }
 
     .video-modal-body {
@@ -812,7 +876,7 @@
     }
 
     /* ==========================================================================
-       SEÇÃO: COMO FUNCIONA O NOSSO ATACADO (4 PASSOS COM SVGS ANIMADOS)
+       SEÇÃO: COMO FUNCIONA O NOSSO ATACADO (MICRO-INTERAÇÃO NOS CARDS)
        ========================================================================== */
     .section-padding {
       padding: 92px 0;
@@ -869,7 +933,7 @@
       }
     }
 
-    /* 60fps Card with Pseudo-Element Elevation */
+    /* Step Card with Micro-Interactions */
     .step-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
@@ -879,7 +943,8 @@
       display: flex;
       flex-direction: column;
       transform: translate3d(0, 0, 0);
-      transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease;
+      transition: transform var(--dur-hover) var(--spring-fast), border-color var(--dur-hover) ease;
+      cursor: default;
     }
 
     .step-card::after {
@@ -889,7 +954,7 @@
       border-radius: inherit;
       box-shadow: 0 16px 36px rgba(24, 22, 20, 0.08), 0 4px 12px rgba(197, 160, 89, 0.1);
       opacity: 0;
-      transition: opacity 0.35s ease;
+      transition: opacity var(--dur-hover) ease;
       pointer-events: none;
     }
 
@@ -902,7 +967,11 @@
       opacity: 1;
     }
 
-    /* Step Header with Custom Animated SVG Icon */
+    .step-card:active {
+      transform: translate3d(0, -2px, 0) scale(0.985);
+      transition-duration: var(--dur-tap);
+    }
+
     .step-icon-row {
       display: flex;
       align-items: center;
@@ -910,6 +979,7 @@
       margin-bottom: 24px;
     }
 
+    /* Step Badge Spring Bounce on Card Hover */
     .step-number-tag {
       font-family: var(--font-serif);
       font-size: 1.4rem;
@@ -923,6 +993,14 @@
       align-items: center;
       justify-content: center;
       border: 1px solid var(--border-gold-subtle);
+      transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+      transition: transform var(--dur-hover) var(--spring-overshoot), background var(--dur-hover) ease;
+    }
+
+    .step-card:hover .step-number-tag {
+      transform: scale(1.1) rotate(-3deg);
+      background: #FFFFFF;
+      color: var(--accent-bordeaux-hover);
     }
 
     .step-svg-icon-wrap {
@@ -932,11 +1010,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s var(--ease-out-expo);
+      transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+      transition: transform var(--dur-hover) var(--spring-overshoot), color var(--dur-hover) ease;
     }
 
     .step-card:hover .step-svg-icon-wrap {
-      transform: scale(1.15) rotate(4deg);
+      transform: scale(1.2) rotate(6deg);
+      color: var(--accent-bordeaux);
     }
 
     .step-card-title {
@@ -954,7 +1034,7 @@
     }
 
     /* ==========================================================================
-       SEÇÃO: QUANTO A PESSOA PODE LUCRAR (CARDS DE PEÇAS REAIS COM 60FPS)
+       SEÇÃO: QUANTO A PESSOA PODE LUCRAR (MICRO-INTERAÇÃO NAS PEÇAS)
        ========================================================================== */
     .profit-section {
       background: var(--bg-subtle);
@@ -988,8 +1068,9 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.4s var(--ease-out-expo), border-color 0.3s ease;
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform var(--dur-hover) var(--spring-fast), border-color var(--dur-hover) ease;
+      cursor: pointer;
     }
 
     .piece-card::after {
@@ -999,17 +1080,22 @@
       border-radius: inherit;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity var(--dur-hover) ease;
       pointer-events: none;
     }
 
     .piece-card:hover {
-      transform: translate3d(0, -6px, 0);
+      transform: translate3d(0, -6px, 0) scale(1.01);
       border-color: var(--border-gold);
     }
 
     .piece-card:hover::after {
       opacity: 1;
+    }
+
+    .piece-card:active {
+      transform: translate3d(0, -1px, 0) scale(0.975);
+      transition-duration: var(--dur-tap);
     }
 
     .piece-img-box {
@@ -1025,14 +1111,14 @@
       height: 100%;
       object-fit: cover;
       transform: translate3d(0, 0, 0) scale(1);
-      transition: transform 0.5s var(--ease-out-expo);
+      transition: transform 0.45s var(--spring-fast);
     }
 
     .piece-card:hover .piece-img {
       transform: translate3d(0, 0, 0) scale(1.07);
     }
 
-    /* Profit Badge with Animated Pulse */
+    /* Profit Badge Pops with Overshoot on Card Hover */
     .piece-profit-badge {
       position: absolute;
       top: 14px;
@@ -1046,6 +1132,12 @@
       letter-spacing: 0.06em;
       box-shadow: 0 4px 14px rgba(31, 122, 70, 0.35);
       z-index: 2;
+      transform: scale(1);
+      transition: transform var(--dur-hover) var(--spring-overshoot);
+    }
+
+    .piece-card:hover .piece-profit-badge {
+      transform: scale(1.09);
     }
 
     .piece-content {
@@ -1061,6 +1153,11 @@
       color: var(--text-main);
       margin-bottom: 4px;
       line-height: 1.35;
+      transition: color var(--dur-hover) ease;
+    }
+
+    .piece-card:hover .piece-name {
+      color: var(--accent-bordeaux);
     }
 
     .piece-fabric {
@@ -1078,6 +1175,12 @@
       flex-direction: column;
       gap: 7px;
       border: 1px solid var(--border-light);
+      transition: border-color var(--dur-hover) ease, background var(--dur-hover) ease;
+    }
+
+    .piece-card:hover .piece-prices-table {
+      border-color: var(--accent-gold-light);
+      background: #FFFFFF;
     }
 
     .price-row {
@@ -1114,7 +1217,7 @@
     }
 
     /* ==========================================================================
-       SEÇÃO: FORMULÁRIO DE CADASTRO PARA LIBERAÇÃO DE COMPRAS (CTA CENTRAL)
+       SEÇÃO: FORMULÁRIO DE CADASTRO COM MICRO-INTERAÇÕES
        ========================================================================== */
     .register-section {
       background: var(--bg-surface);
@@ -1187,6 +1290,7 @@
       display: flex;
       flex-direction: column;
       gap: 7px;
+      position: relative;
     }
 
     .form-label {
@@ -1195,12 +1299,18 @@
       color: var(--text-main);
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      transition: color var(--dur-hover) ease;
+    }
+
+    .form-group:focus-within .form-label {
+      color: var(--accent-bordeaux);
     }
 
     .form-label span {
       color: var(--accent-bordeaux);
     }
 
+    /* Input Focus Lift & Glow */
     .form-input, .form-select {
       width: 100%;
       padding: 14px 18px;
@@ -1210,19 +1320,35 @@
       font-size: 0.92rem;
       color: var(--text-main);
       font-family: var(--font-sans);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      transform: translate3d(0, 0, 0);
+      transition: border-color var(--dur-hover) ease, box-shadow var(--dur-hover) ease, transform var(--dur-hover) var(--spring-fast);
       outline: none;
     }
 
     .form-input:focus, .form-select:focus {
       border-color: var(--accent-bordeaux);
-      box-shadow: 0 0 0 3px rgba(122, 16, 19, 0.12);
+      box-shadow: 0 0 0 3px rgba(122, 16, 19, 0.14);
+      transform: translate3d(0, -1px, 0);
+    }
+
+    /* Input Shake Error Micro-Interaction */
+    .form-input.shake-error {
+      border-color: #DC2626 !important;
+      animation: fieldShake 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    @keyframes fieldShake {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(3px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
     }
 
     .form-input::placeholder {
       color: var(--text-light);
     }
 
+    /* Form Submit Button with Loading State */
     .form-submit-btn {
       position: relative;
       width: 100%;
@@ -1240,8 +1366,9 @@
       gap: 12px;
       overflow: hidden;
       margin-top: 10px;
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.3s var(--ease-out-expo);
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform var(--dur-hover) var(--spring-fast), background var(--dur-hover) ease;
+      cursor: pointer;
     }
 
     .form-submit-btn::before {
@@ -1264,12 +1391,12 @@
       height: 200%;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       transform: rotate(25deg) translate3d(0, 0, 0);
-      transition: transform 0.8s var(--ease-out-expo);
+      transition: transform 0.7s var(--spring-fast);
       pointer-events: none;
     }
 
     .form-submit-btn:hover {
-      transform: translate3d(0, -2px, 0);
+      transform: translate3d(0, -2px, 0) scale(1.01);
     }
 
     .form-submit-btn:hover::before {
@@ -1278,6 +1405,31 @@
 
     .form-submit-btn:hover::after {
       transform: rotate(25deg) translate3d(450%, 0, 0);
+    }
+
+    .form-submit-btn:active {
+      transform: translate3d(0, 0, 0) scale(0.96);
+      transition-duration: var(--dur-tap);
+    }
+
+    /* Button Loading State */
+    .form-submit-btn.is-loading {
+      pointer-events: none;
+      background: var(--accent-bordeaux-hover);
+    }
+
+    .btn-spinner-icon {
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #FFFFFF;
+      border-radius: 50%;
+      animation: spinSpinner 0.6s linear infinite;
+      display: inline-block;
+    }
+
+    @keyframes spinSpinner {
+      to { transform: rotate(360deg); }
     }
 
     .form-security-note {
@@ -1299,7 +1451,7 @@
       fill: none;
     }
 
-    /* Estado de Sucesso com SVG Draw-On Checkmark */
+    /* Estado de Sucesso com Transição Suave */
     .success-card-view {
       display: none;
       text-align: center;
@@ -1308,11 +1460,11 @@
 
     .success-card-view.active {
       display: block;
-      animation: fadeInScale 0.5s var(--ease-out-expo) forwards;
+      animation: fadeInScale 0.38s var(--spring-overshoot) forwards;
     }
 
     @keyframes fadeInScale {
-      from { opacity: 0; transform: translate3d(0, 16px, 0) scale(0.97); }
+      from { opacity: 0; transform: translate3d(0, 16px, 0) scale(0.95); }
       to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
     }
 
@@ -1326,9 +1478,14 @@
       justify-content: center;
       margin: 0 auto 24px;
       box-shadow: 0 8px 24px rgba(31, 122, 70, 0.25);
+      animation: popIn 0.4s var(--spring-overshoot) forwards;
     }
 
-    /* SVG Checkmark Draw-on */
+    @keyframes popIn {
+      from { transform: scale(0.6); }
+      to { transform: scale(1); }
+    }
+
     .svg-check-icon {
       width: 38px;
       height: 38px;
@@ -1339,7 +1496,7 @@
       fill: none;
       stroke-dasharray: 60;
       stroke-dashoffset: 60;
-      animation: checkDraw 0.7s ease-out 0.2s forwards;
+      animation: checkDraw 0.6s ease-out 0.15s forwards;
     }
 
     @keyframes checkDraw {
@@ -1374,9 +1531,10 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       border-radius: var(--radius-sm);
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.25s var(--ease-out-expo);
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform var(--dur-hover) var(--spring-fast), background var(--dur-hover) ease;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .btn-unlock-whatsapp::before {
@@ -1391,7 +1549,7 @@
     }
 
     .btn-unlock-whatsapp:hover {
-      transform: translate3d(0, -2px, 0);
+      transform: translate3d(0, -3px, 0) scale(1.02);
       background: var(--accent-whatsapp-hover);
     }
 
@@ -1399,8 +1557,13 @@
       opacity: 1;
     }
 
+    .btn-unlock-whatsapp:active {
+      transform: translate3d(0, 0, 0) scale(0.96);
+      transition-duration: var(--dur-tap);
+    }
+
     /* ==========================================================================
-       SEÇÃO: DÚVIDAS FREQUENTES (FAQ COM CSS GRID 60FPS TRACK TRICK)
+       SEÇÃO: DÚVIDAS FREQUENTES (FAQ COM CSS GRID & ROTATION SPRING)
        ========================================================================== */
     .faq-section {
       background: var(--bg-body);
@@ -1419,7 +1582,13 @@
       border: 1px solid var(--border-light);
       border-radius: var(--radius-sm);
       overflow: hidden;
-      transition: border-color 0.25s ease;
+      transform: translate3d(0, 0, 0);
+      transition: border-color var(--dur-hover) ease, transform var(--dur-hover) var(--spring-fast);
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-gold);
+      transform: translate3d(0, -1px, 0);
     }
 
     .faq-item.active {
@@ -1437,28 +1606,40 @@
       font-size: 0.98rem;
       font-weight: 600;
       color: var(--text-main);
+      cursor: pointer;
+      user-select: none;
+      transition: color var(--dur-hover) ease;
+    }
+
+    .faq-trigger:hover {
+      color: var(--accent-bordeaux);
+    }
+
+    .faq-trigger:active {
+      transform: scale(0.99);
+      transition-duration: var(--dur-tap);
     }
 
     .faq-trigger-icon {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent-gold-dark);
       transform: rotate(0deg);
-      transition: transform 0.3s var(--ease-out-expo);
+      transition: transform 0.3s var(--spring-overshoot);
     }
 
     .faq-item.active .faq-trigger-icon {
       transform: rotate(45deg);
+      color: var(--accent-bordeaux);
     }
 
-    /* 60fps Grid height trick: 0fr -> 1fr (No JS height calc!) */
     .faq-content-grid {
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows 0.35s var(--ease-out-expo);
+      transition: grid-template-rows 0.3s var(--spring-fast);
     }
 
     .faq-item.active .faq-content-grid {
@@ -1477,6 +1658,92 @@
       line-height: 1.65;
       border-top: 1px solid rgba(24, 22, 20, 0.04);
       padding-top: 14px;
+    }
+
+    /* ==========================================================================
+       LIVE B2B SOCIAL PROOF MICRO-TOAST (DISCREET & ELEGANT)
+       ========================================================================== */
+    .b2b-toast-wrap {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 85;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(20, 18, 16, 0.12);
+      transform: translate3d(0, 20px, 0) scale(0.95);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.28s var(--spring-overshoot), opacity 0.28s var(--ease-enter);
+    }
+
+    .b2b-toast-wrap.is-visible {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 768px) {
+      .b2b-toast-wrap {
+        bottom: 74px; /* Above mobile sticky bar */
+        left: 16px;
+        right: 16px;
+      }
+    }
+
+    .b2b-toast-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-green-bg);
+      color: var(--accent-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .b2b-toast-body {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.78rem;
+      line-height: 1.35;
+    }
+
+    .b2b-toast-title {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .b2b-toast-sub {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+    }
+
+    .b2b-toast-close {
+      color: var(--text-light);
+      cursor: pointer;
+      padding: 4px;
+      margin-left: 4px;
+      border-radius: 4px;
+      transition: color var(--dur-hover) ease, transform var(--dur-hover) var(--spring-fast);
+    }
+
+    .b2b-toast-close:hover {
+      color: var(--text-main);
+      transform: scale(1.15);
+    }
+
+    .b2b-toast-close:active {
+      transform: scale(0.9);
+      transition-duration: var(--dur-tap);
     }
 
     /* ==========================================================================
@@ -1524,9 +1791,14 @@
       color: var(--accent-gold-light);
     }
 
+    .footer-contact-links a {
+      transition: color var(--dur-hover) ease, transform var(--dur-hover) var(--spring-fast);
+      display: inline-block;
+    }
+
     .footer-contact-links a:hover {
       color: #FFFFFF;
-      text-decoration: underline;
+      transform: translate3d(0, -1px, 0);
     }
 
     .footer-bottom-bar {
@@ -1594,6 +1866,14 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       border-radius: var(--radius-sm);
+      transform: scale(1);
+      transition: transform var(--dur-hover) var(--spring-fast);
+      cursor: pointer;
+    }
+
+    .mobile-sticky-btn:active {
+      transform: scale(0.96);
+      transition-duration: var(--dur-tap);
     }
 
     /* Accessibility: Respect prefers-reduced-motion */
@@ -1619,7 +1899,6 @@
     <div class="ambient-glow-circle glow-gold"></div>
     <div class="ambient-glow-circle glow-bordeaux"></div>
     
-    <!-- Subtle SVG Atelier Stitching Lines -->
     <svg class="bg-atelier-svg" viewBox="0 0 1440 900" preserveAspectRatio="none" fill="none">
       <path d="M-100,200 C300,100 500,450 900,300 C1200,180 1400,380 1600,250" stroke="rgba(197,160,89,0.18)" stroke-width="1.5" stroke-dasharray="8 6"/>
       <path d="M-50,650 C400,550 700,750 1100,600 C1350,500 1500,700 1650,580" stroke="rgba(122,16,19,0.12)" stroke-width="1.5" stroke-dasharray="10 8"/>
@@ -1659,7 +1938,6 @@
   <section class="hero-section">
     <div class="container">
       
-      <!-- Pill with Animated Pulse Dot -->
       <div class="hero-badge-pill reveal-on-scroll">
         <svg class="hero-badge-svg-pulse" viewBox="0 0 10 10">
           <circle cx="5" cy="5" r="4" fill="var(--accent-gold)"/>
@@ -1672,7 +1950,6 @@
         Descubra como funciona o atacado 
         <em>
           Anna Engles
-          <!-- SVG Underline Draw-on -->
           <svg class="hero-title-svg-flourish" viewBox="0 0 220 10" preserveAspectRatio="none">
             <path d="M2,6 C60,2 160,9 218,5" />
           </svg>
@@ -1684,7 +1961,7 @@
         Moda feminina nobre e alfaiataria fina direto de fábrica. Peças exclusivas com margens reais de até 180% e grade livre. Assista à apresentação oficial abaixo.
       </p>
 
-      <!-- Frame de Vídeo Reservado com Play Trigger e SVG Rotating Ring -->
+      <!-- Frame de Vídeo Reservado -->
       <div class="video-showcase-container reveal-on-scroll delay-3">
         <div class="video-card-frame" id="heroVideoTrigger" onclick="openVideoModal()">
           <img 
@@ -1696,7 +1973,6 @@
           
           <div class="video-play-trigger">
             <div class="play-btn-circle-wrap">
-              <!-- SVG Rotating Dashed Ring -->
               <svg class="svg-play-ring" viewBox="0 0 84 84">
                 <circle cx="42" cy="42" r="38" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-dasharray="8 6"/>
               </svg>
@@ -1733,7 +2009,7 @@
         </div>
       </div>
 
-      <!-- CTA Principal abaixo do vídeo -->
+      <!-- CTA Principal abaixo do vídeo com micro-interação de clique -->
       <div class="hero-action-row reveal-on-scroll delay-4">
         <a href="#cadastro" class="btn-main-cta">
           <span>Cadastrar Minha Loja para Liberar Compras</span>
@@ -1760,7 +2036,6 @@
           preload="metadata" 
           poster="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp"
         >
-          <!-- Quando o vídeo da mãe estiver pronto, basta inserir o link .mp4 na linha abaixo -->
           <source src="" type="video/mp4" id="annaVideoSource">
           Seu navegador não suporta a reprodução de vídeos HTML5.
         </video>
@@ -1787,7 +2062,6 @@
           <div class="step-icon-row">
             <div class="step-number-tag">01</div>
             <div class="step-svg-icon-wrap">
-              <!-- SVG Boutique Storefront -->
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>
@@ -1805,7 +2079,6 @@
           <div class="step-icon-row">
             <div class="step-number-tag">02</div>
             <div class="step-svg-icon-wrap">
-              <!-- SVG Key / VIP Unlock -->
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="7.5" cy="15.5" r="5.5"/>
                 <path d="m21 2-9.6 9.6"/>
@@ -1824,7 +2097,6 @@
           <div class="step-icon-row">
             <div class="step-number-tag">03</div>
             <div class="step-svg-icon-wrap">
-              <!-- SVG Hanger / Free Grid -->
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2a3 3 0 0 0-3 3c0 1.3.8 2.4 2 2.8V9L2 16a2 2 0 0 0 1 3h18a2 2 0 0 0 1-3L13 9V7.8A3 3 0 0 0 12 2z"/>
               </svg>
@@ -1841,10 +2113,9 @@
           <div class="step-icon-row">
             <div class="step-number-tag">04</div>
             <div class="step-svg-icon-wrap">
-              <!-- SVG Express Delivery / Support -->
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="1" y="3" width="15" height="13"/>
-                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 8"/>
                 <circle cx="5.5" cy="18.5" r="2.5"/>
                 <circle cx="18.5" cy="18.5" r="2.5"/>
               </svg>
@@ -1875,7 +2146,7 @@
       <!-- Exemplos Reais por Peça -->
       <div class="real-pieces-grid" id="pecas">
         <!-- Peça 1 -->
-        <div class="piece-card reveal-on-scroll delay-1">
+        <div class="piece-card reveal-on-scroll delay-1" onclick="focusRegisterWithProduct('Blusa MARCELLE')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-33-36abfb83d0c4ca9d0617290992151913-1024-1024.webp" alt="Blusa Marcelle" class="piece-img">
             <span class="piece-profit-badge">+160% Lucro</span>
@@ -1892,7 +2163,7 @@
         </div>
 
         <!-- Peça 2 -->
-        <div class="piece-card reveal-on-scroll delay-2">
+        <div class="piece-card reveal-on-scroll delay-2" onclick="focusRegisterWithProduct('Calça DANI')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp" alt="Calça Dani" class="piece-img">
             <span class="piece-profit-badge">+100% Lucro</span>
@@ -1909,7 +2180,7 @@
         </div>
 
         <!-- Peça 3 -->
-        <div class="piece-card reveal-on-scroll delay-3">
+        <div class="piece-card reveal-on-scroll delay-3" onclick="focusRegisterWithProduct('Conjunto MAYA')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp" alt="Conjunto Maya" class="piece-img">
             <span class="piece-profit-badge">+188% Lucro</span>
@@ -1926,7 +2197,7 @@
         </div>
 
         <!-- Peça 4 -->
-        <div class="piece-card reveal-on-scroll delay-4">
+        <div class="piece-card reveal-on-scroll delay-4" onclick="focusRegisterWithProduct('Macacão ZOE')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7658-80bd06bda5f5b32daa17692049337761-1024-1024.webp" alt="Macacão Zoe" class="piece-img">
             <span class="piece-profit-badge">+107% Lucro</span>
@@ -1962,7 +2233,7 @@
             </p>
           </div>
 
-          <form id="leadRegisterForm" onsubmit="handleRegisterSubmit(event)">
+          <form id="leadRegisterForm" onsubmit="handleRegisterSubmit(event)" novalidate>
             <div class="form-grid">
               <!-- Nome da Responsável -->
               <div class="form-group">
@@ -2006,11 +2277,13 @@
                 </select>
               </div>
 
-              <!-- Botão de Envio com Shimmer 60fps -->
+              <!-- Botão de Envio com Micro-Interação de Loading e Shimmer -->
               <div class="form-group full-col">
-                <button type="submit" class="form-submit-btn">
-                  <span>Solicitar Liberação de Compras</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <button type="submit" id="submitLeadBtn" class="form-submit-btn">
+                  <span id="submitBtnContent" style="display: inline-flex; align-items: center; gap: 10px;">
+                    <span>Solicitar Liberação de Compras</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
                 </button>
                 <p class="form-security-note">
                   <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -2043,7 +2316,7 @@
   </section>
 
   <!-- ==========================================================================
-       SEÇÃO: DÚVIDAS FREQUENTES (FAQ COM CSS GRID TRACK TRICK 60FPS)
+       SEÇÃO: DÚVIDAS FREQUENTES (FAQ COM CSS GRID & ROTATION SPRING)
        ========================================================================== -->
   <section class="section-padding faq-section" id="duvidas">
     <div class="container">
@@ -2181,11 +2454,25 @@
   </div>
 
   <!-- ==========================================================================
-       SCRIPTS: 60FPS SCROLL OBSERVER, MODAL E FORMULÁRIO
+       LIVE B2B SOCIAL PROOF MICRO-TOAST
+       ========================================================================== -->
+  <div class="b2b-toast-wrap" id="b2bLiveToast">
+    <div class="b2b-toast-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="b2b-toast-body">
+      <span class="b2b-toast-title" id="toastStoreName">Boutique Maria (Campinas/SP)</span>
+      <span class="b2b-toast-sub" id="toastActionTime">liberou acesso ao atacado há 3 min</span>
+    </div>
+    <button class="b2b-toast-close" onclick="dismissToast()" title="Fechar">✕</button>
+  </div>
+
+  <!-- ==========================================================================
+       SCRIPTS: MICRO-INTERAÇÕES, SOCIAL TOAST, MODAL E FORMULÁRIO
        ========================================================================== -->
   <script>
     /* ==========================================================================
-       INTERSECTION OBSERVER PARA REVELAÇÃO SUAVE EM 60FPS
+       INTERSECTION OBSERVER PARA REVELAÇÃO EM 60FPS
        ========================================================================== */
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
@@ -2196,13 +2483,16 @@
           }
         });
       }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.12,
+        rootMargin: '0px 0px -30px 0px'
       });
 
       document.querySelectorAll('.reveal-on-scroll').forEach(el => {
         observer.observe(el);
       });
+
+      // Inicia o micro-toast de prova social B2B elegante após 3.5 segundos
+      setTimeout(initB2BToastRotator, 3500);
     });
 
     /* ==========================================================================
@@ -2224,22 +2514,50 @@
     }
 
     /* ==========================================================================
-       ENVIO DO FORMULÁRIO DE CADASTRO
+       MICRO-INTERAÇÃO: CLICAR NUM PRODUTO ROLA E FOCA NO CADASTRO
+       ========================================================================== */
+    function focusRegisterWithProduct(productName) {
+      const cadastroSection = document.getElementById('cadastro');
+      cadastroSection.scrollIntoView({ behavior: 'smooth' });
+      
+      const storeInput = document.getElementById('leadStore');
+      if (storeInput) {
+        setTimeout(() => {
+          storeInput.focus();
+        }, 500);
+      }
+    }
+
+    /* ==========================================================================
+       ENVIO DO FORMULÁRIO COM MICRO-INTERAÇÃO DE LOADING E TRANSIÇÃO
        ========================================================================== */
     function handleRegisterSubmit(e) {
       e.preventDefault();
       
-      const name = document.getElementById('leadName').value.trim();
-      const phone = document.getElementById('leadPhone').value.trim();
-      const store = document.getElementById('leadStore').value.trim();
-      const doc = document.getElementById('leadDoc').value.trim();
-      const city = document.getElementById('leadCity').value.trim();
-      const type = document.getElementById('leadType').value;
+      const nameInput = document.getElementById('leadName');
+      const phoneInput = document.getElementById('leadPhone');
+      const storeInput = document.getElementById('leadStore');
+      const docInput = document.getElementById('leadDoc');
+      const cityInput = document.getElementById('leadCity');
+      const typeInput = document.getElementById('leadType');
 
-      if (!name || !phone || !store) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
-        return;
-      }
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const store = storeInput.value.trim();
+      const doc = docInput.value.trim();
+      const city = cityInput.value.trim();
+      const type = typeInput.value;
+
+      // Micro-interação de erro caso falte campo: tremor no campo vazio
+      if (!name) { shakeField(nameInput); return; }
+      if (!phone || phone.length < 14) { shakeField(phoneInput); return; }
+      if (!store) { shakeField(storeInput); return; }
+
+      // Ativa micro-interação de carregamento no botão
+      const submitBtn = document.getElementById('submitLeadBtn');
+      const btnContent = document.getElementById('submitBtnContent');
+      submitBtn.classList.add('is-loading');
+      btnContent.innerHTML = '<span class="btn-spinner-icon"></span> <span>Liberando Acesso...</span>';
 
       const leadData = {
         name,
@@ -2251,7 +2569,6 @@
         createdAt: new Date().toISOString()
       };
 
-      // Salva no LocalStorage para histórico
       try {
         const existing = JSON.parse(localStorage.getItem('anna_engles_leads') || '[]');
         existing.push(leadData);
@@ -2260,7 +2577,6 @@
         console.warn('LocalStorage error:', err);
       }
 
-      // Prepara mensagem para o WhatsApp Oficial
       const message = `Olá, equipe Anna Engles! Acabei de me cadastrar na página de atacado e gostaria de liberar o meu catálogo e tabela de compras.\n\n` +
                       `*Nome:* ${name}\n` +
                       `*Loja/Instagram:* ${store}\n` +
@@ -2272,15 +2588,25 @@
       const encodedMsg = encodeURIComponent(message);
       const waUrl = `https://wa.me/5519999999999?text=${encodedMsg}`;
 
-      // Configura tela de sucesso com transição suave
-      document.getElementById('registerFormContainer').style.display = 'none';
-      document.getElementById('successView').classList.add('active');
-      document.getElementById('successCustomMessage').textContent = 
-        `Olá, ${name}! As informações da "${store}" foram recebidas com sucesso. Para acelerar sua liberação e receber a tabela em PDF imediatamente, clique abaixo para falar diretamente com a consultora:`;
-      document.getElementById('whatsAppDirectBtn').href = waUrl;
+      // Transição fluida de 380ms (padrão de micro-interação) para a tela de confirmação
+      setTimeout(() => {
+        document.getElementById('registerFormContainer').style.display = 'none';
+        const successView = document.getElementById('successView');
+        successView.classList.add('active');
+        document.getElementById('successCustomMessage').textContent = 
+          `Olá, ${name}! As informações da "${store}" foram recebidas com sucesso. Para acelerar sua liberação e receber a tabela em PDF imediatamente, clique abaixo para falar diretamente com a consultora:`;
+        document.getElementById('whatsAppDirectBtn').href = waUrl;
 
-      // Rolagem suave até a confirmação
-      document.getElementById('cadastro').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('cadastro').scrollIntoView({ behavior: 'smooth' });
+      }, 420);
+    }
+
+    function shakeField(input) {
+      input.classList.add('shake-error');
+      input.focus();
+      setTimeout(() => {
+        input.classList.remove('shake-error');
+      }, 400);
     }
 
     /* ==========================================================================
@@ -2314,11 +2640,54 @@
       const item = btn.closest('.faq-item');
       const isActive = item.classList.contains('active');
       
-      // Fecha todos os outros
       document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
       
       if (!isActive) {
         item.classList.add('active');
+      }
+    }
+
+    /* ==========================================================================
+       MICRO-TOAST DE PROVA SOCIAL B2B ROTATIVO
+       ========================================================================== */
+    const TOAST_EVENTS = [
+      { store: 'Boutique Maria (Campinas/SP)', time: 'liberou acesso ao atacado há 3 min' },
+      { store: 'Ateliê Lis (Belo Horizonte/MG)', time: 'recebeu catálogo de alfaiataria agora' },
+      { store: 'Donna Bella (Ribeirão Preto/SP)', time: 'iniciou pedido de grade livre há 6 min' },
+      { store: 'Closet Chic (Goiânia/GO)', time: 'liberou compras de atacado há 9 min' }
+    ];
+
+    let toastIndex = 0;
+    let toastTimeout = null;
+
+    function initB2BToastRotator() {
+      showNextToast();
+    }
+
+    function showNextToast() {
+      const toastEl = document.getElementById('b2bLiveToast');
+      if (!toastEl) return;
+
+      const current = TOAST_EVENTS[toastIndex % TOAST_EVENTS.length];
+      document.getElementById('toastStoreName').textContent = current.store;
+      document.getElementById('toastActionTime').textContent = current.time;
+
+      toastEl.classList.add('is-visible');
+
+      // Fica visível por 4 segundos
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.remove('is-visible');
+        toastIndex++;
+        // Reaparece com o próximo após 10 segundos
+        setTimeout(showNextToast, 10000);
+      }, 4200);
+    }
+
+    function dismissToast() {
+      const toastEl = document.getElementById('b2bLiveToast');
+      if (toastEl) {
+        toastEl.classList.remove('is-visible');
+        clearTimeout(toastTimeout);
       }
     }
   </script>
