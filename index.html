@@ -417,11 +417,11 @@
       stroke: var(--accent-gold);
     }
 
-    /* Modal de Vídeo */
+    /* Modal de Vídeo com Tag HTML5 Nativa */
     .video-modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(14, 12, 10, 0.9);
+      background: rgba(14, 12, 10, 0.92);
       backdrop-filter: blur(10px);
       z-index: 999;
       display: none;
@@ -442,6 +442,7 @@
       overflow: hidden;
       position: relative;
       border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
     }
 
     .video-modal-close-btn {
@@ -467,12 +468,17 @@
     .video-modal-body {
       aspect-ratio: 16 / 9;
       width: 100%;
+      background: #000000;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #FFFFFF;
-      text-align: center;
-      padding: 30px;
+    }
+
+    .native-html5-player {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      outline: none;
     }
 
     .hero-action-row {
@@ -620,187 +626,12 @@
     }
 
     /* ==========================================================================
-       SEÇÃO: QUANTO A PESSOA PODE LUCRAR (SIMULADOR INTERATIVO + EXEMPLOS REAIS)
+       SEÇÃO: QUANTO A PESSOA PODE LUCRAR (EXEMPLOS REAIS DE MARGEM)
        ========================================================================== */
     .profit-section {
       background: var(--bg-subtle);
       border-top: 1px solid var(--border-light);
       border-bottom: 1px solid var(--border-light);
-    }
-
-    .profit-calculator-card {
-      background: var(--bg-surface);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      border: 1px solid var(--border-light);
-      box-shadow: var(--shadow-md);
-      margin-bottom: 48px;
-    }
-
-    @media (max-width: 640px) {
-      .profit-calculator-card {
-        padding: 24px 18px;
-      }
-    }
-
-    .calc-header-row {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 32px;
-      text-align: center;
-    }
-
-    .calc-header-title {
-      font-family: var(--font-serif);
-      font-size: 1.7rem;
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    .calc-header-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .calc-chips-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .calc-chip-btn {
-      padding: 10px 18px;
-      background: var(--bg-body);
-      border: 1px solid var(--border-light);
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      transition: all 0.2s ease;
-    }
-
-    .calc-chip-btn.active, .calc-chip-btn:hover {
-      background: var(--accent-bordeaux);
-      color: #FFFFFF;
-      border-color: var(--accent-bordeaux);
-      box-shadow: 0 4px 12px rgba(122, 16, 19, 0.25);
-    }
-
-    .calc-slider-wrap {
-      max-width: 640px;
-      margin: 0 auto 36px;
-    }
-
-    .calc-slider-labels {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-light);
-      margin-bottom: 8px;
-    }
-
-    .calc-slider-input {
-      width: 100%;
-      height: 8px;
-      border-radius: 4px;
-      background: #E5E0D8;
-      outline: none;
-      -webkit-appearance: none;
-      cursor: pointer;
-    }
-
-    .calc-slider-input::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: var(--accent-bordeaux);
-      border: 3px solid #FFFFFF;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-
-    .calc-slider-input::-webkit-slider-thumb:hover {
-      transform: scale(1.15);
-    }
-
-    /* Grid de Resultados do Lucro */
-    .calc-metrics-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      background: var(--bg-body);
-      padding: 24px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-light);
-    }
-
-    @media (min-width: 640px) {
-      .calc-metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 992px) {
-      .calc-metrics-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .metric-box {
-      background: var(--bg-surface);
-      border-radius: var(--radius-sm);
-      padding: 18px 16px;
-      border: 1px solid var(--border-light);
-      text-align: center;
-    }
-
-    .metric-box.highlight {
-      background: var(--accent-green-bg);
-      border-color: rgba(31, 122, 70, 0.3);
-    }
-
-    .metric-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .metric-value {
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: var(--text-main);
-      font-family: var(--font-sans);
-    }
-
-    .metric-box.highlight .metric-value {
-      color: var(--accent-green);
-    }
-
-    .metric-note {
-      font-size: 0.72rem;
-      color: var(--text-light);
-      margin-top: 4px;
-    }
-
-    /* Exemplos Reais de Peças */
-    .real-pieces-title {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 24px;
-      color: var(--text-main);
     }
 
     .real-pieces-grid {
@@ -1318,7 +1149,7 @@
 
   <!-- ==========================================================================
        HEADER & BARRA DE NAVEGAÇÃO
-       ========================================================================== -->
+       ========================================================================== */ -->
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
@@ -1342,7 +1173,7 @@
 
   <!-- ==========================================================================
        HERO COM APRESENTAÇÃO E VÍDEO DA MÃE (ANNA ENGLES)
-       ========================================================================== -->
+       ========================================================================== */ -->
   <section class="hero-section">
     <div class="container">
       <div class="hero-badge-pill">
@@ -1412,29 +1243,30 @@
     </div>
   </section>
 
-  <!-- Modal do Vídeo (Pronto para receber o arquivo ou URL do YouTube/Vimeo) -->
+  <!-- Modal do Vídeo com Player HTML5 Nativo Estilizado -->
   <div class="video-modal-backdrop" id="videoModalBackdrop" onclick="closeVideoModal(event)">
     <div class="video-modal-content" onclick="event.stopPropagation()">
       <button class="video-modal-close-btn" onclick="closeVideoModal()">✕</button>
       <div class="video-modal-body" id="videoModalBody">
-        <!-- Espaço reservado para o vídeo da mãe quando gravado -->
-        <div style="padding: 40px 20px;">
-          <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" style="margin: 0 auto 16px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 8px;">Vídeo em Produção</h3>
-          <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 20px;">
-            Anna Engles está finalizando a gravação explicativa para as novas lojistas. Enquanto isso, você já pode cadastrar sua loja para garantir a liberação da tabela de fábrica.
-          </p>
-          <a href="#cadastro" onclick="closeVideoModal()" style="display: inline-block; background: var(--accent-bordeaux); color: #fff; padding: 12px 24px; border-radius: 4px; font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">
-            Ir para o Formulário de Cadastro
-          </a>
-        </div>
+        <video 
+          id="annaHtml5Video" 
+          class="native-html5-player" 
+          controls 
+          playsinline 
+          preload="metadata" 
+          poster="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp"
+        >
+          <!-- Quando o vídeo da mãe estiver pronto, basta inserir o link .mp4 na linha abaixo -->
+          <source src="" type="video/mp4" id="annaVideoSource">
+          Seu navegador não suporta a reprodução de vídeos HTML5.
+        </video>
       </div>
     </div>
   </div>
 
   <!-- ==========================================================================
        SEÇÃO: COMO FUNCIONA O NOSSO ATACADO (4 PASSOS SIMPLES)
-       ========================================================================== -->
+       ========================================================================== */ -->
   <section class="section-padding" id="como-funciona">
     <div class="container">
       <div class="section-header">
@@ -1486,83 +1318,20 @@
   </section>
 
   <!-- ==========================================================================
-       SEÇÃO: QUANTO A PESSOA PODE LUCRAR (SIMULADOR INTERATIVO + EXEMPLOS REAIS)
-       ========================================================================== -->
+       SEÇÃO: QUANTO A PESSOA PODE LUCRAR (EXEMPLOS REAIS DE MARGEM)
+       ========================================================================== */ -->
   <section class="section-padding profit-section" id="lucratividade">
     <div class="container">
       <div class="section-header">
         <span class="section-eyebrow">Rentabilidade Comprovada</span>
         <h2 class="section-title">Quanto a sua Loja Pode Lucrar?</h2>
         <p class="section-subtitle">
-          Comprando direto da fábrica Anna Engles, sem intermediários, você pratica margens brutas entre 120% e 180% mantendo um preço justo para suas clientes.
+          Comprando direto da fábrica Anna Engles, sem intermediários, você pratica margens brutas entre 120% e 180% com acabamento impecável de boutique.
         </p>
       </div>
 
-      <!-- Simulador de Lucro Interativo -->
-      <div class="profit-calculator-card">
-        <div class="calc-header-row">
-          <h3 class="calc-header-title">Simule o Retorno do seu Investimento</h3>
-          <p class="calc-header-desc">
-            Selecione o valor do seu pedido no atacado para ver a estimativa média de faturamento e lucro líquido na sua loja:
-          </p>
-        </div>
-
-        <!-- Chips de Seleção Rápida -->
-        <div class="calc-chips-row">
-          <button class="calc-chip-btn active" onclick="setInvestment(1200, this)">R$ 1.200 (Mínimo)</button>
-          <button class="calc-chip-btn" onclick="setInvestment(2500, this)">R$ 2.500</button>
-          <button class="calc-chip-btn" onclick="setInvestment(5000, this)">R$ 5.000</button>
-          <button class="calc-chip-btn" onclick="setInvestment(10000, this)">R$ 10.000</button>
-        </div>
-
-        <!-- Slider de Ajuste Fino -->
-        <div class="calc-slider-wrap">
-          <div class="calc-slider-labels">
-            <span>R$ 1.200</span>
-            <span id="sliderDisplayVal">Investimento: R$ 1.200</span>
-            <span>R$ 20.000</span>
-          </div>
-          <input 
-            type="range" 
-            min="1200" 
-            max="20000" 
-            step="100" 
-            value="1200" 
-            class="calc-slider-input" 
-            id="investmentSlider" 
-            oninput="handleSliderChange(this.value)"
-          >
-        </div>
-
-        <!-- Métricas Dinâmicas Calculadas -->
-        <div class="calc-metrics-grid">
-          <div class="metric-box">
-            <div class="metric-label">Investimento Fábrica</div>
-            <div class="metric-value" id="calcCostVal">R$ 1.200</div>
-            <div class="metric-note">Custo de mercadoria</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-label">Peças Estimadas</div>
-            <div class="metric-value" id="calcPiecesVal">~20 peças</div>
-            <div class="metric-note">Grade 100% livre</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-label">Faturamento no Varejo</div>
-            <div class="metric-value" id="calcRevenueVal">R$ 3.120</div>
-            <div class="metric-note">Preço médio sugerido</div>
-          </div>
-          <div class="metric-box highlight">
-            <div class="metric-label">Seu Lucro Líquido</div>
-            <div class="metric-value" id="calcProfitVal">R$ 1.920</div>
-            <div class="metric-note" id="calcMarginVal">+160% de retorno</div>
-          </div>
-        </div>
-      </div>
-
       <!-- Exemplos Reais por Peça -->
-      <h3 class="real-pieces-title" id="pecas">Exemplos Reais de Margem por Peça</h3>
-      
-      <div class="real-pieces-grid">
+      <div class="real-pieces-grid" id="pecas">
         <!-- Peça 1 -->
         <div class="piece-card">
           <div class="piece-img-box">
@@ -1636,7 +1405,7 @@
 
   <!-- ==========================================================================
        SEÇÃO: FORMULÁRIO DE CADASTRO PARA LIBERAÇÃO DE COMPRAS (CTA PRINCIPAL)
-       ========================================================================== -->
+       ========================================================================== */ -->
   <section class="section-padding register-section" id="cadastro">
     <div class="container">
       <div class="register-box-wrapper">
@@ -1731,7 +1500,7 @@
 
   <!-- ==========================================================================
        SEÇÃO: DÚVIDAS FREQUENTES (FAQ COMPACTO)
-       ========================================================================== -->
+       ========================================================================== */ -->
   <section class="section-padding faq-section" id="duvidas">
     <div class="container">
       <div class="section-header">
@@ -1803,7 +1572,7 @@
 
   <!-- ==========================================================================
        RODAPÉ
-       ========================================================================== -->
+       ========================================================================== */ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -1828,7 +1597,7 @@
 
   <!-- ==========================================================================
        BARRA FIXA NO MOBILE (STICKY CTA)
-       ========================================================================== -->
+       ========================================================================== */ -->
   <div class="mobile-sticky-bar">
     <div class="mobile-sticky-info">
       <span class="mobile-sticky-tag">Atacado Anna Engles</span>
@@ -1838,58 +1607,9 @@
   </div>
 
   <!-- ==========================================================================
-       SCRIPTS INTERATIVOS: SIMULADOR, FORMULÁRIO E MODAL
-       ========================================================================== -->
+       SCRIPTS INTERATIVOS: FORMULÁRIO, MODAL E WHATSAPP
+       ========================================================================== */ -->
   <script>
-    /* ==========================================================================
-       SIMULADOR DE LUCRO INTERATIVO
-       ========================================================================== */
-    function formatCurrency(val) {
-      return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
-    }
-
-    function calculateProfit(investment) {
-      const avgCostPerPiece = 60; // Média estimada de custo de atacado
-      const pieces = Math.round(investment / avgCostPerPiece);
-      
-      // Margem média de 160% de markup (multiplicador ~2.6x no preço de varejo)
-      const revenue = Math.round(investment * 2.6);
-      const profit = revenue - investment;
-      const marginPct = Math.round((profit / investment) * 100);
-
-      document.getElementById('calcCostVal').textContent = formatCurrency(investment);
-      document.getElementById('calcPiecesVal').textContent = `~${pieces} peças`;
-      document.getElementById('calcRevenueVal').textContent = formatCurrency(revenue);
-      document.getElementById('calcProfitVal').textContent = formatCurrency(profit);
-      document.getElementById('calcMarginVal').textContent = `+${marginPct}% de retorno no caixa`;
-      document.getElementById('sliderDisplayVal').textContent = `Investimento: ${formatCurrency(investment)}`;
-    }
-
-    function handleSliderChange(val) {
-      const num = parseInt(val, 10);
-      calculateProfit(num);
-      
-      // Atualizar estado ativo dos chips
-      const chips = document.querySelectorAll('.calc-chip-btn');
-      chips.forEach(chip => {
-        const text = chip.textContent;
-        if (text.includes(num.toString())) {
-          chip.classList.add('active');
-        } else {
-          chip.classList.remove('active');
-        }
-      });
-    }
-
-    function setInvestment(amount, btn) {
-      document.getElementById('investmentSlider').value = amount;
-      calculateProfit(amount);
-      
-      const chips = document.querySelectorAll('.calc-chip-btn');
-      chips.forEach(c => c.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-    }
-
     /* ==========================================================================
        MÁSCARA DE WHATSAPP
        ========================================================================== */
@@ -1970,17 +1690,27 @@
     }
 
     /* ==========================================================================
-       MODAL DE VÍDEO
+       MODAL DE VÍDEO COM PLAYER HTML5 NATIVO
        ========================================================================== */
     function openVideoModal() {
-      document.getElementById('videoModalBackdrop').classList.add('active');
+      const modal = document.getElementById('videoModalBackdrop');
+      const video = document.getElementById('annaHtml5Video');
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      if (video && video.currentSrc) {
+        video.play().catch(() => {});
+      }
     }
 
     function closeVideoModal(e) {
       if (e) e.stopPropagation();
-      document.getElementById('videoModalBackdrop').classList.remove('active');
+      const modal = document.getElementById('videoModalBackdrop');
+      const video = document.getElementById('annaHtml5Video');
+      modal.classList.remove('active');
       document.body.style.overflow = '';
+      if (video) {
+        video.pause();
+      }
     }
 
     /* ==========================================================================
@@ -1997,11 +1727,6 @@
         item.classList.add('active');
       }
     }
-
-    // Inicializa simulador no valor padrão
-    document.addEventListener('DOMContentLoaded', () => {
-      calculateProfit(1200);
-    });
   </script>
 </body>
 </html>
