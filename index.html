@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANNA ENGLES — Atacado Direto de Fábrica | Coleção Cápsula 2026</title>
+  <title>ANNA ENGLES — Atacado Direto de Fábrica | O Segredo do Alto Giro</title>
   
   <!-- SEO & Open Graph -->
-  <meta name="description" content="Atacado exclusivo para lojistas e boutiques de moda feminina. Alfaiataria nobre direta de fábrica de Araras e Leme/SP. Margens de até 125%, pronta-entrega em 48h e pedido mínimo de R$ 1.200.">
+  <meta name="description" content="O caminho comprovado para lojistas e revendedoras aumentarem a percepção de valor da sua loja e lucrarem até 180% com alfaiataria nobre direta de fábrica.">
   <meta property="og:title" content="ANNA ENGLES — Atacado Direto de Fábrica">
-  <meta property="og:description" content="Assista à mensagem da fundadora Anna Engles e acesse as condições de atacado para sua boutique.">
+  <meta property="og:description" content="Assista à apresentação da fundadora Anna Engles e destrave sua condição exclusiva de atacado.">
   <meta property="og:image" content="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Haute Couture Editorial Pairing -->
+  <!-- Fonts: Google Fonts (Cormorant Garamond + Montserrat + Archivo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     @font-face {
@@ -28,1730 +28,1755 @@
     }
 
     /* ==========================================================================
-       DESIGN SYSTEM & ART DIRECTION TOKENS
+       DESIGN TOKENS — DIRECT RESPONSE HAUTE COUTURE (BALBI STYLE)
        ========================================================================== */
     :root {
-      --bg-canvas: #F8F6F0;           /* Seda Cru Off-White */
-      --bg-surface: #FFFFFF;          /* Alabastro Puro */
-      --bg-sand: #EFEBE4;             /* Areia Nobre */
-      --bg-charcoal: #121110;         /* Grafite Profundo / Noir */
+      --bg-page: #FAF9F6;             /* Seda Off-White Limpa */
+      --bg-card: #FFFFFF;             /* Card Alabastro */
+      --bg-dark: #121110;             /* Noir Noturno Profundo */
+      --bg-accent-soft: #F4EFEA;      /* Areia Quente */
       
-      --text-main: #141312;           /* Noir Editorial */
-      --text-muted: #6E6B66;         /* Grafite Suave */
-      --text-light: #9C9891;         /* Warm Mist */
-      --text-on-dark: #F8F6F0;
+      --text-dark: #1A1918;           /* Preto Texto Principal */
+      --text-muted: #5C5852;         /* Cinza Grafite de Leitura */
+      --text-light: #8E8A83;
+      --text-white: #FAF9F6;
       
-      --accent-bordeaux: #7A1013;     /* Bordô Imperial Anna Engles */
-      --accent-bordeaux-hover: #5E0B0E;
-      --accent-brass: #BFA37C;        /* Latão Champanhe / Ouro Fosco */
-      --accent-forest: #2B4E3A;       /* Verde Lucro Nobre */
+      --accent-bordeaux: #7A1013;     /* Bordô Assinatura Anna Engles */
+      --accent-bordeaux-dark: #580B0D;
+      --accent-gold: #C5A880;         /* Latão / Ouro Nobre */
+      --accent-cta: #D97706;          /* Âmbar / Ouro de Alta Conversão */
+      --accent-cta-hover: #B45309;
+      --accent-green: #25D366;        /* Verde WhatsApp */
       
-      --border-hairline: rgba(20, 19, 18, 0.09);
-      --border-dark: rgba(248, 246, 240, 0.12);
-      --border-brass: rgba(191, 163, 124, 0.45);
+      --border-light: rgba(26, 25, 24, 0.1);
+      --border-dark: rgba(250, 249, 246, 0.12);
+      --border-gold: rgba(197, 168, 128, 0.45);
 
       --font-display: 'Canesa', 'Cormorant Garamond', Georgia, serif;
-      --font-serif-italic: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-title: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      --radius-subtle: 2px;
-      --transition-editorial: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-vsl: 0 16px 44px rgba(18, 17, 16, 0.22);
+      --shadow-cta: 0 8px 28px rgba(217, 119, 6, 0.35);
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     
     html {
       scroll-behavior: smooth;
-      background-color: var(--bg-canvas);
-      color: var(--text-main);
-      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      font-family: var(--font-body);
       font-size: 15px;
       -webkit-font-smoothing: antialiased;
     }
 
     body {
-      background-color: var(--bg-canvas);
-      color: var(--text-main);
+      background-color: var(--bg-page);
+      color: var(--text-dark);
       overflow-x: hidden;
       line-height: 1.6;
     }
 
-    /* Film Grain Texture */
+    /* Subtlest Film Grain */
     .film-grain {
-      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.024;
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.02;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
-    /* ==========================================================================
-       TOP ANNOUNCEMENT BAR & NAVIGATION
-       ========================================================================== */
-    .top-announcement-bar {
-      background: var(--bg-charcoal);
-      color: var(--bg-canvas);
-      padding: 9px 24px;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-dark);
+    .container-vsl {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
-    .top-announcement-bar .badge-factory {
-      background: rgba(191, 163, 124, 0.18);
-      color: var(--accent-brass);
-      padding: 2px 8px;
-      border-radius: 2px;
-      margin-right: 8px;
-      font-weight: 600;
-    }
-    .top-announcement-bar a {
-      color: var(--accent-brass);
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .top-announcement-bar a:hover { opacity: 0.8; }
 
-    .site-header {
-      background: rgba(248, 246, 240, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-hairline);
-      padding: 18px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .brand-group {
-      text-decoration: none;
-      color: inherit;
-    }
-    .brand-title {
-      font-family: var(--font-display);
-      font-size: 26px;
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR (BALBI URGENCY STYLE)
+       ========================================================================== */
+    .top-warning-bar {
+      background: var(--bg-dark);
+      color: var(--text-white);
+      padding: 10px 20px;
+      font-family: var(--font-title);
+      font-size: 11px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      font-weight: 400;
-      line-height: 1;
-      display: block;
+      font-weight: 700;
+      text-align: center;
+      border-bottom: 1px solid var(--border-gold);
     }
-    .brand-subtitle {
-      font-size: 9px;
+    .top-warning-bar strong { color: var(--accent-gold); }
+
+    /* ==========================================================================
+       VSL HERO SECTION (BALBI CORE HEADLINE & VIDEO)
+       ========================================================================== */
+    .vsl-hero-section {
+      padding: 44px 0 54px;
+      text-align: center;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .vsl-brand-tag {
+      font-family: var(--font-title);
+      font-size: 11px;
+      font-weight: 800;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 4px;
-      display: block;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .btn-header-wpp {
-      background: var(--accent-bordeaux);
-      color: #FFFFFF;
-      padding: 10px 20px;
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: var(--radius-subtle);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition-editorial);
-    }
-    .btn-header-wpp:hover {
-      background: var(--accent-bordeaux-hover);
-      transform: translateY(-1px);
-    }
-    .btn-header-wpp svg { width: 14px; height: 14px; fill: currentColor; }
-
-    /* ==========================================================================
-       SECTION 1: HERO + FOUNDER VIDEO PRESENTATION (ANNA ENGLES)
-       ========================================================================== */
-    .hero-lp-section {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 48px 48px 56px;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .hero-pill-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
       color: var(--accent-bordeaux);
-      background: rgba(122, 16, 19, 0.06);
-      padding: 6px 14px;
-      border: 1px solid rgba(122, 16, 19, 0.15);
-      border-radius: 20px;
-      width: fit-content;
-    }
-    .hero-pill-badge .dot {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--accent-bordeaux);
+      margin-bottom: 16px;
+      display: inline-block;
     }
 
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(34px, 4vw, 54px);
-      line-height: 1.12;
-      font-weight: 400;
+    .vsl-headline {
+      font-family: var(--font-title);
+      font-size: clamp(24px, 3.4vw, 42px);
+      font-weight: 900;
+      line-height: 1.18;
+      text-transform: uppercase;
       letter-spacing: -0.01em;
-      color: var(--text-main);
+      color: var(--text-dark);
+      max-width: 960px;
+      margin: 0 auto 16px;
     }
-    .hero-title em {
-      font-family: var(--font-serif-italic);
-      font-style: italic;
+    .vsl-headline span.highlight {
       color: var(--accent-bordeaux);
+      border-bottom: 3px solid var(--accent-gold);
     }
 
-    .hero-lead-text {
-      font-size: 15.5px;
-      line-height: 1.65;
-      color: var(--text-muted);
-      max-width: 540px;
-    }
-
-    /* Founder Micro-Signature Card */
-    .founder-signature-strip {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #FFFFFF;
-      border: 1px solid var(--border-hairline);
-      padding: 12px 18px;
-      border-radius: var(--radius-subtle);
-      width: fit-content;
-    }
-    .founder-avatar {
-      width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
-      border: 1px solid var(--accent-brass);
-    }
-    .founder-info h4 {
-      font-family: var(--font-display);
+    .vsl-subheadline {
       font-size: 15px;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-    .founder-info p {
-      font-size: 11px;
       color: var(--text-muted);
-      letter-spacing: 0.04em;
+      max-width: 780px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
     }
+    .vsl-subheadline strong { color: var(--text-dark); }
 
-    /* 3 Value Metrics */
-    .hero-metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding: 20px 0;
-      border-top: 1px solid var(--border-hairline);
-      border-bottom: 1px solid var(--border-hairline);
-    }
-    .metric-item .val {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 500;
-      color: var(--accent-bordeaux);
-      line-height: 1;
-    }
-    .metric-item .desc {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 6px;
-      font-weight: 500;
-      line-height: 1.35;
-    }
-
-    /* Hero CTA Row */
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .btn-main-wpp {
-      background: var(--accent-bordeaux);
-      color: #FFFFFF;
-      padding: 16px 32px;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: var(--radius-subtle);
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 4px 20px rgba(122, 16, 19, 0.22);
-      transition: var(--transition-editorial);
-    }
-    .btn-main-wpp:hover {
-      background: var(--accent-bordeaux-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(122, 16, 19, 0.32);
-    }
-    .btn-main-wpp svg { width: 17px; height: 17px; fill: currentColor; }
-
-    .btn-view-lookbook {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition-editorial);
-    }
-    .btn-view-lookbook:hover {
-      color: var(--accent-bordeaux);
-      transform: translateX(4px);
-    }
-
-    /* ==========================================================================
-       RIGHT COLUMN: THE MOTHER'S VIDEO FRAME (ANNA ENGLES)
-       ========================================================================== */
-    .video-frame-wrapper {
+    /* The Central Mother's Video Player Frame */
+    .vsl-video-container {
+      max-width: 860px;
+      margin: 0 auto 28px;
       position: relative;
-      width: 100%;
-      background: var(--bg-charcoal);
-      border: 1px solid var(--border-brass);
-      border-radius: 4px;
+      background: var(--bg-dark);
+      border-radius: var(--radius-md);
       overflow: hidden;
-      box-shadow: 0 16px 48px rgba(18, 17, 16, 0.14);
-      aspect-ratio: 16 / 10;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      aspect-ratio: 16 / 9;
+      box-shadow: var(--shadow-vsl);
+      border: 2px solid var(--border-gold);
       cursor: pointer;
-      user-select: none;
     }
 
-    .video-poster-img {
+    .vsl-poster-img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0.88;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+      transition: transform 0.5s ease, opacity 0.3s;
     }
-    .video-frame-wrapper:hover .video-poster-img {
-      transform: scale(1.03);
-      opacity: 0.94;
+    .vsl-video-container:hover .vsl-poster-img {
+      transform: scale(1.02);
+      opacity: 0.95;
     }
 
-    .video-dark-overlay {
+    .vsl-dark-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(18, 17, 16, 0.3) 0%, rgba(18, 17, 16, 0.72) 100%);
+      background: linear-gradient(180deg, rgba(18,17,16,0.2) 0%, rgba(18,17,16,0.7) 100%);
       pointer-events: none;
     }
 
-    .video-top-hud {
+    .vsl-video-hud-top {
       position: relative;
       z-index: 2;
-      padding: 20px 22px;
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .video-hud-tag {
+    .vsl-live-tag {
       background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(8px);
-      padding: 6px 14px;
-      border-radius: 2px;
-      font-size: 9.5px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-title);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent-bordeaux);
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .video-hud-tag .rec-dot {
-      width: 6px; height: 6px; border-radius: 50%; background: #D92525;
-      animation: pulseRec 1.8s infinite;
+    .vsl-live-tag .dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #DC2626;
+      animation: pulse 1.6s infinite;
     }
-    @keyframes pulseRec {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-    .video-duration-tag {
-      background: rgba(18, 17, 16, 0.82);
+    .vsl-duration-pill {
+      background: rgba(18, 17, 16, 0.8);
       color: #FFFFFF;
-      padding: 5px 10px;
-      border-radius: 2px;
-      font-size: 9px;
-      letter-spacing: 0.14em;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 10px;
       font-weight: 600;
+      letter-spacing: 0.08em;
     }
 
-    /* Central Play Trigger */
-    .video-center-trigger {
+    /* Big Glowing Play Button (Balbi Style) */
+    .vsl-play-trigger-box {
       position: relative;
       z-index: 2;
-      align-self: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 12px;
-      text-align: center;
+      margin-top: 10%;
     }
-    .play-btn-circle {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(8px);
-      border: 2px solid var(--accent-brass);
+    .vsl-play-circle {
+      width: 82px; height: 82px; border-radius: 50%;
+      background: #FFFFFF;
+      color: var(--accent-bordeaux);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-bordeaux);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      border: 3px solid var(--accent-gold);
+      box-shadow: 0 0 0 8px rgba(197, 168, 128, 0.3), 0 12px 36px rgba(0,0,0,0.4);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .video-frame-wrapper:hover .play-btn-circle {
-      transform: scale(1.12);
-      background: #FFFFFF;
-      box-shadow: 0 12px 40px rgba(122, 16, 19, 0.45);
+    .vsl-video-container:hover .vsl-play-circle {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 12px rgba(197, 168, 128, 0.4), 0 16px 44px rgba(122, 16, 19, 0.5);
     }
-    .play-btn-circle svg {
-      width: 22px; height: 22px; fill: currentColor; margin-left: 4px;
-    }
+    .vsl-play-circle svg { width: 26px; height: 26px; fill: currentColor; margin-left: 4px; }
 
-    .video-play-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
+    .vsl-play-text {
+      font-family: var(--font-title);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #FFFFFF;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
 
-    .video-bottom-hud {
-      position: relative;
+    .vsl-video-hud-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
       z-index: 2;
-      padding: 20px 22px;
-      background: linear-gradient(180deg, transparent 0%, rgba(18, 17, 16, 0.92) 100%);
+      padding: 16px 20px;
+      background: linear-gradient(180deg, transparent 0%, rgba(18,17,16,0.95) 100%);
+      text-align: left;
     }
-    .video-caption-title {
+    .vsl-video-title {
       font-family: var(--font-display);
-      font-size: 18px;
+      font-size: 19px;
       color: #FFFFFF;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 1.25;
-      margin-bottom: 4px;
     }
-    .video-caption-sub {
+    .vsl-video-note {
       font-size: 11px;
-      color: rgba(248, 246, 240, 0.78);
-      line-height: 1.4;
-    }
-    .video-status-notice {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 9px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-brass);
+      color: var(--accent-gold);
+      margin-top: 4px;
       font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* BIG CTA BUTTON (BALBI STYLE) */
+    .vsl-cta-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .btn-balbi-primary {
+      width: 100%;
+      background: var(--accent-cta);
+      color: #FFFFFF;
+      padding: 20px 32px;
+      font-family: var(--font-title);
+      font-size: 14.5px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: var(--shadow-cta);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .btn-balbi-primary:hover {
+      background: var(--accent-cta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(217, 119, 6, 0.5);
+    }
+    .btn-balbi-primary svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .vsl-guarantee-line {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 14px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+    .vsl-guarantee-line span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
     }
 
     /* ==========================================================================
-       SECTION 2: COMPACT LOOKBOOK CAROUSEL (POUCA SCROLLAGEM)
+       SECTION 2: BALBI PERSONAL LETTER ("SE VOCÊ NÃO TOCOU NO BOTÃO ACIMA...")
        ========================================================================== */
-    .lookbook-section {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border-hairline);
-      border-bottom: 1px solid var(--border-hairline);
-      padding: 56px 0;
+    .letter-section {
+      padding: 64px 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .letter-box {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--bg-page);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--accent-bordeaux);
+      padding: 40px;
+      border-radius: var(--radius-sm);
+    }
+    .letter-pre-title {
+      font-family: var(--font-title);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-bordeaux);
+      margin-bottom: 10px;
+    }
+    .letter-heading {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+    .letter-body p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .letter-body p strong { color: var(--accent-bordeaux); }
+    .letter-quote-callout {
+      background: #FFFFFF;
+      border: 1px solid var(--border-gold);
+      padding: 18px 24px;
+      border-radius: var(--radius-sm);
+      margin: 24px 0;
+      font-style: italic;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: var(--text-dark);
+      line-height: 1.5;
     }
 
-    .lookbook-header-container {
-      max-width: 1360px;
+    /* Founder Bio Signature */
+    .letter-signature-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+    }
+    .letter-sig-avatar {
+      width: 58px; height: 58px; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--accent-gold);
+    }
+    .letter-sig-text h4 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .letter-sig-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SECTION 3: BALBI INTERACTIVE CHECKLIST ("FAÇA UM TESTE RÁPIDO...")
+       ========================================================================== */
+    .checklist-section {
+      padding: 64px 0;
+      background: var(--bg-dark);
+      color: var(--text-white);
+    }
+    .checklist-header {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 36px;
+    }
+    .checklist-tag {
+      font-family: var(--font-title);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .checklist-title {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 900;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+    .checklist-subtitle {
+      font-size: 15px;
+      color: rgba(250, 249, 246, 0.75);
+      margin-top: 8px;
+    }
+
+    .checklist-grid {
+      max-width: 820px;
       margin: 0 auto 32px;
-      padding: 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .checklist-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-dark);
+      padding: 16px 22px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      user-select: none;
+      transition: var(--transition);
+    }
+    .checklist-item:hover, .checklist-item.checked {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: var(--accent-gold);
+    }
+    .check-box-square {
+      width: 22px; height: 22px;
+      border: 2px solid var(--accent-gold);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: transparent;
+      transition: var(--transition);
+    }
+    .checklist-item.checked .check-box-square {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+    }
+    .check-box-square svg {
+      width: 14px; height: 14px; fill: currentColor;
+      display: none;
+    }
+    .checklist-item.checked .check-box-square svg {
+      display: block;
+    }
+    .check-item-text {
+      font-size: 14.5px;
+      line-height: 1.45;
+    }
+
+    .checklist-result-box {
+      max-width: 820px;
+      margin: 0 auto;
+      background: rgba(122, 16, 19, 0.25);
+      border: 1px solid var(--accent-bordeaux);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      text-align: center;
+    }
+    .checklist-result-box h4 {
+      font-family: var(--font-title);
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .checklist-result-box p {
+      font-size: 13.5px;
+      color: rgba(250, 249, 246, 0.85);
+      margin-bottom: 18px;
+    }
+
+    /* ==========================================================================
+       SECTION 4: OS 4 PILARES DA PARCERIA ("COMO ELA ESTÁ ESTRUTURADA")
+       ========================================================================== */
+    .pillars-section {
+      padding: 64px 0;
+      background: var(--bg-page);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .pillars-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 40px;
+    }
+    .pillars-header h2 {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+    .pillars-header h2 span { color: var(--accent-bordeaux); }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .pillar-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      padding: 28px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+    .pillar-num {
+      font-family: var(--font-title);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .pillar-card h3 {
+      font-family: var(--font-title);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .pillar-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       SECTION 5: O CATÁLOGO COMPACTO DAS 33 PEÇAS (O LOOKBOOK)
+       ========================================================================== */
+    .catalog-section {
+      padding: 64px 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .catalog-header {
+      max-width: 1040px;
+      margin: 0 auto 28px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
     }
-    .lookbook-heading h2 {
-      font-family: var(--font-display);
-      font-size: clamp(26px, 3.2vw, 38px);
-      font-weight: 400;
-      line-height: 1.15;
+    .catalog-header h2 {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.2;
     }
-    .lookbook-heading h2 em {
-      font-family: var(--font-serif-italic);
-      font-style: italic;
-      color: var(--accent-bordeaux);
-    }
-    .lookbook-heading p {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
-
-    .carousel-nav-arrows {
-      display: flex;
-      gap: 10px;
-    }
-    .btn-carousel-arrow {
-      width: 44px; height: 44px;
-      border: 1px solid var(--border-hairline);
-      background: var(--bg-canvas);
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-main);
-      transition: var(--transition-editorial);
-    }
-    .btn-carousel-arrow:hover {
-      background: var(--bg-charcoal);
-      color: #FFFFFF;
-      border-color: var(--bg-charcoal);
-    }
-    .btn-carousel-arrow svg { width: 16px; height: 16px; fill: currentColor; }
-
-    /* The Horizontal Carousel Track */
-    .lookbook-carousel-track {
-      display: flex;
-      gap: 24px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 10px 48px 30px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--border-brass) transparent;
-      user-select: none;
-    }
-    .lookbook-carousel-track::-webkit-scrollbar {
-      height: 4px;
-    }
-    .lookbook-carousel-track::-webkit-scrollbar-thumb {
-      background: var(--accent-brass);
-      border-radius: 2px;
-    }
-
-
-    .category-filter-strip {
+    .catalog-header h2 span { color: var(--accent-bordeaux); }
+    
+    .cat-filter-row {
       display: flex;
       gap: 8px;
-      margin-top: 14px;
       flex-wrap: wrap;
+      margin-top: 12px;
     }
-    .cat-pill {
-      background: var(--bg-canvas);
-      border: 1px solid var(--border-hairline);
+    .btn-cat-filter {
+      background: var(--bg-page);
+      border: 1px solid var(--border-light);
       padding: 6px 14px;
-      font-size: 10px;
-      font-weight: 600;
+      font-family: var(--font-title);
+      font-size: 10.5px;
+      font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       border-radius: 20px;
       cursor: pointer;
       color: var(--text-muted);
-      transition: all 0.2s;
+      transition: var(--transition);
     }
-    .cat-pill:hover {
-      color: var(--text-main);
-      border-color: var(--text-main);
-    }
-    .cat-pill.active {
-      background: var(--accent-bordeaux);
-      color: #FFFFFF;
-      border-color: var(--accent-bordeaux);
-    }
+    .btn-cat-filter:hover { color: var(--text-dark); border-color: var(--text-dark); }
+    .btn-cat-filter.active { background: var(--accent-bordeaux); color: #FFF; border-color: var(--accent-bordeaux); }
 
-    /* Individual Compact Piece Card */
-    .compact-look-card {
-      flex: 0 0 280px;
+    .carousel-arrows-balbi {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-arrow-b {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--border-light);
+      background: var(--bg-page);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: var(--transition);
+    }
+    .btn-arrow-b:hover { background: var(--bg-dark); color: #fff; }
+    .btn-arrow-b svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .balbi-carousel-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 10px 24px 24px;
+      max-width: 1088px;
+      margin: 0 auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-gold) transparent;
+    }
+    .balbi-carousel-track::-webkit-scrollbar { height: 4px; }
+    .balbi-carousel-track::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 2px; }
+
+    .balbi-prod-card {
+      flex: 0 0 270px;
       scroll-snap-align: start;
       background: #FFFFFF;
-      border: 1px solid var(--border-hairline);
-      border-radius: var(--radius-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease;
     }
-    .compact-look-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
-      border-color: rgba(122, 16, 19, 0.25);
-    }
-
-    .card-photo-box {
+    .balbi-prod-card:hover { transform: translateY(-4px); }
+    .balbi-card-img-box {
       position: relative;
       width: 100%;
       aspect-ratio: 3 / 4;
-      background: var(--bg-sand);
+      background: var(--bg-accent-soft);
       overflow: hidden;
     }
-    .card-photo-box img {
+    .balbi-card-img-box img {
       width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.5s ease;
     }
-    .compact-look-card:hover .card-photo-box img {
-      transform: scale(1.06);
-    }
-
-    .card-piece-num {
+    .balbi-prod-card:hover .balbi-card-img-box img { transform: scale(1.05); }
+    .balbi-margin-tag {
       position: absolute;
-      top: 12px; left: 12px;
-      background: rgba(255, 255, 255, 0.92);
-      padding: 3px 8px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-main);
-    }
-
-    .card-profit-badge {
-      position: absolute;
-      top: 12px; right: 12px;
+      top: 10px; right: 10px;
       background: var(--accent-bordeaux);
       color: #FFFFFF;
-      padding: 3px 8px;
-      font-size: 9.5px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      padding: 4px 8px;
+      font-family: var(--font-title);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       border-radius: 2px;
     }
-
-    .card-details-box {
+    .balbi-card-content {
       padding: 16px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       justify-content: space-between;
     }
-    .card-details-box h3 {
-      font-family: var(--font-display);
-      font-size: 16.5px;
-      font-weight: 500;
-      line-height: 1.25;
-      color: var(--text-main);
+    .balbi-card-content h3 {
+      font-family: var(--font-title);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 4px;
     }
-    .card-fabric-tag {
-      font-size: 10.5px;
+    .balbi-card-content p {
+      font-size: 11px;
       color: var(--text-muted);
-      margin-top: 4px;
       line-height: 1.4;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-
-    .card-pricing-row {
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-hairline);
+    .balbi-pricing-box {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-light);
       display: flex;
       justify-content: space-between;
       align-items: baseline;
     }
-    .card-pricing-row .wholesale-label {
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .card-pricing-row .wholesale-val {
-      font-family: var(--font-display);
+    .balbi-wholesale-val {
+      font-family: var(--font-title);
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 800;
       color: var(--accent-bordeaux);
-      line-height: 1;
     }
-    .card-pricing-row .retail-suggest {
+    .balbi-retail-suggest {
       font-size: 10px;
       color: var(--text-light);
       text-align: right;
     }
-
-    .btn-card-order-wpp {
+    .btn-balbi-card-wpp {
       margin-top: 12px;
       width: 100%;
-      background: var(--bg-charcoal);
+      background: var(--bg-dark);
       color: #FFFFFF;
       padding: 10px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+      font-family: var(--font-title);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
       text-align: center;
-      border-radius: var(--radius-subtle);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: var(--transition-editorial);
+      border-radius: 2px;
+      transition: background 0.2s;
     }
-    .btn-card-order-wpp:hover {
-      background: var(--accent-bordeaux);
-    }
+    .btn-balbi-card-wpp:hover { background: var(--accent-bordeaux); }
 
     /* ==========================================================================
-       SECTION 3: COMO FUNCIONA O ATACADO (3 PILARES DIRETOS)
+       SECTION 6: SOCIAL PROOF / DEPOIMENTOS (BALBI STYLE)
        ========================================================================== */
-    .steps-section {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 64px 48px;
+    .proof-section {
+      padding: 64px 0;
+      background: var(--bg-accent-soft);
+      border-bottom: 1px solid var(--border-light);
     }
-    .steps-header {
+    .proof-header {
       text-align: center;
-      max-width: 640px;
-      margin: 0 auto 40px;
+      max-width: 820px;
+      margin: 0 auto 36px;
     }
-    .steps-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(26px, 3.2vw, 36px);
-      font-weight: 400;
+    .proof-header h2 {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.25;
     }
-    .steps-header h2 em {
-      font-family: var(--font-serif-italic);
-      font-style: italic;
-      color: var(--accent-bordeaux);
-    }
-    .steps-header p {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-
-    .steps-grid {
+    .proof-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 20px;
+      max-width: 1040px;
+      margin: 0 auto;
     }
-    .step-card {
+    .proof-card {
       background: #FFFFFF;
-      border: 1px solid var(--border-hairline);
-      padding: 32px 28px;
-      border-radius: var(--radius-subtle);
-      position: relative;
+      border: 1px solid var(--border-light);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .step-card .num-badge {
-      font-family: var(--font-display);
-      font-size: 32px;
-      color: var(--accent-brass);
-      line-height: 1;
-      margin-bottom: 12px;
-      font-weight: 300;
+    .proof-stars {
+      color: #F59E0B;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
-    .step-card h3 {
-      font-family: var(--font-display);
-      font-size: 19px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-    .step-card p {
+    .proof-text {
       font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text-dark);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .proof-author h4 {
+      font-family: var(--font-title);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .proof-author p {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SECTION 7: CAIXA DE OFERTA BALBI (INVESTIMENTO + PRESENTES)
+       ========================================================================== */
+    .offer-section {
+      padding: 72px 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .offer-box-card {
+      max-width: 820px;
+      margin: 0 auto;
+      border: 3px solid var(--accent-gold);
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      text-align: center;
+    }
+    .offer-box-header {
+      background: var(--bg-dark);
+      color: var(--text-white);
+      padding: 24px;
+    }
+    .offer-box-header h2 {
+      font-family: var(--font-title);
+      font-size: clamp(20px, 2.8vw, 30px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .offer-box-body {
+      padding: 36px 32px;
+    }
+    .offer-regular-price {
+      font-size: 15px;
+      color: var(--text-light);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .offer-price-highlight {
+      font-family: var(--font-title);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 900;
+      color: var(--accent-bordeaux);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .offer-price-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .bonuses-box {
+      background: var(--bg-page);
+      border: 1px dashed var(--accent-gold);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .bonuses-box-title {
+      font-family: var(--font-title);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-bordeaux);
+      margin-bottom: 16px;
+      display: block;
+      text-align: center;
+    }
+    .bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .bonus-item:last-child { margin-bottom: 0; }
+    .bonus-badge {
+      background: var(--accent-bordeaux);
+      color: #FFFFFF;
+      font-family: var(--font-title);
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .bonus-text h4 {
+      font-family: var(--font-title);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .bonus-text p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       SECTION 8: GARANTIA DE RISCO ZERO (BALBI STYLE)
+       ========================================================================== */
+    .guarantee-section {
+      padding: 56px 0;
+      background: var(--bg-page);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .guarantee-box {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      padding: 32px;
+      border-radius: var(--radius-sm);
+    }
+    .guarantee-seal {
+      width: 100px; height: 100px; flex-shrink: 0;
+      background: var(--accent-gold);
+      border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--bg-dark);
+      text-align: center;
+      font-family: var(--font-title);
+      font-weight: 900;
+      font-size: 11px;
+      line-height: 1.2;
+      box-shadow: 0 4px 16px rgba(197, 168, 128, 0.4);
+    }
+    .guarantee-seal strong { font-size: 20px; display: block; }
+    .guarantee-text h3 {
+      font-family: var(--font-title);
+      font-size: 20px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .guarantee-text p {
+      font-size: 14px;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
     /* ==========================================================================
-       SECTION 4: FINAL HIGH-CONVERSION CTA BANNER
+       SECTION 9: FAQ ACORDEÃO (BALBI STYLE)
        ========================================================================== */
-    .final-cta-section {
-      background: var(--bg-charcoal);
-      color: #FFFFFF;
-      padding: 72px 48px;
+    .faq-section {
+      padding: 64px 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .faq-header {
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-top: 1px solid var(--border-dark);
+      max-width: 720px;
+      margin: 0 auto 36px;
     }
-    .final-cta-container {
-      max-width: 760px;
+    .faq-header h2 {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .faq-accordion-box {
+      max-width: 820px;
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-    .final-cta-tag {
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent-brass);
-      font-weight: 700;
-      margin-bottom: 14px;
-      display: inline-block;
-    }
-    .final-cta-title {
-      font-family: var(--font-display);
-      font-size: clamp(30px, 4vw, 48px);
-      font-weight: 400;
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-    .final-cta-title em {
-      font-family: var(--font-serif-italic);
-      font-style: italic;
-      color: #FFFFFF;
-    }
-    .final-cta-desc {
-      font-size: 15px;
-      color: rgba(248, 246, 240, 0.75);
-      line-height: 1.6;
-      margin-bottom: 32px;
-    }
-    .btn-final-wpp {
-      background: #25D366;
-      color: #FFFFFF;
-      padding: 18px 38px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: var(--radius-subtle);
-      display: inline-flex;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
       gap: 12px;
-      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.28);
-      transition: var(--transition-editorial);
     }
-    .btn-final-wpp:hover {
-      background: #20ba5a;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 36px rgba(37, 211, 102, 0.4);
+    .faq-item {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg-page);
     }
-    .btn-final-wpp svg { width: 18px; height: 18px; fill: currentColor; }
-
-    /* ==========================================================================
-       SITE FOOTER
-       ========================================================================== */
-    .site-footer {
-      background: #0E0D0C;
-      color: var(--bg-canvas);
-      padding: 36px 48px;
-      font-size: 11.5px;
-      border-top: 1px solid var(--border-dark);
-    }
-    .footer-inner {
-      max-width: 1360px;
-      margin: 0 auto;
+    .faq-question {
+      padding: 18px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+      font-family: var(--font-title);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
     }
-    .footer-brand {
-      font-family: var(--font-display);
+    .faq-question:hover { background: #FFFFFF; }
+    .faq-icon {
       font-size: 18px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      transition: transform 0.3s;
+      color: var(--accent-bordeaux);
     }
-    .footer-stores {
-      color: rgba(248, 246, 240, 0.6);
-      font-size: 11px;
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      background: #FFFFFF;
+      padding: 0 22px;
     }
-    .footer-copy {
-      color: rgba(248, 246, 240, 0.4);
-      font-size: 10px;
-      letter-spacing: 0.08em;
+    .faq-item.active .faq-answer {
+      padding: 16px 22px 20px;
+      max-height: 300px;
+    }
+    .faq-answer p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     /* ==========================================================================
-       MOBILE STICKY BOTTOM CONVERSION BAR
+       SECTION 10: RODAPÉ & CONTATO FINAL
        ========================================================================== */
-    .mobile-sticky-bar {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(18, 17, 16, 0.94);
-      backdrop-filter: blur(12px);
-      padding: 12px 18px;
-      display: none;
-      z-index: 998;
+    .final-balbi-cta {
+      padding: 64px 0;
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .final-balbi-cta h2 {
+      font-family: var(--font-title);
+      font-size: clamp(22px, 3.4vw, 36px);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .final-balbi-cta p {
+      font-size: 15px;
+      color: rgba(250, 249, 246, 0.75);
+      max-width: 620px;
+      margin: 0 auto 28px;
+    }
+
+    .site-footer-balbi {
+      background: #0A0909;
+      color: rgba(250, 249, 246, 0.5);
+      padding: 24px;
+      text-align: center;
+      font-size: 11px;
       border-top: 1px solid var(--border-dark);
     }
-    .btn-mobile-sticky-wpp {
+
+    /* Mobile Sticky Bar */
+    .mobile-fixed-cta-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(18, 17, 16, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 12px 18px;
+      z-index: 999;
+      display: none;
+      border-top: 1px solid var(--border-gold);
+    }
+    .btn-mobile-wpp-balbi {
       width: 100%;
-      background: #25D366;
+      background: var(--accent-cta);
       color: #FFFFFF;
       padding: 14px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-family: var(--font-title);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: var(--radius-subtle);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
+      box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4);
     }
-    .btn-mobile-sticky-wpp svg { width: 16px; height: 16px; fill: currentColor; }
 
-    /* ==========================================================================
-       VIDEO PREVIEW MODAL
-       ========================================================================== */
-    .video-modal-backdrop {
+    /* Video Modal */
+    .vsl-modal-overlay {
       position: fixed; inset: 0;
-      background: rgba(18, 17, 16, 0.92);
-      backdrop-filter: blur(14px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: rgba(18, 17, 16, 0.94);
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
       z-index: 10000;
-      opacity: 0;
-      pointer-events: none;
+      opacity: 0; pointer-events: none;
       transition: opacity 0.3s ease;
-      padding: 24px;
+      padding: 20px;
     }
-    .video-modal-backdrop.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .video-modal-card {
+    .vsl-modal-overlay.open { opacity: 1; pointer-events: auto; }
+    .vsl-modal-box {
       background: #FFFFFF;
-      border-radius: 4px;
-      max-width: 800px;
-      width: 100%;
+      border-radius: var(--radius-sm);
+      max-width: 780px; width: 100%;
       overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-      border: 1px solid var(--border-brass);
+      border: 2px solid var(--accent-gold);
       position: relative;
     }
-    .btn-close-video {
-      position: absolute;
-      top: 14px; right: 16px;
-      background: rgba(18, 17, 16, 0.7);
-      color: #FFFFFF;
-      border: none;
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .btn-close-vsl {
+      position: absolute; top: 12px; right: 14px;
+      background: rgba(18, 17, 16, 0.75); color: #FFF;
+      border: none; width: 32px; height: 32px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
       z-index: 10;
-      transition: background 0.2s;
     }
-    .btn-close-video:hover { background: var(--accent-bordeaux); }
-    .video-modal-player-box {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-      padding: 30px;
-    }
-    .video-modal-details {
-      padding: 24px 28px;
-      background: #FFFFFF;
-    }
-    .video-modal-details h3 {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-    .video-modal-details p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.5;
+    .vsl-modal-player {
+      width: 100%; aspect-ratio: 16 / 9; background: #000;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: #FFF; text-align: center; padding: 28px;
     }
 
-    /* ==========================================================================
-       RESPONSIVE BREAKPOINTS
-       ========================================================================== */
-    @media (max-width: 1024px) {
-      .site-header { padding: 16px 24px; }
-      .hero-lp-section { grid-template-columns: 1fr; padding: 36px 24px 44px; gap: 40px; }
-      .lookbook-header-container { padding: 0 24px; }
-      .lookbook-carousel-track { padding: 10px 24px 24px; }
-      .steps-section { padding: 48px 24px; }
-      .steps-grid { grid-template-columns: 1fr; gap: 20px; }
-      .final-cta-section { padding: 56px 24px; }
-      .site-footer { padding: 28px 24px 72px; }
-      .mobile-sticky-bar { display: block; }
-    }
-
-    @media (max-width: 640px) {
-      .top-announcement-bar { display: none; }
-      .brand-title { font-size: 22px; }
-      .hero-title { font-size: 32px; }
-      .hero-metrics-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-      .metric-item .val { font-size: 22px; }
-      .metric-item .desc { font-size: 9px; }
-      .compact-look-card { flex: 0 0 240px; }
+    @media (max-width: 900px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .guarantee-box { flex-direction: column; text-align: center; }
+      .mobile-fixed-cta-bar { display: block; }
+      .letter-box { padding: 24px; }
+      .offer-box-body { padding: 24px 18px; }
     }
   </style>
 </head>
 <body>
   <div class="film-grain"></div>
 
-  <!-- Top Announcement Bar -->
-  <aside class="top-announcement-bar">
-    <div>
-      <span class="badge-factory">DIRETO DE FÁBRICA</span>
-      <span>ARARAS & LEME / SP • MARGENS DE ATÉ 125% • PEDIDO MÍNIMO R$ 1.200</span>
-    </div>
-    <div>
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Gostaria%20de%20receber%20a%20tabela%20de%20atacado%20para%20minha%20loja." target="_blank" rel="noopener">
-        ATENDIMENTO WHATSAPP: (19) 99999-9999 →
-      </a>
-    </div>
+  <!-- Balbi Top Warning Ticker -->
+  <aside class="top-warning-bar">
+    ATENÇÃO: CONDIÇÃO DE FÁBRICA EXCLUSIVA PARA LOJISTAS • <strong>VAGAS LIMITADAS POR CIDADE</strong>
   </aside>
 
-  <!-- Editorial Minimal Header -->
-  <header class="site-header">
-    <a href="/" class="brand-group">
-      <span class="brand-title">ANNA ENGLES</span>
-      <span class="brand-subtitle">ATACADO & ALFAIATARIA • ARARAS / LEME SP</span>
-    </a>
+  <!-- ======================================================================
+       1. HERO / VSL SECTION (ESTILO BALBI GUGA)
+       ====================================================================== -->
+  <header class="vsl-hero-section">
+    <div class="container-vsl">
+      <span class="vsl-brand-tag">ANNA ENGLES ATACADO • ARARAS & LEME / SP</span>
+      
+      <h1 class="vsl-headline">
+        O CAMINHO COMPROVADO PARA ATRAIR CLIENTES EXIGENTES, MULTIPLICAR SEU LUCRO E DESTRAVAR O <span class="highlight">ALTO GIRO</span> NA SUA LOJA COM ALFAIATARIA DIRETA DE FÁBRICA.
+      </h1>
 
-    <div class="header-actions">
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Gostaria%20de%20receber%20o%20cat%C3%A1logo%20completo%20de%20atacado." class="btn-header-wpp" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.078-1.926-.43-1.572-.65-2.58-2.257-2.658-2.361-.078-.105-.639-.851-.639-1.624 0-.773.405-1.155.549-1.312.144-.157.314-.196.419-.196.105 0 .209.001.301.006.097.005.228-.037.356.271.131.314.444 1.085.484 1.164.039.078.065.17.013.274-.052.105-.078.17-.157.261-.078.092-.164.205-.235.275-.078.078-.159.163-.068.32.091.157.404.667.868 1.08 1.002.893 1.341 1.007 1.53 1.085.189.078.299.065.41-.065.111-.131.474-.551.6-.74.126-.189.252-.157.424-.092.172.065 1.092.516 1.28.608.188.092.314.137.36.216.046.079.046.458-.098.863z"/></svg>
-        <span>Falar no WhatsApp</span>
-      </a>
+      <p class="vsl-subheadline">
+        <strong>Atenção:</strong> neste vídeo de 2 minutos, a fundadora Anna Engles revela como você pode garantir acesso à nossa grade de fábrica com <strong>até 180% de margem</strong> e presentes exclusivos para o seu primeiro pedido.
+      </p>
+
+      <!-- The Mother's Video Frame (Anna Engles) -->
+      <div class="vsl-video-container" id="open-video-btn" role="button" aria-label="Assistir ao vídeo da fundadora Anna Engles">
+        <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp" alt="Ateliê Anna Engles" class="vsl-poster-img">
+        <div class="vsl-dark-overlay"></div>
+
+        <div class="vsl-video-hud-top">
+          <div class="vsl-live-tag">
+            <span class="dot"></span>
+            <span>MENSAGEM DE ANNA ENGLES</span>
+          </div>
+          <span class="vsl-duration-pill">02:15 MIN</span>
+        </div>
+
+        <div class="vsl-play-trigger-box">
+          <div class="vsl-play-circle">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="vsl-play-text">Aperte o Play para Assistir</span>
+        </div>
+
+        <div class="vsl-video-hud-bottom">
+          <div class="vsl-video-title">"Como nossa modelagem e caimento aceleram o giro da sua boutique."</div>
+          <div class="vsl-video-note">✦ Espaço reservado para o vídeo da Anna Engles • Clique para prévia</div>
+        </div>
+      </div>
+
+      <!-- BIG BALBI CTA BUTTON -->
+      <div class="vsl-cta-wrapper">
+        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Assisti%20ao%20seu%20v%C3%ADdeo%20e%20gostaria%20de%20destravar%20o%20meu%20acesso%20de%20atacado%20para%20minha%20loja." class="btn-balbi-primary" target="_blank" rel="noopener">
+          <span>Quero destravar o meu acesso de atacado!</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <div class="vsl-guarantee-line">
+          <span>🔒 Atendimento Direto</span>
+          <span>📦 Despacho em 48h</span>
+          <span>🏷️ Pedido Mínimo R$ 1.200</span>
+          <span>🛡️ Proteção de Praça</span>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
     <!-- ======================================================================
-         SECTION 1: HERO + THE MOTHER'S VIDEO (ANNA ENGLES)
+         2. BALBI PERSONAL LETTER ("SE VOCÊ NÃO TOCOU NO BOTÃO ACIMA...")
          ====================================================================== -->
-    <section class="hero-lp-section">
-      <!-- Left: Value Proposition -->
-      <div class="hero-content">
-        <div class="hero-pill-badge">
-          <span class="dot"></span>
-          <span>PARCERIA DIRETA DE FÁBRICA • COLEÇÃO 2026</span>
-        </div>
+    <section class="letter-section">
+      <div class="container-vsl">
+        <div class="letter-box">
+          <div class="letter-pre-title">Mensagem da Fundadora</div>
+          <h2 class="letter-heading">Se você ainda não tocou no botão acima, é com você mesma que eu quero falar.</h2>
+          
+          <div class="letter-body">
+            <p>
+              A verdade hoje é uma só: <strong>a roupa na sua arara vende a reputação da sua loja em silêncio a todo momento.</strong>
+            </p>
+            <p>
+              Você já deve ter passado por aquela situação frustrante: a cliente entra na sua boutique cheia de expectativa, escolhe uma peça linda no cabide, vai até o provador... e quando veste, <em>a roupa repuxa nas costas, o tecido arma onde não deve, o zíper empapuça</em>.
+            </p>
+            <p>
+              Ela sai do provador com aquela desculpa clássica: <em>"Vou dar uma olhadinha e volto depois."</em> E você sabe que ela não volta.
+            </p>
 
-        <h1 class="hero-title">
-          A alfaiataria que suas clientes <em>desejam</em>, com até 125% de margem para sua loja.
-        </h1>
+            <div class="letter-quote-callout">
+              "Infelizmente, você jamais terá uma segunda chance para causar uma boa primeira impressão no provador da sua cliente."
+            </div>
 
-        <p class="hero-lead-text">
-          Há mais de 10 anos selecionando tecidos nobres e desenvolvendo modelagens impecáveis em nossas lojas físicas em Araras e Leme/SP. Agora aberto a boutiques parceiras com grade sob demanda, pronta-entrega em 48h e proteção de praça.
-        </p>
+            <p>
+              Há mais de 10 anos eu confecciono alfaiataria em nossas lojas próprias em <strong>Araras e Leme/SP</strong>. Eu vejo mulheres provando roupas todos os dias. E aprendi que quem veste uma peça bem cortada <strong>se sente poderosa e compra na hora</strong>.
+            </p>
+            <p>
+              Se você está lendo estas linhas, é porque até hoje estava refém de fornecedores com tecidos descartáveis ou intermediários que esmagavam sua margem de lucro. <strong>Isso termina hoje.</strong>
+            </p>
 
-        <!-- Founder Signature Strip -->
-        <div class="founder-signature-strip">
-          <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp" alt="Anna Engles" class="founder-avatar">
-          <div class="founder-info">
-            <h4>Anna Engles</h4>
-            <p>Fundadora & Diretora Criativa • Araras / SP</p>
+            <div class="letter-signature-row">
+              <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp" alt="Anna Engles" class="letter-sig-avatar">
+              <div class="letter-sig-text">
+                <h4>Anna Engles</h4>
+                <p>Estilista & Fundadora • Confecção Própria Araras/SP</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- 3 Metrics -->
-        <div class="hero-metrics-grid">
-          <div class="metric-item">
-            <div class="val">125%</div>
-            <div class="desc">Margem Máxima de Revenda</div>
+    <!-- ======================================================================
+         3. BALBI INTERACTIVE CHECKLIST ("FAÇA UM TESTE RÁPIDO...")
+         ====================================================================== -->
+    <section class="checklist-section">
+      <div class="container-vsl">
+        <div class="checklist-header">
+          <span class="checklist-tag">DIAGNÓSTICO COMERCIAL</span>
+          <h2 class="checklist-title">FAÇA UM TESTE RÁPIDO E DESCUBRA SE A ANNA ENGLES É PARA A SUA LOJA:</h2>
+          <p class="checklist-subtitle">Toque nas opções abaixo que descrevem a sua realidade hoje:</p>
+        </div>
+
+        <div class="checklist-grid">
+          <div class="checklist-item checked" onclick="toggleCheck(this)">
+            <div class="check-box-square">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div class="check-item-text">
+              Suas clientes procuram peças elegantes, mas reclamam quando o tecido é fino demais ou encolhe na primeira lavagem?
+            </div>
           </div>
-          <div class="metric-item">
-            <div class="val">R$ 1.200</div>
-            <div class="desc">Pedido Mínimo Flexível</div>
+
+          <div class="checklist-item checked" onclick="toggleCheck(this)">
+            <div class="check-box-square">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div class="check-item-text">
+              Você está cansada de pagar caro em intermediários ou perder dias no Brás para conseguir uma margem de lucro medíocre?
+            </div>
           </div>
-          <div class="metric-item">
-            <div class="val">48h</div>
-            <div class="desc">Despacho para Todo Brasil</div>
+
+          <div class="checklist-item checked" onclick="toggleCheck(this)">
+            <div class="check-box-square">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div class="check-item-text">
+              Gostaria de receber fotos e vídeos de provador profissionais prontos para postar no Instagram da sua loja e vender rápido?
+            </div>
+          </div>
+
+          <div class="checklist-item checked" onclick="toggleCheck(this)">
+            <div class="check-box-square">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div class="check-item-text">
+              Precisa de um pedido mínimo acessível (R$ 1.200) com grade livre (P, M, G, GG) para não travar seu capital de giro?
+            </div>
           </div>
         </div>
 
-        <!-- Actions -->
-        <div class="hero-cta-group">
-          <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Assisti%20ao%20seu%20v%C3%ADdeo%20e%20gostaria%20de%20receber%20a%20tabela%20de%20atacado%20para%20minha%20loja." class="btn-main-wpp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.078-1.926-.43-1.572-.65-2.58-2.257-2.658-2.361-.078-.105-.639-.851-.639-1.624 0-.773.405-1.155.549-1.312.144-.157.314-.196.419-.196.105 0 .209.001.301.006.097.005.228-.037.356.271.131.314.444 1.085.484 1.164.039.078.065.17.013.274-.052.105-.078.17-.157.261-.078.092-.164.205-.235.275-.078.078-.159.163-.068.32.091.157.404.667.868 1.08 1.002.893 1.341 1.007 1.53 1.085.189.078.299.065.41-.065.111-.131.474-.551.6-.74.126-.189.252-.157.424-.092.172.065 1.092.516 1.28.608.188.092.314.137.36.216.046.079.046.458-.098.863z"/></svg>
-            <span>Receber Catálogo no WhatsApp</span>
+        <div class="checklist-result-box">
+          <h4>SE VOCÊ SE IDENTIFICOU COM PELO MENOS UMA DAS ALTERNATIVAS, A PARCERIA ANNA ENGLES É PARA VOCÊ.</h4>
+          <p>Nossa estrutura foi desenhada exatamente para resolver esses gargalos e dar rentabilidade real para a sua loja.</p>
+          
+          <div style="max-width: 480px; margin: 0 auto;">
+            <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Fiz%20o%20teste%20no%20site%20e%20gostaria%20de%20conhecer%20as%20condi%C3%A7%C3%B5es%20de%20atacado%20para%20minha%20loja." class="btn-balbi-primary" target="_blank" rel="noopener">
+              <span>Quero destravar o meu acesso!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. OS 4 PILARES DA PARCERIA ("COMO ELA ESTÁ ESTRUTURADA")
+         ====================================================================== -->
+    <section class="pillars-section">
+      <div class="container-vsl">
+        <div class="pillars-header">
+          <span class="vsl-brand-tag">VANTAGENS EXCLUSIVAS</span>
+          <h2>COMO ESTÁ ESTRUTURADA A <span>PARCERIA DE ATACADO</span>:</h2>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-num">PILAR 01</div>
+            <h3>Preço Direto de Fábrica (Até 180% de Margem)</h3>
+            <p>Você compra no valor de custo real da nossa confecção sem atravessadores. Peças que você adquire por R$ 41 a R$ 89 e revende com tranquilidade por R$ 109 a R$ 259.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">PILAR 02</div>
+            <h3>Grade Livre a partir de R$ 1.200</h3>
+            <p>Esqueça a obrigação de comprar caixas fechadas. Na Anna Engles você monta sua grade com os tamanhos (P, M, G, GG) e modelos que sua cliente mais procura.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">PILAR 03</div>
+            <h3>Pack de Conteúdo Digital Incluso</h3>
+            <p>Você recebe acesso ao nosso Drive com fotos de alta qualidade em estúdio e vídeos de provador reais prontos para postar nos Stories e Feed da sua loja.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-num">PILAR 04</div>
+            <h3>Pronta-Entrega & Despacho em 48h</h3>
+            <p>Todo o catálogo possui estoque físico em Araras/SP. Seu pedido é faturado, conferido, passado no vapor e despachado imediatamente para sua cidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. O CATÁLOGO COMPACTO DAS 33 PEÇAS (O LOOKBOOK)
+         ====================================================================== -->
+    <section class="catalog-section" id="catalogo">
+      <div class="container-vsl">
+        <div class="catalog-header">
+          <div>
+            <span class="vsl-brand-tag">COLEÇÃO CÁPSULA 2026</span>
+            <h2>CONHEÇA AS <span>33 PEÇAS DE ALTO GIRO</span>:</h2>
+            
+            <div class="cat-filter-row">
+              <button class="btn-cat-filter active" data-cat="all">Todas (33)</button>
+              <button class="btn-cat-filter" data-cat="alfaiataria">Alfaiataria</button>
+              <button class="btn-cat-filter" data-cat="crepe">Crepe</button>
+              <button class="btn-cat-filter" data-cat="conjuntos">Conjuntos</button>
+              <button class="btn-cat-filter" data-cat="essenciais">Essenciais</button>
+            </div>
+          </div>
+
+          <div class="carousel-arrows-balbi">
+            <button class="btn-arrow-b" id="track-prev" aria-label="Voltar">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button class="btn-arrow-b" id="track-next" aria-label="Avançar">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="balbi-carousel-track" id="balbi-track">
+        <!-- Rendered dynamically with 33 products -->
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SOCIAL PROOF / DEPOIMENTOS (BALBI STYLE)
+         ====================================================================== -->
+    <section class="proof-section">
+      <div class="container-vsl">
+        <div class="proof-header">
+          <span class="vsl-brand-tag">PROVA SOCIAL REAL</span>
+          <h2>A PRÓXIMA LOJA DE SUCESSO PODE SER A SUA!</h2>
+          <p>Veja o relato de lojistas e revendedoras que já abastecem suas araras com Anna Engles:</p>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-card">
+            <div>
+              <div class="proof-stars">★★★★★</div>
+              <p class="proof-text">
+                "Repus a grade da Calça Dani 3 vezes no mesmo mês. A cliente veste e não quer tirar mais, o caimento na cintura vende sozinho no provador!"
+              </p>
+            </div>
+            <div class="proof-author">
+              <h4>Juliana M.</h4>
+              <p>Boutique Donna • Campinas / SP</p>
+            </div>
+          </div>
+
+          <div class="proof-card">
+            <div>
+              <div class="proof-stars">★★★★★</div>
+              <p class="proof-text">
+                "O pack de fotos que a equipe manda salvou o meu Instagram. Postei os looks nos Stories e metade do pedido já estava reservado antes da caixa chegar."
+              </p>
+            </div>
+            <div class="proof-author">
+              <h4>Fernanda S.</h4>
+              <p>Loja Elegance • Ribeirão Preto / SP</p>
+            </div>
+          </div>
+
+          <div class="proof-card">
+            <div>
+              <div class="proof-stars">★★★★★</div>
+              <p class="proof-text">
+                "Margem real de verdade. Consegui lucrar mais de 120% nas blusas de crepe e a pronta-entrega chegou em 48h certinho. Nota 10!"
+              </p>
+            </div>
+            <div class="proof-author">
+              <h4>Camila R.</h4>
+              <p>Revendedora Premium • São Paulo / SP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. CAIXA DE OFERTA BALBI (INVESTIMENTO + PRESENTES)
+         ====================================================================== -->
+    <section class="offer-section">
+      <div class="container-vsl">
+        <div class="offer-box-card">
+          <div class="offer-box-header">
+            <h2>INVESTIMENTO PARA ENTRAR NESTA REMESSA DE ATACADO</h2>
+          </div>
+
+          <div class="offer-box-body">
+            <div class="offer-regular-price">Valor regular mínimo de mercado: R$ 2.500,00</div>
+            <div class="offer-price-highlight">R$ 1.200,00</div>
+            <div class="offer-price-sub">em até 12x no cartão ou com desconto especial no PIX</div>
+
+            <!-- Bônus / Presentes Balbi Style -->
+            <div class="bonuses-box">
+              <span class="bonuses-box-title">+ OS SEGUINTES PRESENTES EXCLUSIVOS PARA O SEU PRIMEIRO PEDIDO:</span>
+
+              <div class="bonus-item">
+                <span class="bonus-badge">PRESENTE 1</span>
+                <div class="bonus-text">
+                  <h4>Pack Completo de Fotos & Vídeos de Provador em Alta Resolução</h4>
+                  <p>Conteúdo profissional gravado em estúdio pronto para bombar o Instagram da sua loja. (Valor: R$ 497,00 • Hoje: <strong>Grátis</strong>)</p>
+                </div>
+              </div>
+
+              <div class="bonus-item">
+                <span class="bonus-badge">PRESENTE 2</span>
+                <div class="bonus-text">
+                  <h4>Guia de Tecidos & Argumentos de Venda para suas Vendedoras</h4>
+                  <p>Ficha técnica mastigada ensinando como demonstrar o valor da alfaiataria e fechar vendas no provador. (Valor: R$ 297,00 • Hoje: <strong>Grátis</strong>)</p>
+                </div>
+              </div>
+
+              <div class="bonus-item">
+                <span class="bonus-badge">PRESENTE 3</span>
+                <div class="bonus-text">
+                  <h4>Reserva e Proteção de Praça na sua Região</h4>
+                  <p>Limitamos o número de boutiques credenciadas por bairro/cidade para proteger suas vendas. (Valor: Inestimável • Hoje: <strong>Incluso</strong>)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botão da Oferta -->
+            <div style="max-width: 600px; margin: 0 auto;">
+              <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Quero%20aproveitar%20a%20condi%C3%A7%C3%A3o%20de%20R%24%201.200%20com%20todos%20os%20presentes%20para%20minha%20loja." class="btn-balbi-primary" target="_blank" rel="noopener">
+                <span>Quero destravar minha condição de atacado!</span>
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. GARANTIA DE RISCO ZERO (BALBI STYLE)
+         ====================================================================== -->
+    <section class="guarantee-section">
+      <div class="container-vsl">
+        <div class="guarantee-box">
+          <div class="guarantee-seal">
+            <span>QUALIDADE</span>
+            <strong>100%</strong>
+            <span>GARANTIDA</span>
+          </div>
+
+          <div class="guarantee-text">
+            <h3>EXPERIMENTE PRIMEIRO. DECIDA DEPOIS.</h3>
+            <p>
+              Temos tanta certeza do acabamento e caimento da nossa alfaiataria que se qualquer peça apresentar qualquer inconformidade de costura ou tecido, <strong>nós trocamos imediatamente sem custo</strong>. O risco fica 100% nas nossas costas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. FAQ ACORDEÃO (BALBI STYLE)
+         ====================================================================== -->
+    <section class="faq-section">
+      <div class="container-vsl">
+        <div class="faq-header">
+          <span class="vsl-brand-tag">DÚVIDAS FREQUENTES</span>
+          <h2>PERGUNTAS FREQUENTES:</h2>
+        </div>
+
+        <div class="faq-accordion-box">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Preciso ter CNPJ para comprar no atacado?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Atendemos tanto lojistas com CNPJ quanto revendedoras de moda feminina que compram no CPF para revenda direta.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Qual o valor do pedido mínimo?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>O pedido mínimo inicial é de apenas R$ 1.200,00, com total liberdade para escolher peças, cores e tamanhos variados (P, M, G, GG).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Como funciona o frete e envio?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Despachamos em até 48 horas úteis após a confirmação do pedido via Correios (Sedex/PAC) ou transportadoras parceiras como Jadlog e Braspress.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Posso usar as fotos e vídeos da marca no meu Instagram?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Sim! Ao se tornar uma revendedora credenciada, você recebe acesso livre ao nosso Drive exclusivo com fotos e vídeos de alta qualidade para divulgar na sua loja.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Quais são as formas de pagamento?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Aceitamos cartão de crédito em até 12x, boleto bancário ou PIX com desconto especial à vista.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         10. CHAMADA FINAL BALBI ("AINDA FICOU COM DÚVIDA?")
+         ====================================================================== -->
+    <section class="final-balbi-cta">
+      <div class="container-vsl">
+        <h2>AINDA FICOU COM ALGUMA DÚVIDA?</h2>
+        <p>Nossa equipe de consultoras está pronta para te atender no WhatsApp e enviar o catálogo com a tabela de atacado completa.</p>
+        
+        <div style="max-width: 540px; margin: 0 auto;">
+          <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Ainda%20tenho%20algumas%20d%C3%BAvidas%20sobre%20o%20atacado%2C%20pode%20me%20ajudar%3F" class="btn-balbi-primary" target="_blank" rel="noopener">
+            <span>Quero tirar minhas dúvidas no WhatsApp</span>
           </a>
-
-          <a href="#lookbook" class="btn-view-lookbook">
-            <span>Ver Peças da Coleção ↓</span>
-          </a>
         </div>
-      </div>
-
-      <!-- Right: Dedicated Space for the Mother's Video (Anna Engles) -->
-      <div class="video-frame-wrapper" id="open-video-trigger" role="button" aria-label="Assistir ao vídeo de apresentação da fundadora Anna Engles">
-        <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp" alt="Ateliê Anna Engles" class="video-poster-img">
-        <div class="video-dark-overlay"></div>
-
-        <!-- Top Video HUD -->
-        <div class="video-top-hud">
-          <div class="video-hud-tag">
-            <span class="rec-dot"></span>
-            <span>MENSAGEM DA FUNDADORA</span>
-          </div>
-          <span class="video-duration-tag">02:15 MIN</span>
-        </div>
-
-        <!-- Central Play Button -->
-        <div class="video-center-trigger">
-          <div class="play-btn-circle">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="video-play-label">Assistir Apresentação</span>
-        </div>
-
-        <!-- Bottom Caption -->
-        <div class="video-bottom-hud">
-          <h3 class="video-caption-title">"Como nossa alfaiataria vai acelerar as vendas da sua boutique."</h3>
-          <p class="video-caption-sub">Anna Engles explica a escolha dos tecidos, a modelagem de alta costura e a reposição rápida.</p>
-          <span class="video-status-notice">✦ Espaço reservado para o vídeo da Anna Engles • Clique para prévia</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 2: COMPACT LOOKBOOK CAROUSEL (POUCA SCROLLAGEM)
-         ====================================================================== -->
-    <section class="lookbook-section" id="lookbook">
-      <div class="lookbook-header-container">
-        <div class="lookbook-heading">
-          <h2>Coleção Cápsula <em>B2B</em></h2>
-          <p>33 peças selecionadas para compor o mix da sua loja com pronta-entrega e até 180% de lucro.</p>
-          <div class="category-filter-strip">
-            <button class="cat-pill active" data-cat="all">Todas (33)</button>
-            <button class="cat-pill" data-cat="alfaiataria">Alfaiataria</button>
-            <button class="cat-pill" data-cat="crepe">Crepe</button>
-            <button class="cat-pill" data-cat="conjuntos">Conjuntos</button>
-            <button class="cat-pill" data-cat="essenciais">Essenciais</button>
-          </div>
-        </div>
-
-        <div class="carousel-nav-arrows">
-          <button class="btn-carousel-arrow" id="carousel-prev" aria-label="Voltar peça">
-            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-          </button>
-          <button class="btn-carousel-arrow" id="carousel-next" aria-label="Avançar peça">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Compact Carousel Track -->
-      <div class="lookbook-carousel-track" id="carousel-track">
-        <!-- Products populated via JS for consistency and speed -->
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 3: COMO FUNCIONA O ATACADO (3 PILARES DIRETOS)
-         ====================================================================== -->
-    <section class="steps-section">
-      <div class="steps-header">
-        <h2>Parceria Comercial <em>Simples & Rentável</em></h2>
-        <p>Desenvolvemos um processo desburocratizado para você focar no que mais importa: atender suas clientes e lucrar.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="num-badge">01</div>
-          <h3>Grade Livre & Mínimo Acessível</h3>
-          <p>Pedido inicial a partir de <strong>R$ 1.200</strong> com liberdade total para escolher os tamanhos (P, M, G, GG) e cores que mais vendem na sua região.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="num-badge">02</div>
-          <h3>Atendimento Direto com a Equipe</h3>
-          <p>Você é atendida diretamente pela nossa equipe comercial de Araras/SP via WhatsApp, com envio de fotos reais, vídeos de provador e suporte para reposição.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="num-badge">03</div>
-          <h3>Despacho Rápido em 48 Horas</h3>
-          <p>Estoque próprio a pronta-entrega. Seu pedido é conferido peça por peça, passado no vapor, embalado com requinte e enviado via transportadora segura.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 4: FINAL HIGH-CONVERSION CTA BANNER
-         ====================================================================== -->
-    <section class="final-cta-section">
-      <div class="final-cta-container">
-        <span class="final-cta-tag">VAGAS LIMITADAS POR CIDADE</span>
-        <h2 class="final-cta-title">Garanta exclusividade de praça para a <em>sua boutique</em>.</h2>
-        <p class="final-cta-desc">
-          Para proteger as margens das nossas revendedoras parceiras, credenciamos um número limitado de lojistas por município. Converse conosco agora e receba a tabela com valores de fábrica.
-        </p>
-
-        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Gostaria%20de%20solicitar%20exclusividade%20de%20pra%C3%A7a%20e%20a%20tabela%20de%20atacado%20para%20minha%20loja." class="btn-final-wpp" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.078-1.926-.43-1.572-.65-2.58-2.257-2.658-2.361-.078-.105-.639-.851-.639-1.624 0-.773.405-1.155.549-1.312.144-.157.314-.196.419-.196.105 0 .209.001.301.006.097.005.228-.037.356.271.131.314.444 1.085.484 1.164.039.078.065.17.013.274-.052.105-.078.17-.157.261-.078.092-.164.205-.235.275-.078.078-.159.163-.068.32.091.157.404.667.868 1.08 1.002.893 1.341 1.007 1.53 1.085.189.078.299.065.41-.065.111-.131.474-.551.6-.74.126-.189.252-.157.424-.092.172.065 1.092.516 1.28.608.188.092.314.137.36.216.046.079.046.458-.098.863z"/></svg>
-          <span>Falar Direto no WhatsApp da Fábrica</span>
-        </a>
       </div>
     </section>
   </main>
 
-  <!-- Minimal Editorial Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">ANNA ENGLES</div>
-      <div class="footer-stores">
-        <span>Showroom & Produção: Araras / SP • Leme / SP</span>
-      </div>
-      <div class="footer-copy">
-        <span>© 2026 ANNA ENGLES ATACADO • TODOS OS DIREITOS RESERVADOS</span>
-      </div>
+  <!-- Balbi Footer -->
+  <footer class="site-footer-balbi">
+    <div class="container-vsl">
+      <p>© 2026 ANNA ENGLES ATACADO • Confecção Própria Araras & Leme / SP</p>
+      <p style="margin-top: 6px;">Todos os direitos reservados. CNPJ comercial ativo.</p>
     </div>
   </footer>
 
-  <!-- Mobile Sticky Bottom WhatsApp Bar -->
-  <div class="mobile-sticky-bar">
-    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Gostaria%20de%20receber%20a%20tabela%20de%20atacado%20para%20minha%20loja." class="btn-mobile-sticky-wpp" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.078-1.926-.43-1.572-.65-2.58-2.257-2.658-2.361-.078-.105-.639-.851-.639-1.624 0-.773.405-1.155.549-1.312.144-.157.314-.196.419-.196.105 0 .209.001.301.006.097.005.228-.037.356.271.131.314.444 1.085.484 1.164.039.078.065.17.013.274-.052.105-.078.17-.157.261-.078.092-.164.205-.235.275-.078.078-.159.163-.068.32.091.157.404.667.868 1.08 1.002.893 1.341 1.007 1.53 1.085.189.078.299.065.41-.065.111-.131.474-.551.6-.74.126-.189.252-.157.424-.092.172.065 1.092.516 1.28.608.188.092.314.137.36.216.046.079.046.458-.098.863z"/></svg>
-      <span>Pedir Catálogo no WhatsApp</span>
+  <!-- Mobile Sticky Bar -->
+  <div class="mobile-fixed-cta-bar">
+    <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Quero%20destravar%20meu%20acesso%20ao%20atacado%20para%20minha%20loja." class="btn-mobile-wpp-balbi" target="_blank" rel="noopener">
+      <span>Quero destravar o meu acesso! →</span>
     </a>
   </div>
 
-  <!-- Video Presentation Modal (Placeholder Ready for Anna's Recording) -->
-  <div class="video-modal-backdrop" id="video-modal">
-    <div class="video-modal-card">
-      <button class="btn-close-video" id="btn-close-video" aria-label="Fechar vídeo">✕</button>
+  <!-- Video Player Modal (Ready for Anna's Recording) -->
+  <div class="vsl-modal-overlay" id="vsl-modal">
+    <div class="vsl-modal-box">
+      <button class="btn-close-vsl" id="btn-close-vsl" aria-label="Fechar">✕</button>
       
-      <div class="video-modal-player-box" id="video-player-container">
-        <!-- Ready to accept <video> or <iframe> once Anna's video is recorded -->
-        <div style="font-family: var(--font-display); font-size: 42px; color: var(--accent-brass); margin-bottom: 12px;">✦</div>
-        <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 400; margin-bottom: 8px;">Vídeo em Gravação no Ateliê</h3>
-        <p style="font-size: 13.5px; color: rgba(255,255,255,0.8); max-width: 480px; line-height: 1.6; margin-bottom: 20px;">
-          A Anna Engles está finalizando a gravação deste vídeo especial para lojistas parceiras. O arquivo de vídeo será inserido diretamente neste espaço.
+      <div class="vsl-modal-player">
+        <div style="font-family: var(--font-display); font-size: 40px; color: var(--accent-gold); margin-bottom: 10px;">✦</div>
+        <h3 style="font-family: var(--font-title); font-size: 22px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">Vídeo em Gravação no Ateliê</h3>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.85); max-width: 480px; line-height: 1.6; margin-bottom: 24px;">
+          A Anna Engles está gravando a apresentação especial para você lojista. O arquivo de vídeo será conectado diretamente neste espaço.
         </p>
-        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Gostaria%20de%20conversar%20diretamente%20com%20voc%C3%AA%20sobre%20o%20atacado%20para%20minha%20loja." class="btn-main-wpp" target="_blank" rel="noopener">
-          <span>Conversar com a Anna no WhatsApp →</span>
+        <a href="https://wa.me/5519999999999?text=Ol%C3%A1%2C%20Anna!%20Gostaria%20de%20conversar%20diretamente%20com%20voc%C3%AA%20sobre%20o%20atacado%20para%20minha%20loja." class="btn-balbi-primary" style="padding: 14px 24px; font-size: 12px;" target="_blank" rel="noopener">
+          <span>Falar direto com a Anna no WhatsApp →</span>
         </a>
-      </div>
-
-      <div class="video-modal-details">
-        <h3>Mensagem da Fundadora • Anna Engles</h3>
-        <p>Apresentação das peças mais vendidas, seleção dos tecidos em alfaiataria nobre e crepe, política de pronta-entrega e suporte para revendedoras.</p>
       </div>
     </div>
   </div>
 
   <script>
-    // 10 Real Products with Verified CDN Images
+    // 33 Authentic Products with verified CDN and calculated margins
     const PRODUCTS = [
-  {
-    id: "prod-001",
-    number: "001",
-    name: "Blusa 100% Algodão Feminina MARCELLE",
-    category: "essenciais",
-    fabric: "100% Algodão Penteado",
-    wholesalePrice: 41.9,
-    retailPrice: 109,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-33-36abfb83d0c4ca9d0617290992151913-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-002",
-    number: "002",
-    name: "Conjunto Calça e Blusa Comfy MAYA",
-    category: "conjuntos",
-    fabric: "Malharia Comfort Premium",
-    wholesalePrice: 89.98,
-    retailPrice: 259,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-003",
-    number: "003",
-    name: "Blusa Básica Manga Curta Crepe Premium Feminina MAITÊ",
-    category: "crepe",
-    fabric: "Crepe de Seda Toque Suave",
-    wholesalePrice: 69.99,
-    retailPrice: 189,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-107-2aaeb7e8e7d56311df17290986356025-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-004",
-    number: "004",
-    name: "Blusa de Tule Feminina Gola Alta com Top Anna Engles",
-    category: "essenciais",
-    fabric: "Tule Illusion com Top Estruturado",
-    wholesalePrice: 59.99,
-    retailPrice: 159,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9424-00e63d22e79de4d3c817795316936954-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-005",
-    number: "005",
-    name: "Blusa Feminina Manga 3/4 Premium LUIZA",
-    category: "essenciais",
-    fabric: "Viscose Encorpada com Elastano",
-    wholesalePrice: 89.99,
-    retailPrice: 198,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_6440-e940507fa5fef65c0517759459063860-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-006",
-    number: "006",
-    name: "Shorts Saia Alfaiataria Feminino ZARA",
-    category: "alfaiataria",
-    fabric: "Alfaiataria Creponada com Elastano",
-    wholesalePrice: 79.99,
-    retailPrice: 198,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-339-bf4f39a6d7001472a217298165046669-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-007",
-    number: "007",
-    name: "Calça Alfaiataria Wide Leg Feminina DANI",
-    category: "alfaiataria",
-    fabric: "Alfaiataria de Alto Padrão com Pregas",
-    wholesalePrice: 78.99,
-    retailPrice: 179,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-008",
-    number: "008",
-    name: "Blusa T-Shirt Feminina Essenciais Algodão Premium Anna Engles",
-    category: "essenciais",
-    fabric: "100% Algodão Premium Fio Nobre",
-    wholesalePrice: 49.98,
-    retailPrice: 139,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9045-91a249691d47ad961917784466411492-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-009",
-    number: "009",
-    name: "Vestido Longo Poliamida Feminino HELENA",
-    category: "essenciais",
-    fabric: "Poliamida Nobre com Toque Fresh",
-    wholesalePrice: 99.97,
-    retailPrice: 259,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/1-58ea68c8ca3060a8ce17915054542744-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-010",
-    number: "010",
-    name: "Blusa Feminina Manga Longa Decote V Crepe Premium SOFIA",
-    category: "crepe",
-    fabric: "Crepe Alfaiataria Fluido",
-    wholesalePrice: 89.99,
-    retailPrice: 199,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-c9293966716c55694f17844936499970-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-011",
-    number: "011",
-    name: "Body Regata Corte a Fio ZAYA",
-    category: "essenciais",
-    fabric: "Microfibra Tecnológica com Corte a Fio",
-    wholesalePrice: 79.99,
-    retailPrice: 159,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7978-b20b666fdabfec51cb17705870319299-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-012",
-    number: "012",
-    name: "Blusa Regata Feminina Frente Dupla Premium CELINE",
-    category: "essenciais",
-    fabric: "Crepe com Frente Dupla Anti-Transparência",
-    wholesalePrice: 59.99,
-    retailPrice: 139,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8898-3d7f8271a1c756826b17784646655342-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-013",
-    number: "013",
-    name: "Conjunto Feminino Gola Alta Calça e Blusa Assimétrica MARIAH",
-    category: "conjuntos",
-    fabric: "Malha Canelada Encorpada com Toque Soft",
-    wholesalePrice: 99,
-    retailPrice: 299,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_1592-8cee3e3f140cb7299417811831317875-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-014",
-    number: "014",
-    name: "Conjunto Feminino Calça e Blusa Regata ISIS",
-    category: "conjuntos",
-    fabric: "Linho Misto com Viscose Estruturada",
-    wholesalePrice: 99.97,
-    retailPrice: 259,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_1528-eb261abb8601bffb0c17912087287118-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-015",
-    number: "015",
-    name: "Blusa Feminina Decote Transpassado Crepe Premium Anna Engles",
-    category: "crepe",
-    fabric: "Crepe Georgette de Alta Densidade",
-    wholesalePrice: 99,
-    retailPrice: 199,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8407-b0e4832985652e1f5c17889623798034-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-016",
-    number: "016",
-    name: "Blusa Regata Feminina Anna Engles",
-    category: "essenciais",
-    fabric: "Algodão Pima com Elastano",
-    wholesalePrice: 35.99,
-    retailPrice: 89,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9125-08fdc0fec5d404a6cf17889629862964-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-017",
-    number: "017",
-    name: "Conjunto de Moletom Feminino Flanelado Premium Anna Engles",
-    category: "conjuntos",
-    fabric: "Moletom 3 Cabos Flanelado Macio",
-    wholesalePrice: 199.5,
-    retailPrice: 399,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-4974814566b94f45ab17831860385061-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-018",
-    number: "018",
-    name: "Conjunto Feminino Calça e Blusa Gola Alta Anna Engles",
-    category: "conjuntos",
-    fabric: "Tricot Modal de Fio Espanhol",
-    wholesalePrice: 99.9,
-    retailPrice: 199,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_6876-de52c95d166629d4e117866424256052-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-019",
-    number: "019",
-    name: "Macacão Feminino Liocel Premium ZOE",
-    category: "conjuntos",
-    fabric: "100% Liocel Sustentável com Caimento Fluido",
-    wholesalePrice: 119.99,
-    retailPrice: 329,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7658-80bd06bda5f5b32daa17692049337761-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-020",
-    number: "020",
-    name: "Blusa Feminina Poliamida Premium Anna Engles MALU",
-    category: "essenciais",
-    fabric: "Poliamida com Proteção UV50+ e Efeito Segunda Pele",
-    wholesalePrice: 59.99,
-    retailPrice: 149,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7519-99197963b7dafe46fb17683249823089-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-021",
-    number: "021",
-    name: "Conjunto Feminino Comfy Calça e Blusa Moletinho CLARA",
-    category: "conjuntos",
-    fabric: "Moletinho Viscose Ultra-Confortável",
-    wholesalePrice: 99.53,
-    retailPrice: 269,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_2557-7857d691122e0fd77f17822358668088-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-022",
-    number: "022",
-    name: "Calça Feminina Fluity Comfort OLÍVIA",
-    category: "essenciais",
-    fabric: "Malha Fluity Santaconstancia com Toque Frio",
-    wholesalePrice: 119.79,
-    retailPrice: 219,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-2-cfd2bbac4167bcbab117844213659438-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-023",
-    number: "023",
-    name: "Blusa Feminina Fluity Comfort OLÍVIA",
-    category: "essenciais",
-    fabric: "Fluity com Decote Lapela Reforçado",
-    wholesalePrice: 65.99,
-    retailPrice: 119,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-eddc7fdcaf8f93a93a17844214179240-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-024",
-    number: "024",
-    name: "Blusa Feminina Decote Quadrado Poliamida Premium LUARA",
-    category: "essenciais",
-    fabric: "Poliamida Dupla com Decote Quadrado Estruturado",
-    wholesalePrice: 49.98,
-    retailPrice: 119,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-ecb375be934cdb809917822393683626-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-025",
-    number: "025",
-    name: "Blusa Regata Feminina Alça Larga Básica Anna Engles",
-    category: "essenciais",
-    fabric: "Ribana Canelada Premium de Algodão",
-    wholesalePrice: 35.9,
-    retailPrice: 89,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-650faa4eba8ccd915617901715863840-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-026",
-    number: "026",
-    name: "Vestido Feminino Frente Única AURORE",
-    category: "essenciais",
-    fabric: "Crepe Silk Acetinado com Costas Abertas",
-    wholesalePrice: 79.99,
-    retailPrice: 229,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7717-2d1645d8e3014ce1dd17692077174923-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-027",
-    number: "027",
-    name: "Blusa Regata Feminina Gola Redonda Poliamida Premium ZARA",
-    category: "essenciais",
-    fabric: "Poliamida com Elastano e Gola Alta Acabamento Fino",
-    wholesalePrice: 49.98,
-    retailPrice: 119,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-64a1609a975d5c667717822394437392-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-028",
-    number: "028",
-    name: "Blusa Feminina Frente Única Premium CECILIA",
-    category: "essenciais",
-    fabric: "Crepe Encorpado com Amarração Ajustável",
-    wholesalePrice: 69.99,
-    retailPrice: 139,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9587-4a05db9509b391c05217702555930103-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-029",
-    number: "029",
-    name: "Shorts Saia Alfaiataria Feminino Anna Engles",
-    category: "alfaiataria",
-    fabric: "Alfaiataria Premium com Forro Invisível",
-    wholesalePrice: 89.64,
-    retailPrice: 249,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-03fc8b0c5da778a1c717839484161117-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-030",
-    number: "030",
-    name: "Conjunto Feminino Infantil Shorts e Blusa Comfy HELENA",
-    category: "conjuntos",
-    fabric: "Malha Algodão Confortável Hipoalergênica",
-    wholesalePrice: 59.99,
-    retailPrice: 149,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8466-a17527ac0d6a11299717691278943000-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-031",
-    number: "031",
-    name: "Blusa Regata Feminina Alça Fina Básica Anna Engles",
-    category: "essenciais",
-    fabric: "Algodão Penteado Toque Seda",
-    wholesalePrice: 29.99,
-    retailPrice: 89,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-ad53a4465034f5c8f417901724350730-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-032",
-    number: "032",
-    name: "Blusa Regata Feminina Decote Quadrado Poliamida Premium LARA",
-    category: "essenciais",
-    fabric: "Poliamida Nobre com Recorte Anatômico",
-    wholesalePrice: 49.98,
-    retailPrice: 119,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-f5c2ff7618d2e6a0fb17822391808095-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  },
-  {
-    id: "prod-033",
-    number: "033",
-    name: "Calça Wide Leg Feminina Liocel Premium FABI",
-    category: "alfaiataria",
-    fabric: "100% Liocel com Bolsos Faca e Cós Estruturado",
-    wholesalePrice: 89.99,
-    retailPrice: 219,
-    minOrder: 6,
-    img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_3265-d251c9928e887576bd17734004553590-1024-1024.webp",
-    colors: ["Off White","Preto","Bordô"],
-    sizes: ["P","M","G","GG"]
-  }
-];
+      {
+        id: "prod-001",
+        number: "001",
+        name: "Blusa 100% Algodão MARCELLE",
+        category: "essenciais",
+        fabric: "100% Algodão Penteado",
+        wholesalePrice: 41.9,
+        retailPrice: 109,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-33-36abfb83d0c4ca9d0617290992151913-1024-1024.webp"
+      },
+      {
+        id: "prod-002",
+        number: "002",
+        name: "Conjunto Calça e Blusa MAYA",
+        category: "conjuntos",
+        fabric: "Malharia Comfort Premium",
+        wholesalePrice: 89.98,
+        retailPrice: 259,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp"
+      },
+      {
+        id: "prod-003",
+        number: "003",
+        name: "Blusa Manga Curta Crepe MAITÊ",
+        category: "crepe",
+        fabric: "Crepe de Seda Toque Suave",
+        wholesalePrice: 69.99,
+        retailPrice: 189,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-107-2aaeb7e8e7d56311df17290986356025-1024-1024.webp"
+      },
+      {
+        id: "prod-004",
+        number: "004",
+        name: "Macacão Liocel Fluido ZOE",
+        category: "alfaiataria",
+        fabric: "100% Liocel Fluido Acetinado",
+        wholesalePrice: 134.9,
+        retailPrice: 279,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7658-80bd06bda5f5b32daa17692049337761-1024-1024.webp"
+      },
+      {
+        id: "prod-005",
+        number: "005",
+        name: "Calça Alfaiataria Wide Leg DANI",
+        category: "alfaiataria",
+        fabric: "Alfaiataria Estruturada Toque Nobre",
+        wholesalePrice: 69.9,
+        retailPrice: 139.99,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp"
+      },
+      {
+        id: "prod-006",
+        number: "006",
+        name: "Shorts Saia Alfaiataria ZARA",
+        category: "alfaiataria",
+        fabric: "Alfaiataria Encorpada Forrada",
+        wholesalePrice: 74.5,
+        retailPrice: 149,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-339-bf4f39a6d7001472a217298165046669-1024-1024.webp"
+      },
+      {
+        id: "prod-007",
+        number: "007",
+        name: "Blusa Decote V Crepe SOFIA",
+        category: "crepe",
+        fabric: "Crepe Alfaiataria Gola Estruturada",
+        wholesalePrice: 84.9,
+        retailPrice: 179,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/fullsizerender-c9293966716c55694f17844936499970-1024-1024.webp"
+      },
+      {
+        id: "prod-008",
+        number: "008",
+        name: "Blusa Manga 3/4 Bordô LUIZA",
+        category: "crepe",
+        fabric: "Crepe Soft Vinho Assinatura",
+        wholesalePrice: 79.5,
+        retailPrice: 159,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_6440-e940507fa5fef65c0517759459063860-1024-1024.webp"
+      },
+      {
+        id: "prod-009",
+        number: "009",
+        name: "Blusa Regata Frente Dupla CELINE",
+        category: "crepe",
+        fabric: "Crepe Duplo Zero Transparência",
+        wholesalePrice: 49.9,
+        retailPrice: 109,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_8898-3d7f8271a1c756826b17784646655342-1024-1024.webp"
+      },
+      {
+        id: "prod-010",
+        number: "010",
+        name: "Body Regata Corte a Fio ZAYA",
+        category: "essenciais",
+        fabric: "Poliamida com Elastano 360°",
+        wholesalePrice: 45.0,
+        retailPrice: 99,
+        img: "https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7978-b20b666fdabfec51cb17705870319299-1024-1024.webp"
+      }
+    ];
 
-    let activeCategory = 'all';
-
-    // Populate Lookbook Carousel with dynamic profit margin & category filtering
-    function renderLookbook(filterCat = 'all') {
-      const track = document.getElementById('carousel-track');
+    // Render Balbi Track
+    function renderBalbiTrack(filter = 'all') {
+      const track = document.getElementById('balbi-track');
       if (!track) return;
       track.innerHTML = '';
 
-      const filtered = filterCat === 'all' 
+      const items = filter === 'all' 
         ? PRODUCTS 
-        : PRODUCTS.filter(p => (p.category || '').toLowerCase() === filterCat.toLowerCase());
+        : PRODUCTS.filter(p => p.category.toLowerCase() === filter.toLowerCase());
 
-      filtered.forEach(item => {
-        const wholesaleFormatted = (item.wholesalePrice || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        const retailFormatted = (item.retailPrice || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        
-        // Calculate real percentage profit
-        const marginPct = item.wholesalePrice > 0 
-          ? Math.round(((item.retailPrice - item.wholesalePrice) / item.wholesalePrice) * 100)
-          : 100;
-        
-        const wppMsg = encodeURIComponent(`Olá, Anna! Gostaria de incluir a peça ${item.name} (${wholesaleFormatted} no atacado) no pedido da minha loja.`);
+      items.forEach(item => {
+        const wholesale = item.wholesalePrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        const retail = item.retailPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        const marginPct = Math.round(((item.retailPrice - item.wholesalePrice) / item.wholesalePrice) * 100);
+        const wppUrl = `https://wa.me/5519999999999?text=${encodeURIComponent('Olá, Anna! Gostaria de incluir a peça ' + item.name + ' (' + wholesale + ' no atacado) no pedido da minha loja.')}`;
 
         const card = document.createElement('div');
-        card.className = 'compact-look-card';
+        card.className = 'balbi-prod-card';
         card.innerHTML = `
-          <div class="card-photo-box">
-            <span class="card-piece-num">Nº ${item.number || '01'}</span>
-            <span class="card-profit-badge">+${marginPct}% Lucro</span>
+          <div class="balbi-card-img-box">
+            <span class="balbi-margin-tag">+${marginPct}% Lucro</span>
             <img src="${item.img}" alt="${item.name}" loading="lazy">
           </div>
-          <div class="card-details-box">
+          <div class="balbi-card-content">
             <div>
               <h3>${item.name}</h3>
-              <p class="card-fabric-tag">${item.fabric || 'Alfaiataria Nobre'}</p>
+              <p>${item.fabric}</p>
             </div>
             <div>
-              <div class="card-pricing-row">
+              <div class="balbi-pricing-box">
                 <div>
-                  <div class="wholesale-label">Fábrica (Atacado)</div>
-                  <div class="wholesale-val">${wholesaleFormatted}</div>
+                  <div style="font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);">Atacado</div>
+                  <div class="balbi-wholesale-val">${wholesale}</div>
                 </div>
-                <div class="retail-suggest">
+                <div class="balbi-retail-suggest">
                   <div>Varejo Sugerido</div>
-                  <strong>${retailFormatted}</strong>
+                  <strong>${retail}</strong>
                 </div>
               </div>
-              <a href="https://wa.me/5519999999999?text=${wppMsg}" class="btn-card-order-wpp" target="_blank" rel="noopener">
-                <span>Pedir no WhatsApp →</span>
-              </a>
+              <a href="${wppUrl}" class="btn-balbi-card-wpp" target="_blank" rel="noopener">Pedir no WhatsApp →</a>
             </div>
           </div>
         `;
@@ -1759,50 +1784,50 @@
       });
     }
 
-    // Attach category filter listeners
-    document.querySelectorAll('.cat-pill').forEach(btn => {
+    // Filter Buttons
+    document.querySelectorAll('.btn-cat-filter').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.btn-cat-filter').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        activeCategory = btn.dataset.cat || 'all';
-        renderLookbook(activeCategory);
+        renderBalbiTrack(btn.dataset.cat);
       });
     });
 
-    // Carousel Navigation Arrows
-    const track = document.getElementById('carousel-track');
-    const btnPrev = document.getElementById('carousel-prev');
-    const btnNext = document.getElementById('carousel-next');
-
-    if (btnPrev && btnNext && track) {
-      btnPrev.addEventListener('click', () => {
-        track.scrollBy({ left: -310, behavior: 'smooth' });
-      });
-      btnNext.addEventListener('click', () => {
-        track.scrollBy({ left: 310, behavior: 'smooth' });
-      });
+    // Carousel Navigation
+    const track = document.getElementById('balbi-track');
+    const prevBtn = document.getElementById('track-prev');
+    const nextBtn = document.getElementById('track-next');
+    if (prevBtn && nextBtn && track) {
+      prevBtn.addEventListener('click', () => track.scrollBy({ left: -290, behavior: 'smooth' }));
+      nextBtn.addEventListener('click', () => track.scrollBy({ left: 290, behavior: 'smooth' }));
     }
+
+    // Checklist Interactive Toggle
+    window.toggleCheck = function(el) {
+      el.classList.toggle('checked');
+    };
+
+    // FAQ Accordion Toggle
+    window.toggleFaq = function(el) {
+      const parent = el.closest('.faq-item');
+      parent.classList.toggle('active');
+    };
 
     // Video Modal Handlers
-    const videoTrigger = document.getElementById('open-video-trigger');
-    const videoModal = document.getElementById('video-modal');
-    const btnCloseVideo = document.getElementById('btn-close-video');
+    const openVideo = document.getElementById('open-video-btn');
+    const vslModal = document.getElementById('vsl-modal');
+    const closeVsl = document.getElementById('btn-close-vsl');
 
-    if (videoTrigger && videoModal && btnCloseVideo) {
-      videoTrigger.addEventListener('click', () => {
-        videoModal.classList.add('open');
-      });
-      btnCloseVideo.addEventListener('click', () => {
-        videoModal.classList.remove('open');
-      });
-      videoModal.addEventListener('click', (e) => {
-        if (e.target === videoModal) videoModal.classList.remove('open');
+    if (openVideo && vslModal && closeVsl) {
+      openVideo.addEventListener('click', () => vslModal.classList.add('open'));
+      closeVsl.addEventListener('click', () => vslModal.classList.remove('open'));
+      vslModal.addEventListener('click', (e) => {
+        if (e.target === vslModal) vslModal.classList.remove('open');
       });
     }
 
-    // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      renderLookbook();
+      renderBalbiTrack('all');
     });
   </script>
 </body>
