@@ -1019,6 +1019,55 @@
       line-height: 1.6;
     }
 
+    /* Regras do atacado (condições, envio, trocas) */
+    @media (min-width: 1024px) {
+      .steps-grid.rules-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .rules-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .rules-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .rules-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+    }
+
+    .rules-list li strong {
+      color: var(--text-main);
+    }
+
+    .rules-note {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent-bordeaux);
+      background: rgba(122, 16, 19, 0.05);
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      color: var(--text-main);
+      line-height: 1.55;
+    }
+
     /* ==========================================================================
        SEÇÃO: QUANTO A PESSOA PODE LUCRAR (MICRO-INTERAÇÃO NAS PEÇAS)
        ========================================================================== */
@@ -1104,26 +1153,47 @@
       transform: translate3d(0, 0, 0) scale(1.07);
     }
 
-    /* Profit Badge Pops with Overshoot on Card Hover */
+    /* Etiqueta editorial de margem (canto da foto) */
     .piece-profit-badge {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: var(--accent-green);
-      color: #FFFFFF;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 5px 12px;
-      border-radius: 20px;
-      letter-spacing: 0.06em;
-      box-shadow: 0 4px 14px rgba(31, 122, 70, 0.35);
+      left: 0;
+      bottom: 0;
       z-index: 2;
-      transform: scale(1);
-      transition: transform var(--dur-hover) var(--spring-overshoot);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 10px 16px 9px 14px;
+      background: rgba(250, 248, 245, 0.96);
+      border-top: 2px solid var(--accent-gold);
+      color: var(--accent-bordeaux);
+      transition: background var(--dur-hover) ease, color var(--dur-hover) ease;
+    }
+
+    .piece-profit-badge strong {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-variant-numeric: lining-nums;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .piece-profit-badge small {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      transition: color var(--dur-hover) ease;
     }
 
     .piece-card:hover .piece-profit-badge {
-      transform: scale(1.09);
+      background: var(--accent-bordeaux);
+      color: var(--text-white);
+    }
+
+    .piece-card:hover .piece-profit-badge small {
+      color: var(--accent-gold-light);
     }
 
     .piece-content {
@@ -1203,7 +1273,7 @@
     }
 
     /* ==========================================================================
-       SEÇÃO: CADASTRO DE ATACADO (INCORPORADO DA LOJA)
+       SEÇÃO: CADASTRO DE ATACADO (LINK PARA A LOJA)
        ========================================================================== */
     .register-section {
       background: var(--bg-surface);
@@ -1257,40 +1327,13 @@
       line-height: 1.6;
     }
 
-    /* Cadastro incorporado (iframe da loja) */
-    .register-frame-wrap {
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      background: #FFFFFF;
-      overflow: hidden;
-    }
-
-    .register-iframe {
-      display: block;
-      width: 100%;
-      height: 980px;
-      border: 0;
-    }
-
-    @media (max-width: 640px) {
-      .register-iframe {
-        height: 1180px;
-      }
-    }
-
-    .register-external-note {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      margin-top: 18px;
-      line-height: 1.6;
-    }
-
-    .register-external-note a {
-      color: var(--accent-bordeaux);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    /* Chamada para o cadastro de atacado na loja */
+    .register-cta-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0 8px;
     }
 
     /* ==========================================================================
@@ -1677,9 +1720,9 @@
       </div>
       
       <h1 class="hero-title reveal-on-scroll delay-1">
-        Descubra como funciona o atacado 
+        Descubra como funciona o atacado da
         <em>
-          Anna Engles
+          Anna Engles Store
           <svg class="hero-title-svg-flourish" viewBox="0 0 220 10" preserveAspectRatio="none">
             <path d="M2,6 C60,2 160,9 218,5" />
           </svg>
@@ -1725,7 +1768,7 @@
           <div class="caption-tags-row">
             <div class="caption-tag-item">
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Mínimo R$ 1.200</span>
+              <span>Mínimo R$ 700</span>
             </div>
             <div class="caption-tag-item">
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1800,7 +1843,7 @@
           </div>
           <h3 class="step-card-title">1. Cadastro da sua Loja</h3>
           <p class="step-card-desc">
-            Preencha o formulário em menos de 1 minuto com os dados do seu negócio (físico, online ou revenda independente).
+            Preencha o formulário em menos de 1 minuto com os dados do seu negócio (físico ou online) e o seu CNPJ.
           </p>
         </div>
 
@@ -1834,7 +1877,7 @@
           </div>
           <h3 class="step-card-title">3. Escolha com Grade Livre</h3>
           <p class="step-card-desc">
-            Pedido mínimo inteligente de R$ 1.200. Você monta seu mix com os modelos, cores e tamanhos que suas clientes realmente compram.
+            Pedido mínimo inteligente de R$ 700. Você monta seu mix com os modelos, cores e tamanhos que suas clientes realmente compram.
           </p>
         </div>
 
@@ -1879,7 +1922,7 @@
         <div class="piece-card reveal-on-scroll delay-1" onclick="focusRegisterWithProduct('Blusa MARCELLE')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/aes-33-36abfb83d0c4ca9d0617290992151913-1024-1024.webp" alt="Blusa Marcelle" class="piece-img">
-            <span class="piece-profit-badge">+160% Lucro</span>
+            <span class="piece-profit-badge"><strong>+160%</strong><small>de lucro</small></span>
           </div>
           <div class="piece-content">
             <h4 class="piece-name">Blusa 100% Algodão MARCELLE</h4>
@@ -1896,7 +1939,7 @@
         <div class="piece-card reveal-on-scroll delay-2" onclick="focusRegisterWithProduct('Calça DANI')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp" alt="Calça Dani" class="piece-img">
-            <span class="piece-profit-badge">+100% Lucro</span>
+            <span class="piece-profit-badge"><strong>+100%</strong><small>de lucro</small></span>
           </div>
           <div class="piece-content">
             <h4 class="piece-name">Calça Alfaiataria Wide Leg DANI</h4>
@@ -1913,7 +1956,7 @@
         <div class="piece-card reveal-on-scroll delay-3" onclick="focusRegisterWithProduct('Conjunto MAYA')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/elegancia-neutra-em-parede-curva-e667bf04bc5ff64aa217913341145676-1024-1024.webp" alt="Conjunto Maya" class="piece-img">
-            <span class="piece-profit-badge">+188% Lucro</span>
+            <span class="piece-profit-badge"><strong>+188%</strong><small>de lucro</small></span>
           </div>
           <div class="piece-content">
             <h4 class="piece-name">Conjunto Calça e Blusa MAYA</h4>
@@ -1930,7 +1973,7 @@
         <div class="piece-card reveal-on-scroll delay-4" onclick="focusRegisterWithProduct('Macacão ZOE')">
           <div class="piece-img-box">
             <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_7658-80bd06bda5f5b32daa17692049337761-1024-1024.webp" alt="Macacão Zoe" class="piece-img">
-            <span class="piece-profit-badge">+107% Lucro</span>
+            <span class="piece-profit-badge"><strong>+107%</strong><small>de lucro</small></span>
           </div>
           <div class="piece-content">
             <h4 class="piece-name">Macacão Liocel Fluido ZOE</h4>
@@ -1947,7 +1990,53 @@
   </section>
 
   <!-- ==========================================================================
-       SEÇÃO: CADASTRO PARA LIBERAÇÃO DE COMPRAS (CTA PRINCIPAL, IFRAME DA LOJA)
+       SEÇÃO: CONDIÇÕES DO ATACADO (COMPRA, ENVIO, TROCAS)
+       ========================================================================== -->
+  <section class="section-padding" id="condicoes">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-eyebrow">Regras Claras</span>
+        <h2 class="section-title">Condições do Atacado</h2>
+        <p class="section-subtitle">
+          Veja antes de se cadastrar como funcionam a compra, o envio e as trocas.
+        </p>
+      </div>
+
+      <div class="steps-grid rules-grid">
+        <div class="step-card reveal-on-scroll delay-1">
+          <h3 class="step-card-title">Condições de compra</h3>
+          <ul class="rules-list">
+            <li>Pedido mínimo de <strong>R$ 700,00</strong></li>
+            <li>Pagamento somente via <strong>Pix à vista</strong></li>
+            <li>Mais <strong>5% OFF</strong> no Pix!</li>
+          </ul>
+          <p class="rules-note">
+            Os descontos de atacado <strong>NÃO</strong> são cumulativos com cupons ou outras promoções. Apenas os 5% do Pix são aplicáveis.
+          </p>
+        </div>
+
+        <div class="step-card reveal-on-scroll delay-2">
+          <h3 class="step-card-title">Como funciona o envio?</h3>
+          <ul class="rules-list">
+            <li>Escolha a opção de envio na finalização do pedido.</li>
+            <li>O frete é 100% por conta da cliente, sem frete grátis ou fixo.</li>
+            <li>O pedido será preparado e postado após a confirmação do pagamento.</li>
+          </ul>
+        </div>
+
+        <div class="step-card reveal-on-scroll delay-3">
+          <h3 class="step-card-title">Trocas e devoluções</h3>
+          <ul class="rules-list">
+            <li>Não realizamos trocas por tamanho, cor ou preferência.</li>
+            <li>Aceitamos solicitações de troca apenas por defeito, respeitando os direitos previstos em lei.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO: CADASTRO PARA LIBERAÇÃO DE COMPRAS (CTA PRINCIPAL, LINK PARA A LOJA)
        ========================================================================== -->
   <section class="section-padding register-section" id="cadastro">
     <div class="container">
@@ -1957,26 +2046,20 @@
           <span class="register-badge">Etapa de Liberação</span>
           <h2 class="register-title">Cadastre sua Loja para Liberar o Atacado</h2>
           <p class="register-desc">
-            Trabalhamos com preços restritos para proteger os lojistas parceiros. Preencha o cadastro abaixo para liberar o seu catálogo completo de compras.
+            Trabalhamos com preços restritos para proteger os lojistas parceiros. Faça o cadastro na nossa loja oficial para liberar o seu catálogo completo de compras.
           </p>
         </div>
 
-        <div class="register-frame-wrap">
-          <iframe
-            class="register-iframe"
-            id="registerFrame"
-            src="https://www.annaenglesstore.com.br/account/register/wholesale/9ddf0c82-7bee-410b-96fb-9666fc46e5cd"
-            title="Cadastro de atacado Anna Engles Store"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="clipboard-write"
-          ></iframe>
+        <div class="register-cta-block">
+          <a href="https://www.annaenglesstore.com.br/account/register/wholesale/9ddf0c82-7bee-410b-96fb-9666fc46e5cd" target="_blank" rel="noopener" class="btn-main-cta">
+            <span>Fazer meu Cadastro de Atacado</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <p class="cta-helper-note">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Você será levada ao cadastro oficial da Anna Engles Store, em uma nova aba.
+          </p>
         </div>
-
-        <p class="register-external-note">
-          Se o cadastro não aparecer ou preferir abrir em tela cheia,
-          <a href="https://www.annaenglesstore.com.br/account/register/wholesale/9ddf0c82-7bee-410b-96fb-9666fc46e5cd" target="_blank" rel="noopener">clique aqui para abrir o cadastro em uma nova aba</a>.
-        </p>
 
       </div>
     </div>
@@ -2007,7 +2090,7 @@
           <div class="faq-content-grid">
             <div class="faq-content-inner">
               <div class="faq-answer-body">
-                Nosso pedido mínimo é de <strong>R$ 1.200,00</strong>. Você não é obrigada a comprar grandes volumes ou pacotes fechados de um único modelo: pode mesclar diferentes peças, cores e tamanhos para montar um mix que combine perfeitamente com a sua clientela.
+                Nosso pedido mínimo é de <strong>R$ 700,00</strong>. Você não é obrigada a comprar grandes volumes ou pacotes fechados de um único modelo: pode mesclar diferentes peças, cores e tamanhos para montar um mix que combine perfeitamente com a sua clientela.
               </div>
             </div>
           </div>
@@ -2024,7 +2107,7 @@
           <div class="faq-content-grid">
             <div class="faq-content-inner">
               <div class="faq-answer-body">
-                Não obrigatoriamente. Atendemos tanto lojistas com CNPJ (lojas físicas ou e-commerces) quanto revendedoras independentes que atuam com CPF. Fazemos apenas uma breve validação do seu perfil no cadastro para manter a política de atacado.
+                Sim. O atacado é exclusivo para lojistas com CNPJ (lojas físicas ou e-commerces). Fazemos uma breve validação do seu perfil no cadastro para manter a política de atacado.
               </div>
             </div>
           </div>
@@ -2095,9 +2178,7 @@
           Moda feminina nobre, alfaiataria fina e crepe premium direto de fábrica. Atendendo lojistas e revendedoras de destaque em todo o Brasil.
         </p>
         <div class="footer-contact-links">
-          <span>Americana — Polo Têxtil / SP</span>
-          <span>•</span>
-          <a href="https://instagram.com/annaengles" target="_blank" rel="noopener">Instagram Oficial</a>
+          <a href="https://instagram.com/annaenglesstore" target="_blank" rel="noopener">Instagram Oficial</a>
           <span>•</span>
           <a href="#cadastro">Cadastre sua Loja</a>
         </div>
@@ -2115,7 +2196,7 @@
   <div class="mobile-sticky-bar">
     <div class="mobile-sticky-info">
       <span class="mobile-sticky-tag">Atacado Anna Engles</span>
-      <span class="mobile-sticky-sub">Mínimo R$ 1.200 • Grade Livre</span>
+      <span class="mobile-sticky-sub">Mínimo R$ 700 • Grade Livre</span>
     </div>
     <a href="#cadastro" class="mobile-sticky-btn">Cadastrar Loja</a>
   </div>
