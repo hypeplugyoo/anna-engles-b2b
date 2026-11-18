@@ -468,18 +468,20 @@
        FRAME DE VÍDEO COM MICRO-INTERAÇÕES DE PLAY
        ========================================================================== */
     .video-showcase-container {
-      max-width: 880px;
+      max-width: 380px;
       margin: 0 auto;
       position: relative;
     }
 
     .video-card-frame {
       position: relative;
-      border-radius: var(--radius-lg);
+      border-radius: 24px;
       background: var(--bg-dark);
-      border: 1px solid var(--border-gold);
+      border: 1.5px solid var(--border-gold);
       overflow: hidden;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(197, 160, 89, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -631,12 +633,12 @@
 
     .video-caption-bar {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 20px;
-      padding: 14px 24px;
+      text-align: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding: 14px 18px;
       background: var(--bg-surface);
       border-radius: var(--radius-md);
       border: 1px solid var(--border-light);
@@ -645,11 +647,12 @@
 
     .caption-info {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       font-size: 0.88rem;
       color: var(--text-muted);
-      text-align: left;
+      text-align: center;
     }
 
     .caption-author-badge {
@@ -804,10 +807,10 @@
 
     .video-modal-content {
       position: relative;
-      width: auto;
-      height: 86vh;
-      max-height: 840px;
+      width: min(420px, calc(86vh * (9 / 16)));
       aspect-ratio: 9 / 16;
+      height: auto;
+      max-height: 86vh;
       max-width: calc(100vw - 32px);
       background: #000000;
       border-radius: 20px;
