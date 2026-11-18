@@ -2678,6 +2678,13 @@
         observer.observe(el);
       });
 
+      // Garantia de visibilidade imediata / fallback para evitar tela em branco
+      setTimeout(() => {
+        document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
+          el.classList.add('revealed');
+        });
+      }, 600);
+
       // Inicia o micro-toast de prova social B2B elegante após 3.5 segundos
       setTimeout(initB2BToastRotator, 3500);
     });
@@ -2729,7 +2736,6 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeVideoModal();
     });
-    }
 
     /* ==========================================================================
        FAQ ACCORDION (60FPS GRID TRACK TRICK)
