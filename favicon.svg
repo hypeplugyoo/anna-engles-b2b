@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="aeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAD8BA"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#9E7D3B"/>
+    </linearGradient>
+  </defs>
+  <!-- Haute Couture Bordeaux Luxury Squircle Badge -->
+  <rect width="32" height="32" rx="7" fill="#7A1013"/>
+  <!-- Delicate Antique Brass Hairline Border -->
+  <rect x="1.5" y="1.5" width="29" height="29" rx="5.5" fill="none" stroke="#C5A059" stroke-width="0.75" stroke-opacity="0.35"/>
+  <!-- Anna Engles Haute Couture Delta Monogram -->
+  <path d="M16 6L6 26h20L16 6zm0 6.5l4.5 9.5H11.5L16 12.5z" fill="url(#aeGold)" fill-rule="evenodd"/>
+</svg>

@@ -8,3 +8,5 @@ Thumbs.db
 *.txt
 site_preview.html
 serve.js
+.agents/
+
