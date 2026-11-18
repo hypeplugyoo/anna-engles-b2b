@@ -70,15 +70,17 @@
       --radius-md: 14px;
       --radius-lg: 24px;
       
-      /* Micro-interaction Spring & Motion Physics */
+      /* Micro-interaction Spring & Motion Physics (Haute Couture Silky Fluidity) */
+      --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
       --spring-fast: cubic-bezier(0.16, 1, 0.3, 1);
       --spring-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
       --ease-exit: cubic-bezier(0.4, 0, 1, 1);
       --ease-enter: cubic-bezier(0, 0, 0.2, 1);
       
       --dur-tap: 100ms;
-      --dur-hover: 220ms;
+      --dur-hover: 280ms;
       --dur-feedback: 260ms;
+      --dur-reveal: 0.8s;
     }
 
     *, *::before, *::after {
@@ -179,13 +181,16 @@
     }
 
     /* ==========================================================================
-       60FPS SCROLL REVEAL ANIMATIONS
+       60/120FPS SILKY SMOOTH SCROLL REVEAL ANIMATIONS
        ========================================================================== */
     .reveal-on-scroll {
       opacity: 0;
-      transform: translate3d(0, 24px, 0);
-      transition: opacity 0.65s var(--spring-fast), transform 0.65s var(--spring-fast);
-      will-change: transform, opacity;
+      transform: translate3d(0, 22px, 0);
+      transition: opacity var(--dur-reveal) var(--ease-fluid), 
+                  transform var(--dur-reveal) var(--ease-fluid);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      will-change: opacity, transform;
     }
 
     .reveal-on-scroll.revealed {
@@ -964,7 +969,7 @@
       display: flex;
       flex-direction: column;
       transform: translate3d(0, 0, 0);
-      transition: transform var(--dur-hover) var(--spring-fast), border-color var(--dur-hover) ease;
+      transition: transform 0.4s var(--ease-fluid), border-color 0.35s ease;
       cursor: default;
     }
 
@@ -975,7 +980,7 @@
       border-radius: inherit;
       box-shadow: 0 16px 36px rgba(24, 22, 20, 0.08), 0 4px 12px rgba(197, 160, 89, 0.1);
       opacity: 0;
-      transition: opacity var(--dur-hover) ease;
+      transition: opacity 0.4s var(--ease-fluid);
       pointer-events: none;
     }
 
@@ -1138,8 +1143,8 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      transform: translate3d(0, 0, 0) scale(1);
-      transition: transform var(--dur-hover) var(--spring-fast), border-color var(--dur-hover) ease;
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.4s var(--ease-fluid), border-color 0.35s ease;
       cursor: pointer;
     }
 
@@ -1150,12 +1155,12 @@
       border-radius: inherit;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
       opacity: 0;
-      transition: opacity var(--dur-hover) ease;
+      transition: opacity 0.4s var(--ease-fluid);
       pointer-events: none;
     }
 
     .piece-card:hover {
-      transform: translate3d(0, -6px, 0) scale(1.01);
+      transform: translate3d(0, -6px, 0);
       border-color: var(--border-gold);
     }
 
@@ -1181,11 +1186,13 @@
       height: 100%;
       object-fit: cover;
       transform: translate3d(0, 0, 0) scale(1);
-      transition: transform 0.45s var(--spring-fast);
+      transition: transform 0.65s var(--ease-fluid);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
 
     .piece-card:hover .piece-img {
-      transform: translate3d(0, 0, 0) scale(1.07);
+      transform: translate3d(0, 0, 0) scale(1.05);
     }
 
     /* Etiqueta editorial de margem (canto da foto) */
@@ -3041,31 +3048,40 @@
        ========================================================================== -->
   <script>
     /* ==========================================================================
-       INTERSECTION OBSERVER PARA REVELAÇÃO EM 60FPS
+       INTERSECTION OBSERVER FLUIDO (60/120FPS COM REQUESTANIMATIONFRAME)
        ========================================================================== */
     document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              requestAnimationFrame(() => {
+                entry.target.classList.add('revealed');
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -20px 0px'
         });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -30px 0px'
-      });
 
-      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        observer.observe(el);
-      });
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
 
-      // Garantia de visibilidade imediata / fallback para evitar tela em branco
-      setTimeout(() => {
-        document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
+        // Revela suavemente elementos que já estão no topo visível no carregamento inicial
+        requestAnimationFrame(() => {
+          document.querySelectorAll('.hero-section .reveal-on-scroll').forEach(el => {
+            el.classList.add('revealed');
+          });
+        });
+      } else {
+        // Fallback apenas para navegadores obsoletos sem suporte a IntersectionObserver
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
           el.classList.add('revealed');
         });
-      }, 600);
+      }
 
       // Inicia o micro-toast de prova social B2B elegante após 3.5 segundos
       setTimeout(initB2BToastRotator, 3500);
