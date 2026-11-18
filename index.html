@@ -1470,27 +1470,27 @@
     }
 
     /* ==========================================================================
-       LIVE B2B SOCIAL PROOF MICRO-TOAST (DISCREET & ELEGANT)
+       LIVE B2B SOCIAL PROOF MICRO-TOAST (ULTRA-CLEAN GLASSMORPHISM)
        ========================================================================== */
     .b2b-toast-wrap {
       position: fixed;
-      bottom: 24px;
-      left: 24px;
-      z-index: 85;
-      display: flex;
+      bottom: 28px;
+      left: 28px;
+      z-index: 92;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-sm);
-      padding: 12px 18px;
-      box-shadow: 0 10px 30px rgba(20, 18, 16, 0.12);
-      transform: translate3d(0, 20px, 0) scale(0.95);
+      padding: 9px 18px 9px 12px;
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 100px;
+      box-shadow: 0 12px 35px rgba(20, 18, 16, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+      transform: translate3d(0, 16px, 0) scale(0.96);
       opacity: 0;
       pointer-events: none;
-      transition: transform 0.28s var(--spring-overshoot), opacity 0.28s var(--ease-enter);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
     }
 
     .b2b-toast-wrap.is-visible {
@@ -1501,59 +1501,91 @@
 
     @media (max-width: 768px) {
       .b2b-toast-wrap {
-        bottom: 80px; /* Above mobile sticky bar */
+        bottom: calc(84px + env(safe-area-inset-bottom, 0px));
         left: 14px;
-        right: 80px; /* Clean clearance for floating WhatsApp button */
-        max-width: calc(100vw - 96px);
+        right: auto;
+        max-width: calc(100vw - 92px);
+        padding: 8px 14px 8px 10px;
+        gap: 10px;
       }
     }
 
     .b2b-toast-icon {
-      width: 32px;
-      height: 32px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      background: var(--accent-green-bg);
-      color: var(--accent-green);
+      background: rgba(37, 211, 102, 0.14);
+      color: #15803D;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      border: 1px solid rgba(37, 211, 102, 0.25);
+    }
+
+    .b2b-toast-icon svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.6;
     }
 
     .b2b-toast-body {
       display: flex;
       flex-direction: column;
-      font-size: 0.78rem;
-      line-height: 1.35;
+      font-size: 0.74rem;
+      line-height: 1.25;
+      text-align: left;
     }
 
     .b2b-toast-title {
-      font-weight: 700;
-      color: var(--text-main);
+      font-weight: 600;
+      color: #181614;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 230px;
+    }
+
+    @media (max-width: 480px) {
+      .b2b-toast-title {
+        max-width: 170px;
+      }
     }
 
     .b2b-toast-sub {
-      color: var(--text-muted);
-      font-size: 0.7rem;
+      color: #6E6860;
+      font-size: 0.67rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
     }
 
     .b2b-toast-close {
-      color: var(--text-light);
+      background: transparent;
+      border: none;
+      color: rgba(24, 22, 20, 0.35);
       cursor: pointer;
-      padding: 4px;
-      margin-left: 4px;
-      border-radius: 4px;
-      transition: color var(--dur-hover) ease, transform var(--dur-hover) var(--spring-fast);
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      margin-left: 2px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      line-height: 1;
+      transition: color 0.2s ease, background 0.2s ease;
+      flex-shrink: 0;
     }
 
     .b2b-toast-close:hover {
-      color: var(--text-main);
-      transform: scale(1.15);
+      color: #181614;
+      background: rgba(0, 0, 0, 0.06);
     }
 
     .b2b-toast-close:active {
-      transform: scale(0.9);
-      transition-duration: var(--dur-tap);
+      transform: scale(0.92);
     }
 
     /* ==========================================================================
@@ -2977,17 +3009,17 @@
   </div>
 
   <!-- ==========================================================================
-       LIVE B2B SOCIAL PROOF MICRO-TOAST
+       LIVE B2B SOCIAL PROOF MICRO-TOAST (GLASSMORPHISM CLEAN)
        ========================================================================== -->
-  <div class="b2b-toast-wrap" id="b2bLiveToast">
-    <div class="b2b-toast-icon">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+  <div class="b2b-toast-wrap" id="b2bLiveToast" role="status" aria-live="polite">
+    <div class="b2b-toast-icon" aria-hidden="true">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <div class="b2b-toast-body">
       <span class="b2b-toast-title" id="toastStoreName">Boutique Maria (Campinas/SP)</span>
-      <span class="b2b-toast-sub" id="toastActionTime">liberou acesso ao atacado há 3 min</span>
+      <span class="b2b-toast-sub" id="toastActionTime">liberou compra no atacado há 3 min</span>
     </div>
-    <button class="b2b-toast-close" onclick="dismissToast()" title="Fechar">✕</button>
+    <button class="b2b-toast-close" onclick="dismissToast()" aria-label="Fechar notificação">✕</button>
   </div>
 
   <!-- ==========================================================================
@@ -3102,23 +3134,26 @@
     }
 
     /* ==========================================================================
-       MICRO-TOAST DE PROVA SOCIAL B2B ROTATIVO
+       MICRO-TOAST DE PROVA SOCIAL B2B ROTATIVO (GLASSMORPHISM ULTRA-CLEAN)
        ========================================================================== */
     const TOAST_EVENTS = [
-      { store: 'Boutique Maria (Campinas/SP)', time: 'liberou acesso ao atacado há 3 min' },
-      { store: 'Ateliê Lis (Belo Horizonte/MG)', time: 'recebeu catálogo de alfaiataria agora' },
-      { store: 'Donna Bella (Ribeirão Preto/SP)', time: 'iniciou pedido de grade livre há 6 min' },
-      { store: 'Closet Chic (Goiânia/GO)', time: 'liberou compras de atacado há 9 min' }
+      { store: 'Boutique Maria (Campinas/SP)', time: 'liberou compra no atacado há 3 min' },
+      { store: 'Ateliê Lis (Belo Horizonte/MG)', time: 'liberou compra no atacado agora' },
+      { store: 'Donna Bella (Ribeirão Preto/SP)', time: 'liberou compra no atacado há 6 min' },
+      { store: 'Closet Chic (Goiânia/GO)', time: 'liberou compra no atacado há 9 min' },
+      { store: 'Maison Blanche (Curitiba/PR)', time: 'liberou compra no atacado há 12 min' }
     ];
 
     let toastIndex = 0;
     let toastTimeout = null;
 
     function initB2BToastRotator() {
+      if (sessionStorage.getItem('ae_toast_dismissed')) return;
       showNextToast();
     }
 
     function showNextToast() {
+      if (sessionStorage.getItem('ae_toast_dismissed')) return;
       const toastEl = document.getElementById('b2bLiveToast');
       if (!toastEl) return;
 
@@ -3128,12 +3163,12 @@
 
       toastEl.classList.add('is-visible');
 
-      // Fica visível por 4 segundos
+      // Fica visível por 4.2 segundos
       toastTimeout = setTimeout(() => {
         toastEl.classList.remove('is-visible');
         toastIndex++;
-        // Reaparece com o próximo após 10 segundos
-        setTimeout(showNextToast, 10000);
+        // Reaparece com a próxima notificação após 11 segundos
+        setTimeout(showNextToast, 11000);
       }, 4200);
     }
 
@@ -3142,6 +3177,7 @@
       if (toastEl) {
         toastEl.classList.remove('is-visible');
         clearTimeout(toastTimeout);
+        sessionStorage.setItem('ae_toast_dismissed', '1');
       }
     }
   </script>
