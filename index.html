@@ -1501,9 +1501,10 @@
 
     @media (max-width: 768px) {
       .b2b-toast-wrap {
-        bottom: 74px; /* Above mobile sticky bar */
-        left: 16px;
-        right: 16px;
+        bottom: 80px; /* Above mobile sticky bar */
+        left: 14px;
+        right: 80px; /* Clean clearance for floating WhatsApp button */
+        max-width: calc(100vw - 96px);
       }
     }
 
@@ -1683,6 +1684,275 @@
     .mobile-sticky-btn:active {
       transform: scale(0.96);
       transition-duration: var(--dur-tap);
+    }
+
+    /* ==========================================================================
+       SEÇÃO: ATENDIMENTO DIRETO COM A CEO (FALE COM A ANNA NO WHATSAPP)
+       ========================================================================== */
+    .direct-contact-section {
+      background: var(--bg-subtle);
+      padding: 64px 0 80px;
+      position: relative;
+    }
+
+    .direct-contact-card {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid rgba(197, 160, 89, 0.38);
+      box-shadow: 0 20px 50px rgba(20, 18, 16, 0.05), 0 0 35px rgba(197, 160, 89, 0.12);
+      padding: 44px 48px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .direct-contact-card::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.14) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .direct-contact-avatar-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .direct-contact-avatar {
+      position: relative;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-gold);
+      padding: 3px;
+      background: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(122, 16, 19, 0.12);
+    }
+
+    .ceo-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .online-status-dot {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 16px;
+      height: 16px;
+      background: #25D366;
+      border: 2.5px solid #FFFFFF;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .direct-contact-body {
+      flex: 1;
+      text-align: left;
+    }
+
+    .direct-contact-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-bordeaux);
+      margin-bottom: 8px;
+    }
+
+    .direct-contact-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .direct-contact-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      max-width: 580px;
+    }
+
+    .direct-contact-action {
+      flex-shrink: 0;
+    }
+
+    .btn-wpp-direct {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 16px 30px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 10px 26px rgba(37, 211, 102, 0.38), 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: background 0.25s ease, transform var(--dur-hover) var(--spring-fast), box-shadow 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-wpp-direct:hover {
+      background: #1DA851;
+      transform: translate3d(0, -2px, 0) scale(1.03);
+      box-shadow: 0 14px 32px rgba(37, 211, 102, 0.52), 0 6px 16px rgba(0, 0, 0, 0.15);
+      color: #FFFFFF;
+    }
+
+    .btn-wpp-direct:active {
+      transform: translate3d(0, 0, 0) scale(0.97);
+    }
+
+    .btn-wpp-direct .wpp-icon-svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .direct-contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+        gap: 22px;
+      }
+      .direct-contact-body {
+        text-align: center;
+      }
+      .direct-contact-desc {
+        margin: 0 auto;
+      }
+      .direct-contact-action {
+        width: 100%;
+      }
+      .btn-wpp-direct {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* ==========================================================================
+       BOTÃO FLUTUANTE DO WHATSAPP (CANTO DIREITO INFERIOR)
+       ========================================================================== */
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.42), 0 4px 14px rgba(0, 0, 0, 0.16);
+      z-index: 995;
+      text-decoration: none;
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform var(--dur-hover) var(--spring-overshoot), background var(--dur-hover) ease, box-shadow var(--dur-hover) ease;
+      cursor: pointer;
+    }
+
+    .floating-whatsapp-btn::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 2px solid #25D366;
+      opacity: 0.75;
+      animation: wppPulseRing 2.4s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      pointer-events: none;
+    }
+
+    @keyframes wppPulseRing {
+      0% { transform: scale(1); opacity: 0.8; }
+      70% { transform: scale(1.4); opacity: 0; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    .floating-whatsapp-btn:hover {
+      background: #1DA851;
+      transform: translate3d(0, -3px, 0) scale(1.1);
+      box-shadow: 0 14px 34px rgba(37, 211, 102, 0.58), 0 6px 18px rgba(0, 0, 0, 0.22);
+      color: #FFFFFF;
+    }
+
+    .floating-whatsapp-btn:active {
+      transform: scale(0.94);
+    }
+
+    .floating-whatsapp-btn .wpp-svg-logo {
+      width: 34px;
+      height: 34px;
+      fill: #FFFFFF;
+    }
+
+    .floating-whatsapp-tooltip {
+      position: absolute;
+      right: 76px;
+      background: #181614;
+      color: #FAF8F5;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 8px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(8px, 0, 0);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      display: none;
+    }
+
+    @media (min-width: 900px) {
+      .floating-whatsapp-tooltip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .floating-whatsapp-btn:hover .floating-whatsapp-tooltip {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .floating-whatsapp-btn {
+        bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+        right: 18px;
+        width: 54px;
+        height: 54px;
+      }
+      .floating-whatsapp-btn .wpp-svg-logo {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     /* Accessibility: Respect prefers-reduced-motion */
@@ -2638,6 +2908,41 @@
   </section>
 
   <!-- ==========================================================================
+       SEÇÃO: ATENDIMENTO DIRETO COM A CEO (FALE COM A ANNA NO WHATSAPP)
+       ========================================================================== -->
+  <section class="section-padding direct-contact-section" id="contato-ceo">
+    <div class="container">
+      <div class="direct-contact-card reveal-on-scroll">
+        <div class="direct-contact-avatar-wrap">
+          <div class="direct-contact-avatar">
+            <img src="https://acdn-us.mitiendanube.com/stores/001/492/793/products/img_9543-d42a188fe2831ff3ac17894152745720-1024-1024.webp" alt="Anna Engles — Fundadora e CEO" class="ceo-avatar-img" loading="lazy">
+            <span class="online-status-dot" title="Online no WhatsApp"></span>
+          </div>
+        </div>
+        <div class="direct-contact-body">
+          <span class="direct-contact-eyebrow">Atendimento VIP com a Fundadora</span>
+          <h2 class="direct-contact-title">Ainda ficou com dúvidas? Manda uma mensagem aqui pra Anna, nossa CEO</h2>
+          <p class="direct-contact-desc">
+            Quer entender a grade ideal para a sua região, tirar dúvidas sobre o pedido mínimo ou confirmar a proteção de praça da sua cidade? Fale diretamente com quem cria e lidera a marca.
+          </p>
+        </div>
+        <div class="direct-contact-action">
+          <a href="https://wa.me/5519998133361?text=Ol%C3%A1%2C%20Anna!%20Ainda%20fiquei%20com%20algumas%20d%C3%BAvidas%20sobre%20o%20atacado%20da%20Anna%20Engles%20e%20gostaria%20de%20conversar%20diretamente%20com%20voc%C3%AA." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-wpp-direct" 
+             aria-label="Conversar diretamente com a Anna no WhatsApp">
+            <svg class="wpp-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>Falar com a Anna</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        RODAPÉ
        ========================================================================== -->
   <footer class="site-footer">
@@ -2684,6 +2989,20 @@
     </div>
     <button class="b2b-toast-close" onclick="dismissToast()" title="Fechar">✕</button>
   </div>
+
+  <!-- ==========================================================================
+       BOTÃO FLUTUANTE DO WHATSAPP (CANTO DIREITO INFERIOR)
+       ========================================================================== -->
+  <a href="https://wa.me/5519998133361?text=Ol%C3%A1%2C%20Anna!%20Estou%20no%20site%20de%20atacado%20da%20Anna%20Engles%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp-btn" 
+     aria-label="Falar no WhatsApp com Anna Engles">
+    <span class="floating-whatsapp-tooltip">Falar com a Anna (CEO)</span>
+    <svg class="wpp-svg-logo" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
 
   <!-- ==========================================================================
        SCRIPTS: MICRO-INTERAÇÕES, SOCIAL TOAST E MODAL DE VÍDEO
